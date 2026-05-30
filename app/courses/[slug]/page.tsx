@@ -242,835 +242,777 @@ export default async function CourseDetailPage({
       <Navbar />
 
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden pt-36 pb-20 lg:pt-44 lg:pb-28">
+<section className="relative overflow-hidden border-b border-white/5 bg-[#050505] pt-28 pb-24 lg:pt-36">
 
-        {/* PREMIUM BACKGROUND */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+  {/* ambient glow */}
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-0 overflow-hidden"
+  >
+    <div className="absolute left-[-10%] top-[10%] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/10 blur-[140px]" />
 
-          {/* GOLD GLOW */}
-          <div className="absolute left-[-140px] top-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/10 blur-[130px]" />
+    <div className="absolute right-[-10%] bottom-[-10%] h-[380px] w-[380px] rounded-full bg-[#D4AF37]/5 blur-[140px]" />
 
-          <div className="absolute right-[-120px] bottom-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/8 blur-[130px]" />
+    <div
+      className="absolute inset-0 opacity-[0.03]"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
+        backgroundSize: "42px 42px",
+      }}
+    />
+  </div>
 
-          {/* GRID */}
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage:
-                "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
-              backgroundSize: "42px 42px",
-            }}
-          />
+  <div className="relative z-10 mx-auto grid max-w-[1440px] gap-14 px-5 lg:grid-cols-[1.08fr_0.92fr]">
 
-          {/* RADIAL */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.08),transparent_40%)]" />
+    {/* LEFT CONTENT */}
+    <div className="max-w-[820px]">
 
+      {/* badges */}
+      <div className="flex flex-wrap items-center gap-3">
+
+        <div className="rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-5 py-2 text-[12px] font-semibold tracking-[0.18em] text-[#F5E6B3]">
+          ENTERPRISE TRAINING PROGRAM
         </div>
 
-        {/* CONTAINER */}
-        <div className="relative z-10 mx-auto max-w-[1500px] px-5">
+        {course.priority === 1 && (
+          <div className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-5 py-2 text-[12px] font-semibold tracking-[0.14em] text-emerald-300">
+            MOST DEMANDED COURSE
+          </div>
+        )}
 
-          <div className="grid items-center gap-10 xl:grid-cols-[1.08fr_0.92fr]">
+      </div>
 
-            {/* LEFT CONTENT */}
-            <div className="max-w-[920px]">
+      {/* heading */}
+      <h1
+        className="
+          mt-8
+          text-[42px]
+          font-black
+          leading-[0.95]
+          tracking-[-0.04em]
+          text-white
+          sm:text-[56px]
+          lg:text-[74px]
+        "
+      >
+        Master
+        <span className="block bg-gradient-to-r from-[#D4AF37] via-[#F5E6B3] to-[#D4AF37] bg-clip-text text-transparent">
+          {course.shortTitle}
+        </span>
 
-              {/* TOP BADGES */}
-              <div className="flex flex-wrap items-center gap-3">
+        <span className="mt-2 block text-white">
+          Training in Hyderabad
+        </span>
+      </h1>
 
-                <div
-                  className="
-              inline-flex
-              items-center
-              gap-2
-              rounded-full
-              border
-              border-[#D4AF37]/20
-              bg-[#D4AF37]/5
-              px-5
-              py-2.5
-              backdrop-blur-xl
-            "
-                >
+      {/* description */}
+      <p
+        className="
+          mt-8
+          max-w-[760px]
+          text-[17px]
+          leading-[1.9]
+          text-white/65
+        "
+      >
+        {course.heroDescription}
+      </p>
 
-                  <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
+      {/* trust badges */}
+      <div className="mt-8 flex flex-wrap gap-3">
 
-                  <span className="text-[12px] font-semibold tracking-[0.18em] text-[#f5e6b3]">
-                    ENTERPRISE TRAINING PROGRAM
-                  </span>
+        {[
+          "Real-Time Labs",
+          "Placement Assistance",
+          "Certification Guidance",
+          "Interview Preparation",
+        ].map((item, index) => (
+          <div
+            key={index}
+            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5"
+          >
+            <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
 
-                </div>
+            <span className="text-[13px] font-medium text-white/70">
+              {item}
+            </span>
+          </div>
+        ))}
 
-                {course.priority === 1 && (
+      </div>
 
-                  <div
-                    className="
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                border
-                border-[#D4AF37]/20
-                bg-[#D4AF37]/10
-                px-4
-                py-2
-              "
-                  >
+      {/* metrics */}
+      <div className="mt-10 flex flex-wrap gap-4">
 
-                    <TrendingUp className="h-4 w-4 text-[#D4AF37]" />
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 backdrop-blur-xl">
+          <p className="text-[12px] uppercase tracking-[0.18em] text-white/40">
+            Students Trained
+          </p>
 
-                    <span className="text-[12px] font-semibold tracking-[0.12em] text-[#D4AF37]">
-                      MOST DEMANDED COURSE
-                    </span>
+          <p className="mt-2 text-[24px] font-bold text-white">
+            {course.students}+
+          </p>
+        </div>
 
-                  </div>
-                )}
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 backdrop-blur-xl">
+          <p className="text-[12px] uppercase tracking-[0.18em] text-white/40">
+            Student Rating
+          </p>
 
-              </div>
+          <p className="mt-2 text-[24px] font-bold text-white">
+            {course.rating}/5
+          </p>
+        </div>
 
-              {/* SEO KEYWORD */}
-              <div
-                className="
-            mt-8
+        <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-5 backdrop-blur-xl">
+          <p className="text-[12px] uppercase tracking-[0.18em] text-white/40">
+            Course Duration
+          </p>
+
+          <p className="mt-2 text-[24px] font-bold text-white">
+            {course.duration}
+          </p>
+        </div>
+
+      </div>
+
+      {/* CTA */}
+      <div className="mt-12 flex flex-col gap-4 sm:flex-row">
+
+        <Link
+          href="/contact"
+          className="
             inline-flex
-            rounded-full
+            h-[58px]
+            items-center
+            justify-center
+            rounded-2xl
+            bg-[#D4AF37]
+            px-8
+            text-[15px]
+            font-semibold
+            text-black
+            transition-all
+            duration-300
+            hover:translate-y-[-2px]
+            hover:shadow-[0_10px_40px_rgba(212,175,55,0.25)]
+          "
+        >
+          Book Free Demo
+        </Link>
+
+        <Link
+          href="/courses"
+          className="
+            inline-flex
+            h-[58px]
+            items-center
+            justify-center
+            rounded-2xl
             border
             border-white/10
             bg-white/[0.03]
-            px-5
-            py-2.5
-            backdrop-blur-xl
+            px-8
+            text-[15px]
+            font-medium
+            text-white
+            transition-all
+            duration-300
+            hover:border-[#D4AF37]/30
+            hover:text-[#D4AF37]
           "
-              >
+        >
+          Explore All Courses
+        </Link>
 
-                <span className="text-[13px] font-medium tracking-[0.08em] text-white/70">
-                  BEST {course.shortTitle.toUpperCase()} IN HYDERABAD
-                </span>
+      </div>
 
-              </div>
+    </div>
 
-              {/* MAIN TITLE */}
-              <div className="mt-7">
+    {/* RIGHT STICKY PANEL */}
+    <div className="lg:sticky lg:top-28 lg:h-fit">
 
-                <h1
-                  className="
-              max-w-[1000px]
-              text-[42px]
-              font-black
-              leading-[0.92]
-              tracking-[-0.06em]
-              text-white
-              sm:text-[56px]
-              lg:text-[82px]
-              xl:text-[96px]
-            "
-                >
-
-                  <span className="block text-white">
-                    {course.shortTitle}
-                  </span>
-
-                  <span
-                    className="
-                mt-2
-                block
-                bg-gradient-to-r
-                from-[#D4AF37]
-                via-[#f5e6b3]
-                to-[#D4AF37]
-                bg-clip-text
-                text-transparent
-              "
-                  >
-                    Training in Hyderabad
-                  </span>
-
-                </h1>
-
-                {/* SUB KEYWORDS */}
-                <div className="mt-5 flex flex-wrap gap-3">
-
-                  {[
-                    "Real-Time Labs",
-                    "Placement Support",
-                    "Certification Guidance",
-                    "Interview Preparation",
-                  ].map((item, idx) => (
-
-                    <div
-                      key={idx}
-                      className="
-                  inline-flex
-                  items-center
-                  gap-2
-                  rounded-full
-                  border
-                  border-white/10
-                  bg-black/25
-                  px-4
-                  py-2.5
-                "
-                    >
-
-                      <ShieldCheck className="h-3.5 w-3.5 text-[#D4AF37]" />
-
-                      <span className="text-[12px] font-medium text-white/75">
-                        {item}
-                      </span>
-
-                    </div>
-                  ))}
-
-                </div>
-
-              </div>
-
-              {/* DESCRIPTION */}
-              <p
-                className="
-            mt-8
-            max-w-[860px]
-            text-[17px]
-            leading-[2]
-            text-white/60
-            lg:text-[18px]
-          "
-              >
-                {course.heroDescription}
-              </p>
-
-              {/* STATS */}
-              <div className="mt-9 flex flex-wrap gap-4">
-
-                <div
-                  className="
-              flex
-              items-center
-              gap-4
-              rounded-2xl
-              border
-              border-white/10
-              bg-white/[0.03]
-              px-5
-              py-4
-              backdrop-blur-xl
-            "
-                >
-
-                  <div
-                    className="
-                flex
-                h-12
-                w-12
-                items-center
-                justify-center
-                rounded-xl
-                bg-[#D4AF37]/10
-              "
-                  >
-
-                    <Users className="h-5 w-5 text-[#D4AF37]" />
-
-                  </div>
-
-                  <div>
-
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-white/40">
-                      Students
-                    </p>
-
-                    <p className="mt-1 text-[16px] font-semibold text-white">
-                      {course.students} Trained
-                    </p>
-
-                  </div>
-
-                </div>
-
-                <div
-                  className="
-              flex
-              items-center
-              gap-4
-              rounded-2xl
-              border
-              border-white/10
-              bg-white/[0.03]
-              px-5
-              py-4
-              backdrop-blur-xl
-            "
-                >
-
-                  <div
-                    className="
-                flex
-                h-12
-                w-12
-                items-center
-                justify-center
-                rounded-xl
-                bg-[#D4AF37]/10
-              "
-                  >
-
-                    <Star className="h-5 w-5 fill-[#D4AF37] text-[#D4AF37]" />
-
-                  </div>
-
-                  <div>
-
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-white/40">
-                      Student Rating
-                    </p>
-
-                    <p className="mt-1 text-[16px] font-semibold text-white">
-                      {course.rating} / 5 Rating
-                    </p>
-
-                  </div>
-
-                </div>
-
-                <div
-                  className="
-              flex
-              items-center
-              gap-4
-              rounded-2xl
-              border
-              border-white/10
-              bg-white/[0.03]
-              px-5
-              py-4
-              backdrop-blur-xl
-            "
-                >
-
-                  <div
-                    className="
-                flex
-                h-12
-                w-12
-                items-center
-                justify-center
-                rounded-xl
-                bg-[#D4AF37]/10
-              "
-                  >
-
-                    <Clock3 className="h-5 w-5 text-[#D4AF37]" />
-
-                  </div>
-
-                  <div>
-
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-white/40">
-                      Course Duration
-                    </p>
-
-                    <p className="mt-1 text-[16px] font-semibold text-white">
-                      {course.duration}
-                    </p>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-              {/* CTA */}
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-
-                <Link
-                  href="/contact"
-                  className="
-      group
-      flex
-      h-[60px]
-      items-center
-      justify-center
-      gap-3
-      rounded-2xl
-      bg-[#D4AF37]
-      px-8
-      text-[15px]
-      font-semibold
-      text-black
-      transition-all
-      duration-300
-      hover:scale-[1.02]
-      hover:shadow-[0_0_40px_rgba(212,175,55,0.35)]
-    "
-                >
-
-                  Book Free Demo
-
-                  <ArrowRight
-                    className="
-        h-4
-        w-4
-        transition-transform
-        duration-300
-        group-hover:translate-x-1
-      "
-                  />
-
-                </Link>
-
-                {/* SECONDARY CTA */}
-                <Link
-                  href="/courses"
-                  className="
-      flex
-      h-[60px]
-      items-center
-      justify-center
-      rounded-2xl
-      border
-      border-white/10
-      bg-white/[0.03]
-      px-8
-      text-[15px]
-      font-medium
-      text-white
-      backdrop-blur-xl
-      transition-all
-      duration-300
-      hover:border-[#D4AF37]/30
-      hover:bg-[#D4AF37]/[0.03]
-      hover:text-[#D4AF37]
-    "
-                >
-                  Explore All Courses
-                </Link>
-
-
-              </div>
-
-            </div>
-
-            {/* RIGHT SIDE PREMIUM CARD */}
-            <div
-              className="
-          relative
+      <div
+        className="
           overflow-hidden
-          rounded-[36px]
+          rounded-[32px]
           border
           border-white/10
-          bg-white/[0.04]
-          p-7
-          backdrop-blur-2xl
-          lg:p-8
+          bg-[#0F0F0F]
+          p-8
+          shadow-[0_20px_80px_rgba(0,0,0,0.45)]
         "
-            >
+      >
 
-              {/* INNER GLOW */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_60%)]" />
+
+        <div className="relative z-10">
+
+          <p className="text-[12px] font-semibold tracking-[0.18em] text-[#D4AF37]">
+            COURSE OVERVIEW
+          </p>
+
+          <h2 className="mt-4 text-[34px] font-black leading-[1.05] tracking-[-0.03em] text-white">
+            Why Students
+            <span className="block text-[#D4AF37]">
+              Choose NG Cloud
+            </span>
+          </h2>
+
+          <p className="mt-6 text-[15px] leading-[1.9] text-white/60">
+            {course.instituteWhy}
+          </p>
+
+          <div className="mt-8 space-y-4">
+
+            {course.courseHighlights?.slice(0, 5).map((item, index) => (
               <div
-                className="
-            absolute
-            inset-0
-            bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_55%)]
-          "
-              />
+                key={index}
+                className="flex items-start gap-4 rounded-2xl border border-white/10 bg-black/20 px-5 py-4"
+              >
 
-              <div className="relative z-10">
+                <div className="mt-1 h-2.5 w-2.5 rounded-full bg-[#D4AF37]" />
 
-                {/* TITLE */}
-                <div className="flex items-center justify-between gap-5">
-
-                  <div>
-
-                    <p className="text-[12px] font-semibold tracking-[0.18em] text-[#D4AF37]">
-                      COURSE OVERVIEW
-                    </p>
-
-                    <h2
-                      className="
-                  mt-3
-                  text-[34px]
-                  font-black
-                  leading-[1]
-                  tracking-[-0.04em]
-                  text-white
-                "
-                    >
-                      Why Students
-                      <span className="block text-[#D4AF37]">
-                        Choose NG Cloud
-                      </span>
-                    </h2>
-
-                  </div>
-
-                </div>
-
-                {/* CONTENT */}
-                <p
-                  className="
-              mt-6
-              text-[15px]
-              leading-[1.95]
-              text-white/60
-            "
-                >
-                  {course.instituteWhy}
+                <p className="text-[15px] leading-[1.7] text-white/75">
+                  {item}
                 </p>
 
-                {/* FEATURES */}
-                <div className="mt-8 grid gap-4">
-
-                  {course.courseHighlights
-                    ?.slice(0, 5)
-                    .map((item, idx) => (
-
-                      <div
-                        key={idx}
-                        className="
-                    flex
-                    items-center
-                    gap-4
-                    rounded-2xl
-                    border
-                    border-white/10
-                    bg-black/20
-                    px-5
-                    py-4
-                  "
-                      >
-
-                        <div
-                          className="
-                      flex
-                      h-10
-                      w-10
-                      items-center
-                      justify-center
-                      rounded-xl
-                      bg-[#D4AF37]/10
-                    "
-                        >
-
-                          <ShieldCheck className="h-4 w-4 text-[#D4AF37]" />
-
-                        </div>
-
-                        <div>
-
-                          <h3 className="text-[15px] font-semibold text-white">
-                            {item}
-                          </h3>
-
-                        </div>
-
-                      </div>
-                    ))}
-
-                </div>
-
-                {/* BOTTOM CTA */}
-                <div
-                  className="
-              mt-8
-              rounded-3xl
-              border
-              border-[#D4AF37]/20
-              bg-[#D4AF37]/6
-              p-6
-            "
-                >
-
-                  <p className="text-[13px] font-semibold tracking-[0.16em] text-[#D4AF37]">
-                    CAREER OPPORTUNITIES
-                  </p>
-
-                  <h3
-                    className="
-                mt-3
-                text-[28px]
-                font-black
-                leading-[1.1]
-                tracking-[-0.03em]
-                text-white
-              "
-                  >
-                    Start Your Career in
-                    <span className="block text-[#D4AF37]">
-                      {course.category}
-                    </span>
-                  </h3>
-
-                  <p className="mt-4 text-[15px] leading-[1.9] text-white/60">
-                    Learn practical enterprise skills with real-time projects,
-                    placement preparation and certification-focused mentorship.
-                  </p>
-
-                </div>
-
               </div>
+            ))}
 
-            </div>
+          </div>
+
+          <div className="mt-8 rounded-3xl border border-[#D4AF37]/20 bg-[#D4AF37]/5 p-6">
+
+            <p className="text-[12px] font-semibold tracking-[0.18em] text-[#D4AF37]">
+              CAREER OUTCOMES
+            </p>
+
+            <h3 className="mt-3 text-[28px] font-black leading-[1.1] tracking-[-0.03em] text-white">
+              Build Your Career in
+              <span className="block text-[#D4AF37]">
+                {course.category}
+              </span>
+            </h3>
+
+            <p className="mt-4 text-[15px] leading-[1.9] text-white/60">
+              Learn enterprise-level practical skills with real-time projects,
+              placement-focused mentorship and certification guidance.
+            </p>
 
           </div>
 
         </div>
 
-      </section>
+      </div>
 
+    </div>
+
+  </div>
+
+</section>
       {/* SECTION DIVIDER */}
       <div className="mx-auto h-px max-w-[1400px] bg-gradient-to-r from-transparent via-[#D4AF37]/10 to-transparent" />
 
       {/* ABOUT */}
-      <section className="relative overflow-hidden py-32">
+{/* ABOUT */}
+{/* ABOUT */}
+<section className="relative overflow-hidden py-28 lg:py-36">
+  
+  {/* Background Accents */}
+  <div className="absolute inset-0">
+    <div className="absolute left-0 top-0 h-full w-full bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.08),transparent_40%)]" />
+    <div className="absolute bottom-0 right-0 h-full w-full bg-[radial-gradient(circle_at_bottom_right,rgba(212,175,55,0.05),transparent_35%)]" />
+  </div>
 
-        <div className="mx-auto max-w-[1400px] px-5">
+  <div className="relative mx-auto max-w-[1500px] px-6">
 
-          <div className="grid gap-16 lg:grid-cols-2">
+    {/* Premium Frame */}
+    <div className="relative rounded-[40px] border border-white/10 bg-[#0b0b0b]/80 p-8 shadow-[0_0_80px_rgba(0,0,0,0.45)] backdrop-blur-xl lg:p-14">
 
-            <div>
+      {/* Decorative Lines */}
+      <div className="absolute left-0 top-20 h-px w-24 bg-gradient-to-r from-transparent to-[#D4AF37]" />
+      <div className="absolute bottom-20 right-0 h-px w-24 bg-gradient-to-l from-transparent to-[#D4AF37]" />
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-5 py-2.5">
+      <div className="grid items-start gap-16 lg:grid-cols-[1.1fr_0.9fr]">
 
-                <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
+        {/* LEFT SIDE */}
+        <div className="relative">
 
-                <span className="text-sm text-[#f5e6b3]">
-                  About This Program
-                </span>
+          {/* Label */}
+          <div className="inline-flex items-center gap-3 rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/[0.05] px-6 py-3">
+            <div className="h-2 w-2 rounded-full bg-[#D4AF37] shadow-[0_0_12px_#D4AF37]" />
 
+            <span className="text-[11px] font-medium uppercase tracking-[0.28em] text-[#f5e6b3]">
+              About This Program
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h2
+            className="
+              mt-10
+              max-w-4xl
+              text-[46px]
+              font-black
+              leading-[0.92]
+              tracking-[-0.05em]
+              text-white
+              sm:text-[62px]
+              xl:text-[86px]
+            "
+          >
+            Why Learn
+
+            <span className="mt-2 block text-[#D4AF37]">
+              {course.shortTitle}
+            </span>
+          </h2>
+
+          {/* Elegant Divider */}
+          <div className="mt-10 flex items-center gap-4">
+            <div className="h-px w-24 bg-[#D4AF37]" />
+            <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
+            <div className="h-px w-40 bg-gradient-to-r from-[#D4AF37]/60 to-transparent" />
+          </div>
+
+          {/* Main Paragraph */}
+          <div className="mt-14 max-w-3xl">
+            <p className="text-[19px] leading-[2] text-white/72">
+              {course.whyLearn}
+            </p>
+          </div>
+
+        </div>
+
+        {/* RIGHT SIDE */}
+        <div className="relative">
+
+          {/* Luxury Content Card */}
+          <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.025] p-8 lg:p-10">
+
+            {/* Glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.12),transparent_35%)]" />
+
+            {/* Top Accent */}
+            <div className="relative flex items-center justify-between border-b border-white/10 pb-6">
+              <div>
+                <p className="text-[11px] uppercase tracking-[0.3em] text-[#D4AF37]">
+                  Program Vision
+                </p>
+
+                <h3 className="mt-3 text-2xl font-semibold text-white">
+                  Modern Industry Learning
+                </h3>
               </div>
 
-              <h2
-                className="
-                  mt-8
-                  text-[44px]
-                  font-black
-                  leading-[1]
-                  tracking-[-0.04em]
-                  text-white
-                  md:text-[64px]
-                "
-              >
-                Why Learn
-
-                <span className="block text-[#D4AF37]">
-                  {course.shortTitle}
-                </span>
-
-              </h2>
-
-              <div className="mt-6 h-px w-28 bg-gradient-to-r from-[#D4AF37] to-transparent" />
-
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 text-[#D4AF37]">
+                ✦
+              </div>
             </div>
 
-            <div className="space-y-8">
-
-              <p className="text-[18px] leading-[2] text-white/65">
-                {course.whyLearn}
-              </p>
-
-              <p className="text-[18px] leading-[2] text-white/65">
+            {/* Description */}
+            <div className="relative pt-8">
+              <p className="text-[17px] leading-[2] text-white/65">
                 {course.description}
               </p>
-
             </div>
 
+          </div>
+
+          {/* Floating Premium Badge */}
+          <div className="mt-8 flex items-center gap-5 rounded-2xl border border-white/10 bg-black/40 px-6 py-5 backdrop-blur-md">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[#D4AF37]/10 text-xl text-[#D4AF37]">
+              ★
+            </div>
+
+            <div>
+              <p className="text-sm uppercase tracking-[0.25em] text-[#D4AF37]/80">
+                Career Focused
+              </p>
+
+              <p className="mt-2 text-white/60">
+                Built for practical skills, real-world execution, and
+                long-term professional growth.
+              </p>
+            </div>
           </div>
 
         </div>
 
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+{/* SKILLS */}
+<section className="relative overflow-hidden py-10 lg:py-14">
 
-      {/* SKILLS */}
-      <section className="relative overflow-hidden py-32">
+  <div className="mx-auto max-w-[1450px] px-5">
 
-        <div className="mx-auto max-w-[1400px] px-5">
+    {/* CENTERED HEADER */}
+    <div className="border-b border-white/10 pb-10">
 
-          <div className="max-w-[850px]">
+      <div className="mx-auto flex max-w-[950px] flex-col items-center text-center">
 
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-5 py-2.5">
+        <div className="inline-flex items-center gap-2.5 rounded-full border border-[#D4AF37]/15 bg-[#D4AF37]/[0.04] px-4 py-2">
+          <div className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
 
-              <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
-
-              <span className="text-sm text-[#f5e6b3]">
-                Skills You Will Gain
-              </span>
-
-            </div>
-
-            <h2
-              className="
-                mt-8
-                text-[44px]
-                font-black
-                leading-[1]
-                tracking-[-0.04em]
-                text-white
-                md:text-[64px]
-              "
-            >
-              Build Practical
-
-              <span className="block text-[#D4AF37]">
-                Enterprise Skills
-              </span>
-
-            </h2>
-
-            <div className="mt-6 h-px w-28 bg-gradient-to-r from-[#D4AF37] to-transparent" />
-
-          </div>
-
-          <div className="mt-20 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-
-            {course.skills.map((skill, index) => (
-              <div
-                key={index}
-                className="
-                  rounded-[32px]
-                  border
-                  border-[#D4AF37]/10
-                  bg-gradient-to-b
-                  from-[#111111]
-                  to-[#080808]
-                  p-8
-                  shadow-[0_10px_40px_rgba(0,0,0,0.45)]
-                "
-              >
-
-                <div
-                  className="
-                    flex
-                    h-16
-                    w-16
-                    items-center
-                    justify-center
-                    rounded-2xl
-                    bg-[#D4AF37]/10
-                  "
-                >
-
-                  <Target className="h-7 w-7 text-[#D4AF37]" />
-
-                </div>
-
-                <h3
-                  className="
-                    mt-7
-                    text-[22px]
-                    font-bold
-                    leading-[1.5]
-                    text-white
-                  "
-                >
-                  {skill}
-                </h3>
-
-              </div>
-            ))}
-
-          </div>
-
+          <span className="text-[10px] uppercase tracking-[0.24em] text-[#f5e6b3]">
+            Skills You Will Gain
+          </span>
         </div>
 
-      </section>
+        <h2
+          className="
+            mt-6
+            text-[36px]
+            font-black
+            leading-[0.95]
+            tracking-[-0.05em]
+            text-white
+            sm:text-[50px]
+            xl:text-[62px]
+          "
+        >
+          Build Practical
 
-      {/* CURRICULUM */}
-      <section className="relative overflow-hidden py-32">
+          <span className="block text-[#D4AF37]">
+            Enterprise Skills
+          </span>
+        </h2>
 
-        <div className="mx-auto max-w-[1400px] px-5">
+        <p className="mt-6 max-w-2xl text-[15px] leading-[1.8] text-white/60">
+          Master real-world tools, enterprise workflows, and production-ready
+          implementation strategies used by modern engineering teams.
+        </p>
 
-          <div className="max-w-[850px]">
+      </div>
 
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-5 py-2.5">
+    </div>
 
-              <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
+    {/* COMPACT SKILLS TABLE */}
+    <div className="mt-10 flex justify-center">
 
-              <span className="text-sm text-[#f5e6b3]">
-                Course Curriculum
-              </span>
+      <div className="w-full max-w-[950px] overflow-hidden rounded-[28px] border border-white/10 bg-[#0d0d0d]">
 
-            </div>
+        {course.skills.map((skill, index) => (
+          <div
+            key={index}
+            className="
+              group
+              grid
+              items-center
+              gap-4
+              border-b
+              border-white/10
+              px-5
+              py-4
+              transition-all
+              duration-300
+              hover:bg-white/[0.03]
+              md:grid-cols-[60px_1fr_auto]
+              md:px-7
+            "
+          >
 
-            <h2
+            {/* Number */}
+            <div
               className="
-                mt-8
-                text-[44px]
-                font-black
-                leading-[1]
-                tracking-[-0.04em]
-                text-white
-                md:text-[64px]
+                text-[11px]
+                font-semibold
+                tracking-[0.22em]
+                text-[#D4AF37]/65
               "
             >
-              Complete Training
+              {(index + 1).toString().padStart(2, "0")}
+            </div>
 
-              <span className="block text-[#D4AF37]">
-                Curriculum Modules
-              </span>
+            {/* Skill Name */}
+            <h3
+              className="
+                text-[17px]
+                font-bold
+                tracking-[-0.03em]
+                text-white
+                transition-all
+                duration-300
+                group-hover:text-[#D4AF37]
+                md:text-[20px]
+              "
+            >
+              {skill}
+            </h3>
 
-            </h2>
-
-            <div className="mt-6 h-px w-28 bg-gradient-to-r from-[#D4AF37] to-transparent" />
-
-          </div>
-
-          <div className="mt-20 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-
-            {course.syllabus.map((item, index) => (
+            {/* Indicator */}
+            <div className="hidden md:flex">
               <div
-                key={index}
                 className="
                   flex
-                  items-start
-                  gap-4
-                  rounded-[30px]
+                  h-8
+                  w-8
+                  items-center
+                  justify-center
+                  rounded-full
                   border
-                  border-[#D4AF37]/10
-                  bg-gradient-to-b
-                  from-[#111111]
-                  to-[#080808]
-                  p-7
-                  shadow-[0_10px_40px_rgba(0,0,0,0.45)]
+                  border-[#D4AF37]/15
+                  bg-[#D4AF37]/10
                 "
               >
-
-                <div
-                  className="
-                    mt-1
-                    flex
-                    h-11
-                    w-11
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-full
-                    bg-[#D4AF37]/10
-                  "
-                >
-
-                  <CheckCircle2 className="h-5 w-5 text-[#D4AF37]" />
-
-                </div>
-
-                <h3
-                  className="
-                    text-[18px]
-                    font-semibold
-                    leading-[1.7]
-                    text-white
-                  "
-                >
-                  {item}
-                </h3>
-
+                <Target className="h-3.5 w-3.5 text-[#D4AF37]" />
               </div>
-            ))}
+            </div>
 
           </div>
+        ))}
 
-        </div>
+      </div>
 
-      </section>
+    </div>
+
+  </div>
+</section>
+
+{/* CURRICULUM */}
+<section className="relative overflow-hidden py-20 lg:py-28">
+
+  <div className="mx-auto max-w-[1450px] px-5">
+
+    {/* HEADER */}
+    <div className="mx-auto max-w-[900px] text-center">
+
+      <div
+        className="
+          inline-flex
+          items-center
+          gap-2
+          rounded-full
+          border
+          border-[#D4AF37]/20
+          bg-[#D4AF37]/5
+          px-5
+          py-2
+        "
+      >
+        <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
+
+        <span className="text-[11px] tracking-[0.22em] uppercase text-[#f5e6b3]">
+          Course Curriculum
+        </span>
+
+      </div>
+
+      <h2
+        className="
+          mt-7
+          text-[38px]
+          font-black
+          leading-[0.95]
+          tracking-[-0.05em]
+          text-white
+          md:text-[56px]
+          xl:text-[68px]
+        "
+      >
+        Complete Training
+
+        <span className="block text-[#D4AF37]">
+          Learning Roadmap
+        </span>
+
+      </h2>
+
+      <p
+        className="
+          mx-auto
+          mt-6
+          max-w-[720px]
+          text-[16px]
+          leading-[1.9]
+          text-white/60
+        "
+      >
+        Structured practical training designed to build
+        enterprise-level expertise through real-time
+        implementation, troubleshooting and project-based learning.
+      </p>
+
+    </div>
+
+    {/* MODULES */}
+    <div
+  className={`
+    mt-16
+    grid
+    gap-7
+    md:grid-cols-2
+    ${
+      course.curriculum?.length <= 4
+        ? "xl:grid-cols-2"
+        : "xl:grid-cols-3"
+    }
+  `}
+>
+
+      {course.curriculum?.map((module, index) => (
+
+  <div
+    key={index}
+    className="
+      group
+      relative
+      overflow-hidden
+      rounded-[32px]
+      border
+      border-white/10
+      bg-white/[0.03]
+      backdrop-blur-xl
+      transition-all
+      duration-500
+      hover:-translate-y-1
+      hover:border-[#D4AF37]/30
+      hover:bg-[#D4AF37]/[0.03]
+    "
+  >
+
+    {/* Glow */}
+    <div
+      className="
+        absolute
+        inset-0
+        opacity-0
+        transition-opacity
+        duration-500
+        group-hover:opacity-100
+        bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_60%)]
+      "
+    />
+
+    <div className="relative z-10 p-7">
+
+      {/* Module Number */}
+      <div
+        className="
+          inline-flex
+          items-center
+          rounded-full
+          border
+          border-[#D4AF37]/20
+          bg-[#D4AF37]/10
+          px-3
+          py-1.5
+          text-[11px]
+          font-semibold
+          uppercase
+          tracking-[0.15em]
+          text-[#D4AF37]
+        "
+      >
+        Module {(index + 1).toString().padStart(2, "0")}
+      </div>
+
+      {/* Title */}
+      <h3
+        className="
+          mt-5
+          text-[24px]
+          font-black
+          leading-[1.15]
+          tracking-[-0.03em]
+          text-white
+        "
+      >
+        {module.module}
+      </h3>
+
+      {/* Duration */}
+      <div className="mt-5 flex flex-wrap gap-2">
+
+        <span
+          className="
+            rounded-full
+            border
+            border-white/10
+            bg-black/20
+            px-4
+            py-2
+            text-[12px]
+            text-white/70
+          "
+        >
+          {module.duration}
+        </span>
+
+        <span
+          className="
+            rounded-full
+            border
+            border-[#D4AF37]/15
+            bg-[#D4AF37]/10
+            px-4
+            py-2
+            text-[12px]
+            text-[#f5e6b3]
+          "
+        >
+          {module.days}
+        </span>
+
+      </div>
+
+      {/* Topics */}
+      <div className="mt-7 space-y-3">
+
+        {module.topics.map(
+          (topic: string, topicIndex: number) => (
+
+            <div
+              key={topicIndex}
+              className="
+                flex
+                items-start
+                gap-3
+              "
+            >
+
+              <div
+                className="
+                  mt-[7px]
+                  h-2
+                  w-2
+                  shrink-0
+                  rounded-full
+                  bg-[#D4AF37]
+                "
+              />
+
+              <span
+                className="
+                  text-[14px]
+                  leading-[1.7]
+                  text-white/70
+                "
+              >
+                {topic}
+              </span>
+
+            </div>
+          )
+        )}
+
+      </div>
+
+    </div>
+
+  </div>
+
+))}
+
+    </div>
+
+  </div>
+
+</section>
 
       {/* JOB ROLES */}
       <section className="relative overflow-hidden py-32">

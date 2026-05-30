@@ -65,23 +65,165 @@ export const courses = [
     instituteWhy:
       "NG Cloud Networks provides practical CCNA Training in Hyderabad with enterprise Cisco labs, real-time troubleshooting sessions, certification-focused mentoring and placement-oriented practical training.",
 
-    syllabus: [
-      "Networking Fundamentals",
-      "OSI & TCP/IP Models",
-      "IP Addressing & Subnetting",
-      "Cisco Router Configuration",
-      "Cisco Switch Configuration",
-      "Routing & Switching",
-      "VLAN & Inter VLAN Routing",
-      "STP & EtherChannel",
-      "OSPF Routing",
-      "ACL Configuration",
-      "NAT Concepts",
-      "IPv6 Fundamentals",
-      "DHCP & DNS",
-      "Enterprise Troubleshooting",
-    ],
+curriculum: [
+  {
+    module: "Network Fundamentals",
+    duration: "Week 1",
+    days: "Day 1 - Day 7",
+    topics: [
+      "Introduction to Computer Networks",
+      "Network Components (Routers, Switches, Firewalls, Access Points)",
+      "Network Topology Architectures",
+      "OSI Reference Model",
+      "TCP/IP Model",
+      "Ethernet Fundamentals",
+      "TCP vs UDP",
+      "Network Communication Methods",
+      "Wireless Networking Basics",
+      "Virtualization Fundamentals",
+      "Cloud Networking Overview",
+      "Network Documentation & Diagrams"
+    ]
+  },
 
+  {
+    module: "IP Addressing & Subnetting",
+    duration: "Week 2",
+    days: "Day 8 - Day 14",
+    topics: [
+      "IPv4 Addressing",
+      "Public vs Private IP Addresses",
+      "Subnet Masks",
+      "CIDR Notation",
+      "VLSM",
+      "Subnetting Techniques",
+      "IPv6 Fundamentals",
+      "IPv6 Address Types",
+      "IPv6 Configuration",
+      "Address Planning",
+      "Network Design Exercises",
+      "Subnetting Labs"
+    ]
+  },
+
+  {
+    module: "Network Access & Switching",
+    duration: "Week 3",
+    days: "Day 15 - Day 21",
+    topics: [
+      "Switching Concepts",
+      "MAC Address Learning",
+      "Frame Forwarding",
+      "VLAN Configuration",
+      "Inter-VLAN Routing",
+      "Trunk Ports",
+      "802.1Q",
+      "EtherChannel",
+      "LACP",
+      "Spanning Tree Protocol",
+      "Rapid PVST+",
+      "Layer 2 Troubleshooting"
+    ]
+  },
+
+  {
+    module: "IP Connectivity & Routing",
+    duration: "Week 4",
+    days: "Day 22 - Day 30",
+    topics: [
+      "Routing Fundamentals",
+      "Routing Table Components",
+      "Static Routing",
+      "Default Routes",
+      "Floating Static Routes",
+      "OSPF Fundamentals",
+      "Single Area OSPF",
+      "OSPF Neighbor Relationships",
+      "OSPF Configuration",
+      "Route Verification",
+      "IPv6 Routing",
+      "Routing Troubleshooting"
+    ]
+  },
+
+  {
+    module: "IP Services",
+    duration: "Week 5",
+    days: "Day 31 - Day 38",
+    topics: [
+      "DHCP Configuration",
+      "DHCP Relay",
+      "DNS Fundamentals",
+      "NAT Concepts",
+      "Static NAT",
+      "Dynamic NAT",
+      "PAT",
+      "NTP Configuration",
+      "SNMP Monitoring",
+      "Syslog Configuration",
+      "Network Time Synchronization",
+      "Service Verification"
+    ]
+  },
+
+  {
+    module: "Security Fundamentals",
+    duration: "Week 6",
+    days: "Day 39 - Day 46",
+    topics: [
+      "Network Security Concepts",
+      "Access Control Lists",
+      "Standard ACLs",
+      "Extended ACLs",
+      "Port Security",
+      "DHCP Snooping",
+      "Dynamic ARP Inspection",
+      "Wireless Security",
+      "WPA2 & WPA3",
+      "AAA Fundamentals",
+      "Device Hardening",
+      "Security Best Practices"
+    ]
+  },
+
+  {
+    module: "Network Automation & Programmability",
+    duration: "Week 7",
+    days: "Day 47 - Day 54",
+    topics: [
+      "Network Automation Concepts",
+      "Controller-Based Networking",
+      "Software Defined Networking",
+      "REST APIs",
+      "JSON Fundamentals",
+      "Data Formats",
+      "Python Basics for Network Engineers",
+      "Automation Workflows",
+      "Network Management Tools",
+      "Programmability Concepts"
+    ]
+  },
+
+  {
+    module: "Enterprise Labs, Troubleshooting & Certification Preparation",
+    duration: "Week 8",
+    days: "Day 55 - Day 60",
+    topics: [
+      "Enterprise Network Design Lab",
+      "Campus Network Deployment",
+      "Routing & Switching Troubleshooting",
+      "OSPF Troubleshooting",
+      "VLAN Troubleshooting",
+      "NAT Troubleshooting",
+      "ACL Troubleshooting",
+      "Mock Practical Labs",
+      "Interview Preparation",
+      "Resume Building",
+      "CCNA Exam Preparation",
+      "Final Assessment"
+    ]
+  }
+],
     skills: [
       "Routing & Switching",
       "Subnetting",
@@ -262,18 +404,227 @@ export const courses = [
     instituteWhy:
       "NG Cloud Networks provides practical CCNP training with advanced enterprise infrastructure labs, routing implementation and real-world troubleshooting exposure.",
 
-    syllabus: [
-      "Enterprise Architecture",
-      "Advanced Routing",
-      "Advanced Switching",
+curriculum: [
+  {
+    module: "Enterprise Network Architecture",
+    duration: "Week 1 - Week 2",
+    days: "Day 1 - Day 14",
+    topics: [
+      "Enterprise Network Design Models",
+      "2-Tier & 3-Tier Architectures",
+      "Spine-Leaf Architecture",
+      "Campus Network Design",
+      "Data Center Architecture",
+      "WAN Technologies",
+      "SD-WAN Overview",
+      "Network Virtualization",
+      "VRF Fundamentals",
+      "Enterprise Network Documentation",
+      "Cisco Enterprise Architecture",
+      "Network Design Best Practices"
+    ]
+  },
+
+  {
+    module: "Advanced Layer 2 Technologies",
+    duration: "Week 3",
+    days: "Day 15 - Day 21",
+    topics: [
+      "Advanced VLAN Design",
+      "Private VLANs",
+      "VTP Concepts",
+      "802.1Q Trunking",
+      "EtherChannel",
+      "LACP & PAGP",
+      "Rapid PVST+",
+      "MSTP",
+      "Layer 2 Redundancy",
+      "Loop Prevention Techniques",
+      "Switch Stack Technologies",
+      "Layer 2 Troubleshooting"
+    ]
+  },
+
+  {
+    module: "Advanced Routing Technologies",
+    duration: "Week 4 - Week 5",
+    days: "Day 22 - Day 35",
+    topics: [
+      "Advanced Static Routing",
+      "Policy Based Routing",
+      "Route Redistribution",
+      "Route Summarization",
+      "Floating Routes",
+      "Administrative Distance",
+      "Advanced Routing Design",
+      "IPv6 Routing",
+      "Routing Optimization",
+      "Routing Best Practices",
+      "Routing Scalability Concepts",
+      "Routing Troubleshooting"
+    ]
+  },
+
+  {
+    module: "OSPF Enterprise Routing",
+    duration: "Week 6",
+    days: "Day 36 - Day 42",
+    topics: [
+      "OSPF Architecture",
+      "OSPF Multi-Area Design",
+      "LSA Types",
+      "OSPF Area Types",
+      "Stub Areas",
+      "Totally Stub Areas",
+      "NSSA Areas",
+      "OSPF Route Summarization",
+      "OSPF Authentication",
+      "OSPF Optimization",
+      "OSPF Neighbor Troubleshooting",
+      "Enterprise OSPF Labs"
+    ]
+  },
+
+  {
+    module: "BGP Enterprise Implementation",
+    duration: "Week 7",
+    days: "Day 43 - Day 49",
+    topics: [
       "BGP Fundamentals",
-      "OSPF Advanced Concepts",
+      "BGP Neighbor Relationships",
+      "iBGP vs eBGP",
+      "BGP Path Selection",
+      "BGP Attributes",
+      "Local Preference",
+      "AS Path",
+      "MED",
+      "Route Reflectors",
+      "BGP Communities",
+      "BGP Security",
+      "BGP Troubleshooting"
+    ]
+  },
+
+  {
+    module: "Enterprise Infrastructure Services",
+    duration: "Week 8",
+    days: "Day 50 - Day 56",
+    topics: [
+      "DHCP Enterprise Deployment",
+      "DNS Infrastructure",
+      "NAT & PAT",
+      "NTP Design",
+      "Syslog Architecture",
+      "SNMP Monitoring",
+      "NetFlow",
+      "IP SLA",
+      "First Hop Redundancy Protocols",
+      "HSRP",
+      "VRRP",
+      "GLBP"
+    ]
+  },
+
+  {
+    module: "Enterprise Security",
+    duration: "Week 9",
+    days: "Day 57 - Day 63",
+    topics: [
       "Infrastructure Security",
-      "Network Redundancy",
-      "Wireless Fundamentals",
-      "Automation Basics",
-      "Enterprise Troubleshooting",
-    ],
+      "AAA Configuration",
+      "RADIUS",
+      "TACACS+",
+      "Device Hardening",
+      "Control Plane Protection",
+      "Port Security",
+      "DHCP Snooping",
+      "Dynamic ARP Inspection",
+      "IP Source Guard",
+      "Infrastructure ACLs",
+      "Security Best Practices"
+    ]
+  },
+
+  {
+    module: "Wireless Enterprise Networks",
+    duration: "Week 10",
+    days: "Day 64 - Day 70",
+    topics: [
+      "Wireless Architecture",
+      "WLC Fundamentals",
+      "CAPWAP",
+      "AP Discovery Process",
+      "SSID Design",
+      "Wireless Security",
+      "802.1X Authentication",
+      "Wireless Roaming",
+      "Wireless Monitoring",
+      "RF Concepts",
+      "Enterprise WLAN Design",
+      "Wireless Troubleshooting"
+    ]
+  },
+
+  {
+    module: "Network Automation & SDN",
+    duration: "Week 11",
+    days: "Day 71 - Day 77",
+    topics: [
+      "Software Defined Networking",
+      "Cisco SDN Concepts",
+      "Cisco DNA Center",
+      "REST APIs",
+      "JSON Fundamentals",
+      "YAML Basics",
+      "Python for Network Engineers",
+      "Automation Workflows",
+      "Network Programmability",
+      "Model Driven Telemetry",
+      "Ansible Basics",
+      "Infrastructure Automation"
+    ]
+  },
+
+  {
+    module: "Enterprise Troubleshooting & Operations",
+    duration: "Week 12",
+    days: "Day 78 - Day 84",
+    topics: [
+      "Structured Troubleshooting Methodology",
+      "Routing Troubleshooting",
+      "Switching Troubleshooting",
+      "OSPF Issues",
+      "BGP Issues",
+      "Wireless Troubleshooting",
+      "Infrastructure Monitoring",
+      "Network Performance Analysis",
+      "Packet Analysis",
+      "Wireshark Troubleshooting",
+      "Enterprise Incident Handling",
+      "Operational Best Practices"
+    ]
+  },
+
+  {
+    module: "Real-Time Enterprise Projects & CCNP Exam Preparation",
+    duration: "Week 13",
+    days: "Day 85 - Day 90",
+    topics: [
+      "Enterprise Campus Network Design",
+      "Multi-Branch Enterprise Deployment",
+      "OSPF Enterprise Project",
+      "BGP Enterprise Project",
+      "High Availability Design",
+      "Network Security Project",
+      "Automation Mini Project",
+      "Mock Interviews",
+      "Resume Optimization",
+      "CCNP ENCOR Exam Preparation",
+      "Scenario Based Assessments",
+      "Final Project Presentation"
+    ]
+  }
+],
 
     skills: [
       "BGP Routing",
@@ -444,18 +795,59 @@ export const courses = [
     instituteWhy:
       "NG Cloud Networks provides practical AWS training with cloud deployment labs, real-time projects and certification-focused mentoring.",
 
-    syllabus: [
-      "Cloud Computing Fundamentals",
-      "AWS Global Infrastructure",
-      "EC2",
-      "IAM",
-      "S3 Storage",
-      "VPC Networking",
-      "Auto Scaling",
-      "Load Balancers",
-      "Cloud Monitoring",
-      "AWS Security",
-    ],
+ curriculum: [
+{
+module: "Cloud Fundamentals",
+duration: "Week 1",
+days: "Day 1 - Day 7",
+topics: [
+"Cloud Computing Concepts",
+"AWS Global Infrastructure",
+"IAM",
+"AWS Organizations",
+"Billing & Pricing"
+]
+},
+{
+module: "Core AWS Services",
+duration: "Week 2",
+days: "Day 8 - Day 15",
+topics: [
+"EC2",
+"S3",
+"EBS",
+"RDS",
+"DynamoDB"
+]
+},
+{
+module: "Networking & Security",
+duration: "Week 3",
+days: "Day 16 - Day 22",
+topics: [
+"VPC",
+"Route Tables",
+"NAT Gateway",
+"Security Groups",
+"NACLs",
+"Load Balancers"
+]
+},
+{
+module: "Deployment & Projects",
+duration: "Week 4",
+days: "Day 23 - Day 30",
+topics: [
+"Auto Scaling",
+"CloudWatch",
+"CloudFormation",
+"High Availability",
+"Disaster Recovery",
+"Real-Time AWS Project"
+]
+}
+]
+,
 
     skills: [
       "AWS Deployment",
@@ -625,18 +1017,57 @@ export const courses = [
   instituteWhy:
     "NG Cloud Networks provides practical Azure Training in Hyderabad with real-time cloud labs, enterprise cloud deployment scenarios, certification-focused mentoring and placement-oriented cloud training.",
 
-  syllabus: [
-    "Azure Fundamentals",
-    "Azure Virtual Machines",
-    "Azure Networking",
-    "Azure Storage Services",
-    "Azure Identity Management",
-    "Azure Active Directory",
-    "Azure Monitoring",
-    "Azure Security",
-    "Load Balancers",
-    "Cloud Infrastructure Deployment",
-  ],
+curriculum: [
+{
+module: "Azure Fundamentals",
+duration: "Week 1",
+days: "Day 1 - Day 7",
+topics: [
+"Azure Architecture",
+"Subscriptions",
+"Resource Groups",
+"Azure Portal",
+"Azure CLI"
+]
+},
+{
+module: "Compute & Storage",
+duration: "Week 2",
+days: "Day 8 - Day 15",
+topics: [
+"Azure VMs",
+"Storage Accounts",
+"Blob Storage",
+"Azure Backup",
+"Snapshots"
+]
+},
+{
+module: "Networking & Identity",
+duration: "Week 3",
+days: "Day 16 - Day 22",
+topics: [
+"Virtual Networks",
+"NSGs",
+"Load Balancer",
+"VPN Gateway",
+"Azure Active Directory"
+]
+},
+{
+module: "Monitoring & Deployment",
+duration: "Week 4",
+days: "Day 23 - Day 30",
+topics: [
+"Azure Monitor",
+"Log Analytics",
+"ARM Templates",
+"Cloud Security",
+"Real-Time Azure Project"
+]
+}
+]
+,
 
   skills: [
     "Azure Administration",
@@ -816,18 +1247,71 @@ export const courses = [
   instituteWhy:
     "NG Cloud Networks provides practical Palo Alto Firewall Training in Hyderabad with enterprise firewall labs, security implementation scenarios and real-time troubleshooting exposure.",
 
-  syllabus: [
-    "Firewall Fundamentals",
-    "Security Policies",
-    "NAT Configuration",
-    "VPN Implementation",
-    "Threat Prevention",
-    "App-ID Configuration",
-    "User Authentication",
-    "Security Profiles",
-    "Traffic Monitoring",
-    "Enterprise Security Troubleshooting",
-  ],
+curriculum: [
+{
+module: "Firewall Fundamentals & Network Security",
+duration: "Week 1",
+days: "Day 1 - Day 7",
+topics: [
+"Palo Alto Firewall Architecture",
+"Firewall Deployment Modes",
+"Security Zones & Interfaces",
+"Virtual Routers Configuration",
+"Traffic Flow Processing",
+"Security Fundamentals",
+"Packet Flow Analysis",
+"Initial Device Configuration"
+]
+},
+{
+module: "Security Policies, NAT & VPN Implementation",
+duration: "Week 2",
+days: "Day 8 - Day 15",
+topics: [
+"Security Policy Configuration",
+"NAT Policies (Static, Dynamic & PAT)",
+"Application Identification (App-ID)",
+"User Identification (User-ID)",
+"SSL Decryption Concepts",
+"Site-to-Site VPN Configuration",
+"Remote Access VPN",
+"Security Profile Groups",
+"Policy Troubleshooting"
+]
+},
+{
+module: "Threat Prevention & Advanced Security",
+duration: "Week 3",
+days: "Day 16 - Day 22",
+topics: [
+"Threat Prevention Profiles",
+"Anti-Virus & Anti-Spyware",
+"Vulnerability Protection",
+"URL Filtering",
+"WildFire Integration",
+"DNS Security",
+"Data Filtering",
+"Security Best Practices"
+]
+},
+{
+module: "Panorama, Monitoring & Enterprise Projects",
+duration: "Week 4",
+days: "Day 23 - Day 30",
+topics: [
+"Panorama Management",
+"Device Group Configuration",
+"Template Management",
+"Log Monitoring & Analysis",
+"Traffic Monitoring",
+"High Availability (HA)",
+"Enterprise Firewall Deployment Project",
+"Real-Time Security Troubleshooting",
+"Interview Preparation",
+"Certification Guidance"
+]
+}
+],
 
   skills: [
     "Firewall Administration",
@@ -1003,16 +1487,66 @@ export const courses = [
   instituteWhy:
     "NG Cloud Networks provides practical Fortigate Firewall Training in Hyderabad with enterprise firewall labs and real-world security implementation scenarios.",
 
-  syllabus: [
-    "Fortigate Fundamentals",
-    "Firewall Policies",
-    "VPN Configuration",
-    "NAT Configuration",
-    "Threat Protection",
-    "Security Profiles",
-    "Traffic Monitoring",
-    "Enterprise Security Troubleshooting",
-  ],
+  curriculum: [
+{
+module: "FortiGate Fundamentals & Network Security",
+duration: "Week 1",
+days: "Day 1 - Day 7",
+topics: [
+"Introduction to Fortinet Security Fabric",
+"FortiGate Hardware Architecture",
+"FortiOS Fundamentals",
+"Administrative Access",
+"Interface Configuration",
+"Static Routing",
+"Policy Routing",
+"Network Address Translation",
+"Traffic Flow Analysis",
+"Firewall Concepts"
+]
+},
+
+{
+module: "Firewall Policies, VPN & Security Services",
+duration: "Week 2",
+days: "Day 8 - Day 14",
+topics: [
+"Firewall Policy Creation",
+"Policy Ordering",
+"Source NAT",
+"Destination NAT",
+"Virtual IP Configuration",
+"IPSec VPN",
+"Site-to-Site VPN",
+"Remote Access VPN",
+"SSL VPN",
+"Application Control",
+"Web Filtering",
+"DNS Filtering",
+"Antivirus Protection",
+"Intrusion Prevention System"
+]
+},
+
+{
+module: "Enterprise Security Operations & Troubleshooting",
+duration: "Week 3",
+days: "Day 15 - Day 20",
+topics: [
+"FortiAnalyzer",
+"FortiManager",
+"High Availability",
+"Log Management",
+"Traffic Monitoring",
+"Event Analysis",
+"Troubleshooting Methodology",
+"Enterprise Deployment Scenarios",
+"Real-Time Security Projects",
+"Interview Preparation",
+"NSE Certification Guidance"
+]
+}
+],
 
   skills: [
     "Firewall Administration",
@@ -1180,17 +1714,108 @@ export const courses = [
   instituteWhy:
     "NG Cloud Networks provides practical F5 Load Balancer Training in Hyderabad with enterprise ADC labs, real-time traffic management scenarios and infrastructure deployment training.",
 
-  syllabus: [
-    "F5 BIG-IP Fundamentals",
-    "Load Balancing Methods",
-    "Virtual Servers",
-    "Pools & Nodes",
-    "SSL Offloading",
-    "Traffic Management",
-    "High Availability",
-    "Application Security",
-    "Monitoring & Troubleshooting",
-  ],
+  curriculum: [
+  {
+    module: "F5 BIG-IP Fundamentals & Application Delivery Concepts",
+    duration: "Week 1",
+    days: "Day 1 - Day 7",
+    topics: [
+      "Introduction to Application Delivery Controllers (ADC)",
+      "Load Balancing Fundamentals",
+      "OSI Model Review for ADC",
+      "Application Delivery Concepts",
+      "F5 BIG-IP Architecture",
+      "TMOS Overview",
+      "BIG-IP Modules Overview",
+      "F5 Deployment Models",
+      "Traffic Flow Concepts",
+      "Network & Application Infrastructure",
+      "F5 Licensing & Activation",
+      "Initial BIG-IP Configuration",
+      "Management Interfaces",
+      "Administrative Access",
+      "Configuration Backup & Restore"
+    ]
+  },
+
+  {
+    module: "Local Traffic Manager (LTM) Administration",
+    duration: "Week 2",
+    days: "Day 8 - Day 14",
+    topics: [
+      "Virtual Servers",
+      "Pools & Pool Members",
+      "Nodes & Monitors",
+      "Load Balancing Methods",
+      "Round Robin",
+      "Least Connections",
+      "Ratio Based Load Balancing",
+      "Persistence Profiles",
+      "Source Address Affinity",
+      "Cookie Persistence",
+      "SSL Persistence",
+      "Health Monitoring",
+      "Application Availability",
+      "Traffic Processing Flow",
+      "LTM Troubleshooting Labs"
+    ]
+  },
+
+  {
+    module: "SSL, Security & High Availability",
+    duration: "Week 3",
+    days: "Day 15 - Day 21",
+    topics: [
+      "SSL Fundamentals",
+      "SSL Offloading",
+      "SSL Bridging",
+      "SSL Re-encryption",
+      "Certificate Management",
+      "CSR Generation",
+      "TLS Security Concepts",
+      "Client SSL Profiles",
+      "Server SSL Profiles",
+      "Device Service Clustering (DSC)",
+      "Active / Standby HA",
+      "Device Trust",
+      "Config Sync",
+      "Failover Configuration",
+      "HA Troubleshooting"
+    ]
+  },
+
+  {
+    module: "Advanced Traffic Management, DNS & Enterprise Projects",
+    duration: "Week 4",
+    days: "Day 22 - Day 30",
+    topics: [
+      "iRules Fundamentals",
+      "Traffic Manipulation",
+      "HTTP Profiles",
+      "TCP Profiles",
+      "OneConnect",
+      "SNAT Configuration",
+      "NAT Configuration",
+      "Application Optimization",
+      "F5 DNS Fundamentals",
+      "GTM Overview",
+      "Wide IP Concepts",
+      "Monitoring & Logging",
+      "Analytics & Reporting",
+      "Packet Capture with tcpdump",
+      "Advanced Troubleshooting",
+      "Enterprise Web Application Deployment",
+      "Multi-Tier Application Load Balancing",
+      "SSL Offload Project",
+      "High Availability Deployment Project",
+      "Interview Preparation",
+      "Resume Optimization",
+      "F5 BIG-IP Certification Guidance",
+      "Real-Time Enterprise Scenarios",
+      "Final Assessment"
+    ]
+  }
+],
 
   skills: [
     "Traffic Management",
@@ -1361,29 +1986,241 @@ export const courses = [
   instituteWhy:
     "NG Cloud Networks provides practical CCNP Core Training in Hyderabad with enterprise Cisco labs, advanced routing implementation, SD-WAN practical scenarios, certification mentoring and placement-focused technical training.",
 
-  syllabus: [
-    "Enterprise Architecture",
-    "Advanced Routing",
-    "Advanced Switching",
-    "BGP Implementation",
-    "OSPF Enterprise Routing",
-    "SD-WAN Fundamentals",
-    "Infrastructure Security",
-    "Wireless Networking",
-    "Network Automation",
-    "Infrastructure Services",
-    "QoS Concepts",
-    "Enterprise Troubleshooting",
-  ],
+ curriculum: [
+  {
+    module: "Enterprise Architecture & Network Design",
+    duration: "Week 1 - Week 2",
+    days: "Day 1 - Day 14",
+    topics: [
+      "Enterprise Network Architecture",
+      "Campus Network Design",
+      "Data Center Architecture",
+      "WAN Technologies",
+      "SD-WAN Overview",
+      "Cloud Networking Fundamentals",
+      "Enterprise Design Models",
+      "2-Tier Architecture",
+      "3-Tier Architecture",
+      "Spine-Leaf Architecture",
+      "Network Virtualization Concepts",
+      "VRF Fundamentals",
+      "Enterprise Documentation",
+      "Infrastructure Planning"
+    ]
+  },
+
+  {
+    module: "Advanced Layer 2 Infrastructure",
+    duration: "Week 3",
+    days: "Day 15 - Day 21",
+    topics: [
+      "VLAN Design",
+      "Private VLANs",
+      "Trunking Technologies",
+      "EtherChannel",
+      "LACP",
+      "PAgP",
+      "Rapid PVST+",
+      "Multiple Spanning Tree",
+      "Loop Prevention",
+      "Switch Stack Technologies",
+      "Layer 2 High Availability",
+      "Enterprise Switching Best Practices"
+    ]
+  },
+
+  {
+    module: "Enterprise Routing Technologies",
+    duration: "Week 4 - Week 5",
+    days: "Day 22 - Day 35",
+    topics: [
+      "Advanced Routing Concepts",
+      "Static Routing",
+      "Route Summarization",
+      "Route Redistribution",
+      "Policy Based Routing",
+      "Administrative Distance",
+      "OSPF Fundamentals",
+      "OSPF Multi-Area Design",
+      "OSPF Authentication",
+      "BGP Fundamentals",
+      "BGP Neighbor Relationships",
+      "BGP Path Selection",
+      "IPv6 Routing",
+      "Enterprise Routing Troubleshooting"
+    ]
+  },
+
+  {
+    module: "Wireless Enterprise Networks",
+    duration: "Week 6",
+    days: "Day 36 - Day 42",
+    topics: [
+      "Wireless Architecture",
+      "Wireless LAN Controllers",
+      "CAPWAP",
+      "AP Discovery Process",
+      "Wireless Deployment Models",
+      "SSID Design",
+      "Wireless Security",
+      "802.1X Authentication",
+      "RF Fundamentals",
+      "Wireless Roaming",
+      "Enterprise WLAN Design",
+      "Wireless Troubleshooting"
+    ]
+  },
+
+  {
+    module: "Infrastructure Services",
+    duration: "Week 7",
+    days: "Day 43 - Day 49",
+    topics: [
+      "DHCP Services",
+      "DNS Infrastructure",
+      "NAT Configuration",
+      "PAT Configuration",
+      "NTP Deployment",
+      "SNMP Monitoring",
+      "NetFlow",
+      "Syslog Architecture",
+      "IP SLA",
+      "HSRP",
+      "VRRP",
+      "GLBP",
+      "Enterprise Service Design"
+    ]
+  },
+
+  {
+    module: "Enterprise Security",
+    duration: "Week 8",
+    days: "Day 50 - Day 56",
+    topics: [
+      "Infrastructure Security",
+      "AAA Framework",
+      "RADIUS",
+      "TACACS+",
+      "802.1X Authentication",
+      "Port Security",
+      "DHCP Snooping",
+      "Dynamic ARP Inspection",
+      "IP Source Guard",
+      "Infrastructure ACLs",
+      "Control Plane Protection",
+      "Device Hardening",
+      "Enterprise Security Best Practices"
+    ]
+  },
+
+  {
+    module: "Network Assurance & Monitoring",
+    duration: "Week 9",
+    days: "Day 57 - Day 63",
+    topics: [
+      "Network Assurance Concepts",
+      "Performance Monitoring",
+      "SNMP Analysis",
+      "Syslog Analysis",
+      "NetFlow Monitoring",
+      "Telemetry Fundamentals",
+      "Packet Analysis",
+      "Wireshark Deep Dive",
+      "Troubleshooting Methodology",
+      "Infrastructure Health Monitoring",
+      "Root Cause Analysis",
+      "Operational Best Practices"
+    ]
+  },
+
+  {
+    module: "Software Defined Networking & Cisco DNA",
+    duration: "Week 10",
+    days: "Day 64 - Day 70",
+    topics: [
+      "Software Defined Networking",
+      "Cisco SD-Access",
+      "Cisco DNA Center",
+      "Controller Based Networking",
+      "Network Fabric Concepts",
+      "Segmentation",
+      "Policy Based Automation",
+      "Cisco DNA Workflows",
+      "Intent Based Networking",
+      "Modern Enterprise Networks",
+      "SDN Use Cases",
+      "DNA Center Labs"
+    ]
+  },
+
+  {
+    module: "Automation & Programmability",
+    duration: "Week 11",
+    days: "Day 71 - Day 77",
+    topics: [
+      "Automation Fundamentals",
+      "REST APIs",
+      "JSON",
+      "YAML",
+      "Python for Network Engineers",
+      "Cisco APIs",
+      "Model Driven Telemetry",
+      "Automation Workflows",
+      "Ansible Fundamentals",
+      "Infrastructure as Code Concepts",
+      "Network Programmability",
+      "Automation Labs"
+    ]
+  },
+
+  {
+    module: "Enterprise Troubleshooting & Real-Time Labs",
+    duration: "Week 12",
+    days: "Day 78 - Day 84",
+    topics: [
+      "Routing Troubleshooting",
+      "Switching Troubleshooting",
+      "Wireless Troubleshooting",
+      "Security Troubleshooting",
+      "Infrastructure Services Troubleshooting",
+      "Performance Troubleshooting",
+      "Packet Capture Analysis",
+      "Real-Time Enterprise Scenarios",
+      "Incident Handling",
+      "Root Cause Investigation",
+      "Operational Procedures",
+      "Enterprise Support Workflows"
+    ]
+  },
+
+  {
+    module: "ENCOR Certification Preparation & Enterprise Projects",
+    duration: "Week 13",
+    days: "Day 85 - Day 90",
+    topics: [
+      "Enterprise Campus Network Project",
+      "OSPF Enterprise Deployment",
+      "BGP Enterprise Deployment",
+      "Wireless Infrastructure Project",
+      "Network Assurance Project",
+      "Cisco DNA Center Project",
+      "Automation Mini Project",
+      "Mock Interviews",
+      "Resume Building",
+      "LinkedIn Optimization",
+      "CCNP ENCOR Exam Preparation",
+      "Final Assessment & Certification Guidance"
+    ]
+  }
+],
 
   skills: [
-    "Enterprise Routing",
+    "Enterprise Routing & Switching",
     "BGP Configuration",
     "OSPF Troubleshooting",
     "SD-WAN Deployment",
     "Infrastructure Security",
-    "Network Automation",
-    "Enterprise Switching",
+    "Network Automation"
   ],
 
   tools: [
@@ -1568,20 +2405,135 @@ Keywords targeted include CCNP Training Hyderabad, CCNP Enterprise Course Hydera
   instituteWhy:
     "NG Cloud Networks provides practical Cloud Security Training in Hyderabad with enterprise cloud labs, AWS and Azure security implementation scenarios, SIEM monitoring, cloud threat analysis and placement-oriented practical training.",
 
-  syllabus: [
-    "Cloud Security Fundamentals",
-    "AWS Security Services",
-    "Azure Security Center",
-    "IAM & Identity Management",
-    "Cloud Networking Security",
-    "Cloud Monitoring",
-    "Threat Detection",
-    "SIEM Fundamentals",
-    "Cloud Compliance & Governance",
-    "Cloud Data Protection",
-    "Incident Response",
-    "Enterprise Cloud Security",
-  ],
+curriculum: [
+  {
+    module: "Cloud Computing & Security Fundamentals",
+    duration: "Week 1",
+    days: "Day 1 - Day 7",
+    topics: [
+      "Cloud Computing Fundamentals",
+      "Cloud Service Models (IaaS, PaaS, SaaS)",
+      "Public, Private & Hybrid Cloud",
+      "Shared Responsibility Model",
+      "Cloud Threat Landscape",
+      "Cyber Security Fundamentals",
+      "CIA Triad",
+      "Risk Management Concepts",
+      "Security Controls",
+      "Cloud Security Principles",
+      "Identity & Access Management Overview",
+      "Cloud Security Best Practices"
+    ]
+  },
+
+  {
+    module: "Identity & Access Management (IAM)",
+    duration: "Week 2",
+    days: "Day 8 - Day 14",
+    topics: [
+      "AWS IAM Fundamentals",
+      "Azure Active Directory",
+      "Users, Groups & Roles",
+      "Policies & Permissions",
+      "Least Privilege Principle",
+      "Role Based Access Control (RBAC)",
+      "Multi Factor Authentication (MFA)",
+      "Identity Federation",
+      "SSO Concepts",
+      "Privileged Access Management",
+      "IAM Security Best Practices",
+      "IAM Troubleshooting"
+    ]
+  },
+
+  {
+    module: "Cloud Network Security",
+    duration: "Week 3",
+    days: "Day 15 - Day 21",
+    topics: [
+      "Cloud Networking Fundamentals",
+      "Virtual Private Cloud (VPC)",
+      "Azure Virtual Networks",
+      "Subnets & Segmentation",
+      "Route Tables",
+      "Security Groups",
+      "Network Security Groups (NSG)",
+      "Firewall Fundamentals",
+      "Cloud Load Balancers",
+      "VPN Connectivity",
+      "Private Endpoints",
+      "Network Security Best Practices"
+    ]
+  },
+
+  {
+    module: "Cloud Infrastructure Security",
+    duration: "Week 4",
+    days: "Day 22 - Day 28",
+    topics: [
+      "EC2 Security",
+      "Azure Virtual Machine Security",
+      "Operating System Hardening",
+      "Patch Management",
+      "Endpoint Protection",
+      "Cloud Storage Security",
+      "S3 Security",
+      "Azure Storage Security",
+      "Encryption at Rest",
+      "Encryption in Transit",
+      "Key Management Services",
+      "Infrastructure Security Controls"
+    ]
+  },
+
+  {
+    module: "Security Monitoring & Threat Detection",
+    duration: "Week 5",
+    days: "Day 29 - Day 35",
+    topics: [
+      "Cloud Monitoring Fundamentals",
+      "AWS CloudTrail",
+      "AWS CloudWatch",
+      "Azure Monitor",
+      "Azure Security Center",
+      "Microsoft Defender for Cloud",
+      "Log Collection & Analysis",
+      "SIEM Fundamentals",
+      "Threat Detection",
+      "Incident Response Process",
+      "Security Alerts & Investigation",
+      "Cloud Security Operations"
+    ]
+  },
+
+  {
+    module: "Cloud Compliance, DevSecOps & Real-Time Projects",
+    duration: "Week 6",
+    days: "Day 36 - Day 45",
+    topics: [
+      "Cloud Governance",
+      "Compliance Standards",
+      "ISO 27001",
+      "SOC 2",
+      "PCI DSS",
+      "GDPR Fundamentals",
+      "DevSecOps Concepts",
+      "Security in CI/CD Pipelines",
+      "Container Security Basics",
+      "Kubernetes Security Fundamentals",
+      "Cloud Security Architecture",
+      "AWS Security Project",
+      "Azure Security Project",
+      "Cloud Threat Investigation",
+      "Security Incident Response Lab",
+      "Resume Building",
+      "Mock Interviews",
+      "Cloud Security Career Guidance",
+      "Certification Roadmap",
+      "Final Assessment"
+    ]
+  }
+],
 
   skills: [
     "Cloud Security Administration",
