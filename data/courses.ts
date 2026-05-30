@@ -1649,7 +1649,7 @@ topics: [
 },
 
 {
-  slug: "f5-training-hyderabad",
+  slug: "f5-load-balancer-training-hyderabad",
 
   featured: true,
 
