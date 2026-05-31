@@ -47,7 +47,7 @@ const categories = [
       },
       {
         name: "F5 LTM & GTM",
-        href: "/courses/f5-training-hyderabad",
+        href: "/courses/f5-load-balancer-training-hyderabad",
       },
     ],
   },
