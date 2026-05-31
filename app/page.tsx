@@ -13,7 +13,7 @@ import Navbar from "@/components/navbar/Navbar";
 
 export const metadata: Metadata = {
   title:
-    "Best CCNA, AWS & Cyber Security Training Institute in Hyderabad | NG Cloud Networks",
+    "Best CCNA, CCNP,SDWAN & Network Security Training Institute in Hyderabad | NG Cloud Networks",
 
   description:
     "NG Cloud Networks is a leading networking, cloud and cyber security training institute in Hyderabad offering CCNA, CCNP, AWS, Azure, Palo Alto, Fortigate and F5 Load Balancer training with practical labs, certification guidance and placement support.",
