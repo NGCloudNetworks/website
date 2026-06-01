@@ -227,7 +227,7 @@ export default function HeroSection() {
       text-transparent
     "
               >
-                CCNA, AWS & Cyber Security
+                CCNA, CCNP, SDWAN & Network Security
               </span>
 
               <span className="block text-white">
