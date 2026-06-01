@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Best CCNA, AWS & Cyber Security Training Institute in Hyderabad | NG Cloud Networks",
+      "Best CCNA, CCNP,SDWAN & Network Security Training Institute in Hyderabad | NG Cloud Networks",
 
     description:
       "Practical networking, cloud and cyber security training institute in Hyderabad with placement support and enterprise-level labs.",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Best CCNA, AWS & Cyber Security Training Institute in Hyderabad",
+      "Best CCNA, CCNP, SDWAN & Network Security Training Institute in Hyderabad",
 
     description:
       "Networking, cloud and cyber security training institute with practical labs and placement support.",
