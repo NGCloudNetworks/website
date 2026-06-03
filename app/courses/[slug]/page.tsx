@@ -376,6 +376,57 @@ export default async function CourseDetailPage({
         </div>
 
       </div>
+      <div
+  className="
+    mt-8
+    rounded-[30px]
+    border
+    border-[#D4AF37]/20
+    bg-gradient-to-r
+    from-[#D4AF37]/10
+    via-[#D4AF37]/5
+    to-transparent
+    p-7
+  "
+>
+
+  <div className="flex items-center justify-between">
+
+    <div>
+
+      <span className="text-sm text-[#f5e6b3]">
+        Course Investment
+      </span>
+
+      <h3 className="mt-2 text-[42px] font-black text-white">
+        {course.price}
+      </h3>
+
+      <p className="mt-2 text-white/60">
+        Includes practical labs, study materials,
+        interview preparation and placement support.
+      </p>
+
+    </div>
+
+    <div
+      className="
+        rounded-2xl
+        border
+        border-[#D4AF37]/20
+        bg-[#D4AF37]/10
+        px-5
+        py-3
+      "
+    >
+      <span className="text-[#D4AF37] font-semibold">
+        Limited Seats
+      </span>
+    </div>
+
+  </div>
+
+</div>
 
       {/* CTA */}
       <div className="mt-12 flex flex-col gap-4 sm:flex-row">

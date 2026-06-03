@@ -27,6 +27,10 @@ const courses = [
     href: "/courses/ccnp-enterprise-training-hyderabad",
   },
   {
+    title:"Cisco SDWAN",
+    href:"/courses/cisco-sdwan-training-hyderabad",
+  },
+  {
     title: "AWS Cloud",
     href: "/courses/aws-training-hyderabad",
   },

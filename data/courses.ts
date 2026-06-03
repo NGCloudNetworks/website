@@ -13,6 +13,7 @@ export const courses = [
     category: "Networking",
 
     duration: "2 Months",
+    price: "₹10,000 +18% GST",
 
     level: "Beginner to Intermediate",
 
@@ -352,6 +353,7 @@ curriculum: [
     category: "Advanced Networking",
 
     duration: "3 Months",
+    price: "₹15,000 + 18% GST",
 
     level: "Advanced",
 
@@ -744,6 +746,7 @@ curriculum: [
     category: "Cloud Computing",
 
     duration: "30 Days",
+    price: "₹10,000 + 18% GST",
 
     level: "Beginner Friendly",
 
@@ -965,6 +968,7 @@ topics: [
   category: "Cloud Computing",
 
   duration: "30 Days",
+  price: "₹10,000 + 18% GST",
 
   level: "Beginner Friendly",
 
@@ -1195,6 +1199,7 @@ topics: [
   category: "Cyber Security",
 
   duration: "1 Month",
+  price: "₹10,000 + 18% GST",
 
   level: "Intermediate",
 
@@ -1435,6 +1440,7 @@ topics: [
   category: "Network Security",
 
   duration: "20 Days",
+  price: "₹10,000 + 18% GST",
 
   level: "Intermediate",
 
@@ -1662,6 +1668,7 @@ topics: [
   category: "Infrastructure & ADC",
 
   duration: "1 Month",
+  price: "₹10,000 + 18% GST",
 
   level: "Intermediate to Advanced",
 
@@ -1933,6 +1940,7 @@ topics: [
   category: "Advanced Networking",
 
   duration: "3 Months",
+  price: "₹15,000 + 18% GST",
 
   level: "Advanced",
 
@@ -2352,6 +2360,7 @@ Keywords targeted include CCNP Training Hyderabad, CCNP Enterprise Course Hydera
   category: "Cloud & Cyber Security",
 
   duration: "45 Days",
+  price: "₹15,000+ 18% GST",
 
   level: "Intermediate",
 
@@ -2669,5 +2678,277 @@ NG Cloud Networks provides practical cloud security labs, certification guidance
 
 Keywords targeted include Cloud Security Training Hyderabad, AWS Security Training Hyderabad, Azure Security Course Hyderabad, Cloud Security Certification, Cyber Security Training Hyderabad, Cloud Infrastructure Security, SIEM Training Hyderabad, IAM Security Training, Cloud Threat Protection, Enterprise Cloud Security Course and Cloud Security Placement Training.
 `,
+},
+{
+slug: "cisco-sdwan-training-hyderabad",
+
+featured: true,
+
+priority: 1,
+
+title: "Cisco SD-WAN Training",
+
+shortTitle: "Cisco SD-WAN",
+
+category: "Enterprise Networking",
+
+duration: "1 Month",
+price: "₹12,000 + 18% GST",
+
+level: "Intermediate to Advanced",
+
+certification: "Cisco SD-WAN Specialist",
+
+students: "1200+",
+
+rating: "4.9",
+
+seoTitle:
+"Cisco SD-WAN Training in Hyderabad | SD-WAN Course with Enterprise Labs",
+
+seoDescription:
+"Learn Cisco SD-WAN Training in Hyderabad with practical enterprise labs covering vManage, vSmart, vBond, OMP routing, application-aware routing, security policies and real-world SD-WAN deployment.",
+
+seoKeywords: [
+"Cisco SD WAN Training Hyderabad",
+"SD WAN Course Hyderabad",
+"Cisco SD WAN Course",
+"Cisco SD WAN Certification Training",
+"Cisco SD WAN Labs",
+"vManage Training",
+"vSmart Training",
+"vBond Training",
+"OMP Routing Training",
+"Enterprise WAN Training",
+"Software Defined WAN Course",
+"SD WAN Engineer Course",
+"Cisco Enterprise Networking Training",
+"Cisco SD WAN Institute Hyderabad",
+"Network Automation Course",
+"Application Aware Routing Training",
+"WAN Edge Configuration",
+"Cisco SD WAN Placement Training",
+"Advanced Networking Course Hyderabad",
+"Enterprise Infrastructure Training"
+],
+
+heroTitle:
+"Cisco SD-WAN Training in Hyderabad with Enterprise WAN Labs",
+
+heroDescription:
+"Master Cisco SD-WAN architecture, vManage, vSmart, vBond, OMP routing, application-aware routing and enterprise WAN deployment through practical real-world implementation labs.",
+
+description:
+"Cisco SD-WAN Training at NG Cloud Networks is designed for networking professionals who want expertise in modern enterprise WAN technologies. Students learn Cisco SD-WAN architecture, controller deployment, WAN edge onboarding, routing integration, centralized policies, application-aware routing, security implementation and enterprise troubleshooting through practical labs and real-world scenarios.",
+
+whyLearn:
+"Cisco SD-WAN is one of the most in-demand enterprise networking technologies used by global organizations to modernize WAN infrastructure, improve application performance and simplify network management. SD-WAN professionals are highly valued in enterprise networking and infrastructure engineering roles.",
+
+instituteWhy:
+"NG Cloud Networks provides practical Cisco SD-WAN Training in Hyderabad with enterprise-grade labs, controller deployment scenarios, real-world WAN architecture implementation, interview mentoring and placement-focused training.",
+
+curriculum: [
+{
+module: "SD-WAN Fundamentals & Architecture",
+duration: "Week 1",
+days: "Day 1 - Day 7",
+topics: [
+"Introduction to Software Defined WAN",
+"Traditional WAN vs SD-WAN",
+"SD-WAN Benefits & Use Cases",
+"Cisco SD-WAN Architecture",
+"vManage Overview",
+"vSmart Controller",
+"vBond Orchestrator",
+"WAN Edge Routers",
+"Control Plane & Data Plane",
+"Overlay Network Concepts",
+"Transport Networks",
+"Enterprise SD-WAN Deployment Models"
+]
+},
+{
+  module: "Cisco SD-WAN Deployment & Configuration",
+  duration: "Week 2",
+  days: "Day 8 - Day 14",
+  topics: [
+    "Device Onboarding Process",
+    "Zero Touch Provisioning",
+    "WAN Edge Registration",
+    "Certificate Management",
+    "Feature Templates",
+    "Device Templates",
+    "VPN Configuration",
+    "Transport VPN",
+    "Service VPN",
+    "Management VPN",
+    "Centralized Policy Basics",
+    "Configuration Validation"
+  ]
+},
+
+{
+  module: "Routing, Policies & Application Awareness",
+  duration: "Week 3",
+  days: "Day 15 - Day 21",
+  topics: [
+    "OMP Fundamentals",
+    "OMP Route Advertisement",
+    "OSPF Integration",
+    "BGP Integration",
+    "Route Redistribution",
+    "Control Policies",
+    "Data Policies",
+    "Application Aware Routing",
+    "SLA Based Path Selection",
+    "Traffic Engineering",
+    "QoS Concepts",
+    "Application Visibility"
+  ]
+},
+
+{
+  module: "Security, Troubleshooting & Enterprise Labs",
+  duration: "Week 4",
+  days: "Day 22 - Day 30",
+  topics: [
+    "SD-WAN Security Architecture",
+    "IPSec Tunnel Operations",
+    "Segmentation & VPN Isolation",
+    "Firewall Integration",
+    "High Availability",
+    "Controller Troubleshooting",
+    "OMP Troubleshooting",
+    "Tunnel Troubleshooting",
+    "vManage Monitoring",
+    "Enterprise Branch Deployment Lab",
+    "Multi-Site SD-WAN Project",
+    "Interview Preparation & Certification Guidance"
+  ]
+}
+],
+
+skills: [
+"Cisco SD-WAN Deployment",
+"vManage Administration",
+"vSmart Controller Configuration",
+"OMP Routing",
+"Application Aware Routing",
+"Enterprise WAN Design",
+"Traffic Engineering",
+"SD-WAN Troubleshooting"
+],
+
+tools: [
+"Cisco vManage",
+"Cisco vSmart",
+"Cisco vBond",
+"WAN Edge Routers",
+"Cisco Catalyst WAN Edge",
+"Cisco SD-WAN Lab Environment"
+],
+
+courseHighlights: [
+"Enterprise SD-WAN Labs",
+"Real-Time WAN Deployment Scenarios",
+"Controller-Based Architecture Training",
+"Application Aware Routing",
+"Interview Preparation",
+"Placement Assistance"
+],
+
+projects: [
+"Multi Branch SD-WAN Deployment",
+"Enterprise WAN Migration Project",
+"Application Aware Routing Implementation",
+"Controller Deployment Lab",
+"SD-WAN Security Policy Configuration"
+],
+
+certifications: [
+"Cisco SD-WAN Specialist",
+"Cisco Enterprise Networking Track Preparation"
+],
+
+whoCanLearn: [
+"CCNA Certified Professionals",
+"CCNP Candidates",
+"Network Engineers",
+"Infrastructure Engineers",
+"Enterprise Support Engineers",
+"WAN Engineers"
+],
+
+jobRoles: [
+"SD-WAN Engineer",
+"Enterprise Network Engineer",
+"Network Infrastructure Engineer",
+"WAN Engineer",
+"Network Operations Engineer",
+"Enterprise Support Engineer"
+],
+
+salary:
+"Cisco SD-WAN professionals can expect salary packages ranging between 6 LPA to 15 LPA depending on networking expertise, certifications and enterprise deployment experience.",
+
+placementSupport: [
+"Resume Building",
+"Mock Interviews",
+"SD-WAN Interview Preparation",
+"LinkedIn Optimization",
+"Placement Assistance"
+],
+
+trainingFeatures: [
+"Practical Enterprise Labs",
+"Controller Deployment Training",
+"Enterprise WAN Scenarios",
+"Real-Time Troubleshooting",
+"Certification Guidance",
+"Placement Support"
+],
+
+testimonials: [
+{
+name: "Vamsi Krishna",
+role: "SD-WAN Engineer",
+review:
+"The enterprise WAN deployment labs and controller configuration sessions were extremely practical and helped me gain confidence in SD-WAN implementations."
+},
+{
+name: "Rakesh Kumar",
+role: "Network Engineer",
+review:
+"The vManage and OMP routing explanation was highly practical and aligned with enterprise requirements."
+},
+{
+name: "Sai Teja",
+role: "Infrastructure Engineer",
+review:
+"The multi-branch SD-WAN deployment project provided real-world implementation experience."
+}
+],
+
+recommendedCourses: [
+"ccnp-enterprise-training-hyderabad",
+"f5-load-balancer-training-hyderabad",
+"palo-alto-firewall-training-hyderabad"
+],
+
+faqs: [
+{
+question: "Who should learn Cisco SD-WAN?",
+answer:
+"Cisco SD-WAN is ideal for Network Engineers, CCNP candidates, Infrastructure Engineers and professionals working with enterprise WAN environments."
+},
+{
+question: "Do you provide practical SD-WAN labs?",
+answer:
+"Yes. Students work on practical controller deployment, WAN edge onboarding, OMP routing, policy implementation and enterprise SD-WAN deployment scenarios."
+}
+],
+
+seoContent: `Cisco SD-WAN Training in Hyderabad at NG Cloud Networks is designed for networking professionals who want practical expertise in modern enterprise WAN technologies. Students learn Cisco SD-WAN architecture, vManage administration, vSmart controllers, vBond orchestration, WAN edge deployment, OMP routing, application-aware routing, centralized policy management and enterprise WAN troubleshooting through real-world implementation labs. The course includes practical enterprise projects, certification mentoring, interview preparation and placement assistance for SD-WAN Engineer, Enterprise Network Engineer and Infrastructure Engineer roles.
+ `
 },
 ];
