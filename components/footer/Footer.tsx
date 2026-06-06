@@ -404,6 +404,7 @@ export default function Footer() {
                 <div>
 
                   <p className="text-[15px] leading-[1.8] text-white/60">
+                    H.no:5-125/1/30, plot no,30,Royal Homes, Fusion School Back Side,Ameenpur,
                     Hyderabad, Telangana,
                     India
                   </p>

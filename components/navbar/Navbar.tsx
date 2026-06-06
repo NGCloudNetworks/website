@@ -680,7 +680,9 @@ export default function Navbar() {
                 <MapPin className="h-5 w-5 text-[#D4AF37]" />
 
                 <span className="text-white">
-                  Hyderabad, Telangana
+                  H.no:5-125/1/30, plot no,30,Royal Homes, Fusion School Back Side,Ameenpur,
+                    Hyderabad, Telangana,
+                    India
                 </span>
 
               </div>

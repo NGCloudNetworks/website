@@ -320,7 +320,9 @@ export default function ContactPage() {
                                     </h3>
 
                                     <p className="mt-3 text-[16px] text-white/60">
-                                        Hyderabad, Telangana
+                                        H.no:5-125/1/30, plot no,30,Royal Homes, Fusion School Back Side,Ameenpur,
+                    Hyderabad, Telangana,
+                    India
                                     </p>
 
                                 </div>
