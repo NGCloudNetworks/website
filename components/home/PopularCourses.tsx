@@ -36,12 +36,12 @@ const courses = [
   },
 
   {
-    title: "AWS Cloud",
-    slug: "/courses/aws-training-hyderabad",
+    title: "Cisco SDWAN",
+    slug: "/courses/cisco-sdwan-training-hyderabad",
     description:
-      "Learn cloud deployment, VPC, EC2, IAM and enterprise cloud infrastructure skills.",
+      "Master Cisco SD-WAN architecture, vManage, vSmart, vBond, OMP routing, application-aware routing and enterprise WAN deployment through practical real-world implementation labs.",
     icon: Cloud,
-    students: "3000+",
+    students: "1200+",
     level: "Cloud Computing",
   },
 

@@ -741,7 +741,7 @@ curriculum: [
 
     title: "AWS Cloud Training",
 
-    shortTitle: "AWS Training",
+    shortTitle: "AWS Cloud",
 
     category: "Cloud Computing",
 
