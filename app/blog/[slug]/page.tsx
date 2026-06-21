@@ -235,26 +235,19 @@ export default async function BlogDetailPage({
             "
           >
 
-            <div className="space-y-7">
-
-              {blog.content
-                .split("\n")
-                .filter((paragraph) => paragraph.trim() !== "")
-                .map((paragraph, index) => (
-
-                  <p
-                    key={index}
-                    className="
-                      text-[17px]
-                      leading-[2]
-                      text-white/70
-                    "
-                  >
-                    {paragraph}
-                  </p>
-                ))}
-
-            </div>
+            <div
+              className="
+    prose
+    prose-invert
+    max-w-none
+    prose-a:text-[#D4AF37]
+    prose-a:no-underline
+    hover:prose-a:underline
+  "
+              dangerouslySetInnerHTML={{
+                __html: blog.content,
+              }}
+            />
 
             {/* TAGS */}
             <div className="mt-12 flex flex-wrap gap-3">

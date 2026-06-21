@@ -1814,12 +1814,7 @@ topics: [
       "Enterprise Web Application Deployment",
       "Multi-Tier Application Load Balancing",
       "SSL Offload Project",
-      "High Availability Deployment Project",
-      "Interview Preparation",
-      "Resume Optimization",
-      "F5 BIG-IP Certification Guidance",
-      "Real-Time Enterprise Scenarios",
-      "Final Assessment"
+      "High Availability Deployment Project"
     ]
   }
 ],

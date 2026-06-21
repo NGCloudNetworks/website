@@ -253,7 +253,7 @@ export default function PlacementsPage() {
                 lg:text-[92px]
               "
                         >
-                           Networking, Cloud & Cyber Security Placements
+                            Networking, Cloud & Cyber Security Placements
 
                             <span className="mt-3 block text-[#D4AF37]">
                                 Real Career Growth
@@ -692,27 +692,27 @@ export default function PlacementsPage() {
                             </p>
                             <div className="mt-8 flex flex-wrap gap-3">
 
-  <Link href="/courses/ccna-training-hyderabad">
-    CCNA Training Hyderabad
-  </Link>
+                                <Link href="/courses/ccna-training-hyderabad">
+                                    CCNA Training Hyderabad
+                                </Link>
 
-  <Link href="/courses/aws-training-hyderabad">
-    AWS Cloud Training
-  </Link>
+                                <Link href="/courses/aws-training-hyderabad">
+                                    AWS Cloud Training
+                                </Link>
 
-  <Link href="/courses/azure-cloud-training-hyderabad">
-    Azure Cloud Training
-  </Link>
+                                <Link href="/courses/azure-cloud-training-hyderabad">
+                                    Azure Cloud Training
+                                </Link>
 
-  <Link href="/courses/palo-alto-firewall-training-hyderabad">
-    Palo Alto Training
-  </Link>
+                                <Link href="/courses/palo-alto-firewall-training-hyderabad">
+                                    Palo Alto Training
+                                </Link>
 
-  <Link href="/courses/cloud-security-training-hyderabad">
-    Cloud Security Training
-  </Link>
+                                <Link href="/courses/cloud-security-training-hyderabad">
+                                    Cloud Security Training
+                                </Link>
 
-</div>
+                            </div>
 
                             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
 
