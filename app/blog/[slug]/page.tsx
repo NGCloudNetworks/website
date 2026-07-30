@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 import Link from "next/link";
+import Script from "next/script";
 
 import {
   ArrowLeft,
@@ -20,6 +21,11 @@ type Props = {
   }>;
 };
 
+export async function generateStaticParams() {
+  return blogs.map((blog) => ({
+    slug: blog.slug,
+  }));
+}
 export async function generateMetadata({
   params,
 }: Props) {
@@ -39,6 +45,28 @@ export async function generateMetadata({
   return {
     title: blog.seoTitle,
     description: blog.seoDescription,
+
+    keywords: blog.tags,
+
+    authors: [
+      {
+        name: blog.author,
+      },
+    ],
+
+    openGraph: {
+      title: blog.seoTitle,
+      description: blog.seoDescription,
+      images: [blog.image],
+      type: "article",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: blog.seoTitle,
+      description: blog.seoDescription,
+      images: [blog.image],
+    },
   };
 }
 
@@ -55,9 +83,100 @@ export default async function BlogDetailPage({
   if (!blog) {
     notFound();
   }
+  const baseUrl = "https://ngcloudnetworks.com";
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: blog.title,
+    description: blog.seoDescription,
+    image: [`${baseUrl}${blog.image}`],
+    datePublished: blog.publishedDate,
+    dateModified: blog.publishedDate,
+    author: {
+      "@type": "Organization",
+      name: blog.author,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "NG Cloud Networks",
+      logo: {
+        "@type": "ImageObject",
+        url: `${baseUrl}/logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${baseUrl}/blog/${blog.slug}`,
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: baseUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${baseUrl}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: blog.title,
+        item: `${baseUrl}/blog/${blog.slug}`,
+      },
+    ],
+  };
+  const faqSchema = blog.faq
+    ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: blog.faq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    }
+    : null;
 
   return (
     <main className="overflow-hidden bg-[#050505] text-white">
+      <Script
+        id="article-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema),
+        }}
+      />
+
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
+      {faqSchema && (
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
+        />
+      )}
 
       <Navbar />
 

@@ -338,7 +338,6 @@ curriculum: [
     `,
 
   },
-
   {
     slug: "ccnp-enterprise-training-hyderabad",
 
@@ -731,7 +730,6 @@ curriculum: [
     CCNP Enterprise Training in Hyderabad at NG Cloud Networks helps networking professionals build advanced enterprise infrastructure expertise with practical Cisco labs and real-time enterprise scenarios. The course covers enterprise routing, switching, BGP, OSPF, redundancy, infrastructure security and advanced troubleshooting through hands-on practical implementation. Students gain practical exposure to Cisco enterprise technologies, WAN infrastructure and enterprise network architecture. Our CCNP course includes certification guidance, interview preparation, resume support and placement assistance for Senior Network Engineer, Enterprise Infrastructure Engineer and Network Specialist roles.
   `,
   },
-
   {
     slug: "aws-training-hyderabad",
 
@@ -953,7 +951,6 @@ topics: [
       AWS Training in Hyderabad at NG Cloud Networks helps students build practical cloud computing skills through enterprise-level cloud deployment and infrastructure management. The course covers EC2, IAM, VPC, S3, load balancers, cloud networking, security and monitoring services with practical AWS cloud labs. Students gain real-time experience in cloud infrastructure deployment, virtualization and cloud administration. We provide certification mentoring, practical projects, placement support and interview preparation for AWS Cloud Engineer, Cloud Administrator and DevOps roles.
     `,
   },
-
   {
   slug: "azure-cloud-training-hyderabad",
 
@@ -1184,7 +1181,6 @@ topics: [
     Azure Cloud Training in Hyderabad at NG Cloud Networks helps students and professionals build practical Microsoft cloud computing expertise with enterprise-focused cloud deployment training. The course includes Azure virtual machines, cloud networking, Azure Active Directory, storage services, security, monitoring and infrastructure deployment through practical real-time labs. Students gain hands-on experience in Azure cloud administration, virtualization and cloud infrastructure management. Our Azure course includes certification preparation, practical projects, interview mentoring and placement assistance for Azure Cloud Engineer, Cloud Administrator and Infrastructure Engineer roles.
   `,
 },
-
 {
   slug: "palo-alto-firewall-training-hyderabad",
 
@@ -1425,7 +1421,6 @@ topics: [
     Palo Alto Firewall Training in Hyderabad at NG Cloud Networks helps students and professionals build practical enterprise cybersecurity skills through real-time firewall implementation and security infrastructure labs. The course covers security policies, VPN configuration, NAT, App-ID, User-ID, traffic monitoring, threat prevention and enterprise firewall troubleshooting with practical hands-on labs. Students gain practical experience in enterprise cybersecurity operations, network security management and firewall administration. Our Palo Alto course includes certification guidance, interview preparation, practical security projects and placement support for Security Engineer, SOC Analyst and Firewall Administrator careers.
   `,
 },
-
 {
   slug: "fortigate-firewall-training-hyderabad",
 
@@ -1653,7 +1648,6 @@ topics: [
     Fortigate Firewall Training in Hyderabad at NG Cloud Networks helps students and professionals build practical network security and firewall administration expertise through enterprise security labs and real-time implementation scenarios. The course covers firewall policies, VPN configuration, NAT, threat prevention, traffic monitoring and enterprise security troubleshooting with practical Fortinet firewall environments. Students gain hands-on experience in enterprise firewall deployment, remote access security and cybersecurity operations. Our Fortigate course includes certification guidance, interview preparation, practical projects and placement assistance for Firewall Engineer, Security Administrator and Network Security Engineer roles.
   `,
 },
-
 {
   slug: "f5-load-balancer-training-hyderabad",
 
