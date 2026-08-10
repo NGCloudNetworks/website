@@ -1,314 +1,164 @@
-"use client";
+import { TrendingUp, Users2, Building2 } from "lucide-react";
+import { placementSupport, academyStats } from "@/data/academy";
 
-import { motion } from "framer-motion";
-
-import {
-  FileText,
-  GraduationCap,
-  BriefcaseBusiness,
-  Users,
-  ArrowUpRight,
-} from "lucide-react";
-
-const placementSteps = [
-  {
-    title: "Professional Resume Strategy",
-    description:
-      "Build modern ATS-friendly resumes designed specifically for cloud, networking and cybersecurity roles.",
-    icon: FileText,
-  },
-  {
-    title: "Real-Time Interview Preparation",
-    description:
-      "Technical mock interviews, HR sessions and communication coaching to improve interview confidence.",
-    icon: Users,
-  },
-  {
-    title: "1:1 Career Guidance",
-    description:
-      "Receive mentorship from experienced professionals to choose the right technology and career direction.",
-    icon: GraduationCap,
-  },
-  {
-    title: "Placement & Hiring Support",
-    description:
-      "Get assistance with hiring drives, job applications, interview scheduling and career opportunities.",
-    icon: BriefcaseBusiness,
-  },
-];
-
-export default function PlacementSupport() {
+export default function PlacementSection() {
   return (
-    <section className="relative overflow-hidden py-28">
-
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
-        <div className="absolute left-[-120px] top-[100px] h-[420px] w-[420px] bg-[#D4AF37]/5 blur-[130px]" />
-
-        <div className="absolute right-[-120px] bottom-[-120px] h-[420px] w-[420px] bg-[#D4AF37]/5 blur-[130px]" />
-
+    <section
+      id="placements"
+      aria-labelledby="placements-heading"
+      className="relative overflow-hidden py-20 md:py-24"
+    >
+      {/* Background */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute left-[-180px] top-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/7 blur-[180px]" />
+        <div className="absolute right-[-180px] bottom-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/6 blur-[180px]" />
       </div>
 
-      {/* CONTAINER */}
-      <div className="relative z-10 mx-auto max-w-[1400px] px-5">
+      <div className="relative z-10 mx-auto max-w-[1280px] px-5">
 
-        <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
-
-          {/* LEFT CONTENT */}
-          <motion.div
-            initial={{ opacity: 0, x: -35 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="max-w-[650px]"
+        {/* Header */}
+        <header className="mx-auto max-w-[820px] text-center">
+          <span
+            className="
+              inline-flex rounded-full border border-[#D4AF37]/20
+              bg-[#D4AF37]/10 px-4 py-2 text-sm font-semibold text-[#D4AF37]
+            "
           >
+            Career &amp; Placement Support
+          </span>
 
-            {/* BADGE */}
-            <div
-              className="
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                border
-                border-[#D4AF37]/20
-                bg-[#D4AF37]/5
-                px-5
-                py-2.5
-              "
-            >
+          <h2
+            id="placements-heading"
+            className="
+              mt-6 text-[40px] font-black leading-[1] tracking-[-0.04em]
+              text-white md:text-[56px]
+            "
+          >
+            From Training to a Real Job Offer
+          </h2>
 
-              <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
+          <p
+            className="
+              mx-auto mt-6 max-w-[720px] text-[17px] leading-[1.9]
+              text-white/68
+            "
+          >
+            NG Cloud Networks provides structured placement support, from
+            resume building to job referrals, with students placed at
+            companies including {placementSupport.companies.slice(0, 3).join(", ")}
+            {" "}and more.
+          </p>
+        </header>
 
-              <span className="text-sm text-[#f5e6b3]">
-                Placement & Career Support
-              </span>
-
-            </div>
-
-            {/* TITLE */}
-            <h2
-              className="
-                mt-8
-                text-[42px]
-                font-black
-                leading-[1]
-                tracking-[-0.04em]
-                text-white
-                md:text-[58px]
-                lg:text-[72px]
-              "
-            >
-              Build a
-
-              <span className="block text-[#D4AF37]">
-                Successful IT Career
-              </span>
-
-            </h2>
-
-            {/* DESCRIPTION */}
-            <p
-              className="
-                mt-8
-                text-[19px]
-                leading-[1.8]
-                text-white/60
-              "
-            >
-              Beyond technical training, we prepare students for
-              real-world careers through mentorship, interview preparation,
-              resume optimization and placement-focused guidance.
-            </p>
-
-            {/* STATS */}
-            <div className="mt-12 grid grid-cols-2 gap-6">
-
-              {/* CARD */}
-              <div
-                className="
-                  rounded-[28px]
-                  border
-                  border-white/10
-                  bg-white/[0.03]
-                  p-7
-                  backdrop-blur-xl
-                "
-              >
-
-                <h3 className="text-5xl font-black text-[#D4AF37]">
-                  1000+
-                </h3>
-
-                <p className="mt-3 text-white/55 leading-relaxed">
-                  Students placed in cloud, networking
-                  and security careers.
-                </p>
-
-              </div>
-
-              {/* CARD */}
-              <div
-                className="
-                  rounded-[28px]
-                  border
-                  border-white/10
-                  bg-white/[0.03]
-                  p-7
-                  backdrop-blur-xl
-                "
-              >
-
-                <h3 className="text-5xl font-black text-[#D4AF37]">
-                  95%
-                </h3>
-
-                <p className="mt-3 text-white/55 leading-relaxed">
-                  Student satisfaction with training,
-                  mentorship and support programs.
-                </p>
-
-              </div>
-
-            </div>
-
-          </motion.div>
-
-          {/* RIGHT GRID */}
-          <div className="grid gap-7 sm:grid-cols-2">
-
-            {placementSteps.map((step, index) => {
-              const Icon = step.icon;
-
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 35 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.08,
-                  }}
-                  viewport={{ once: true }}
-                  className="
-                    group
-                    relative
-                    overflow-hidden
-                    rounded-[32px]
-                    border
-                    border-white/10
-                    bg-white/[0.03]
-                    p-8
-                    backdrop-blur-xl
-                    transition-all
-                    duration-500
-                    hover:-translate-y-1
-                    hover:border-[#D4AF37]/30
-                    hover:bg-[#D4AF37]/[0.04]
-                  "
-                >
-
-                  {/* HOVER LIGHT */}
-                  <div
-                    className="
-                      absolute
-                      inset-0
-                      opacity-0
-                      transition-opacity
-                      duration-500
-                      group-hover:opacity-100
-                      bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_55%)]
-                    "
-                  />
-
-                  {/* TOP */}
-                  <div className="relative flex items-start justify-between">
-
-                    {/* ICON */}
-                    <div
-                      className="
-                        flex
-                        h-[72px]
-                        w-[72px]
-                        items-center
-                        justify-center
-                        rounded-[22px]
-                        border
-                        border-[#D4AF37]/20
-                        bg-[#D4AF37]/10
-                      "
-                    >
-
-                      <Icon className="h-8 w-8 text-[#D4AF37]" />
-
-                    </div>
-
-                    {/* ARROW */}
-                    <div
-                      className="
-                        flex
-                        h-11
-                        w-11
-                        items-center
-                        justify-center
-                        rounded-full
-                        border
-                        border-white/10
-                        bg-white/[0.03]
-                        opacity-0
-                        translate-x-2
-                        transition-all
-                        duration-500
-                        group-hover:translate-x-0
-                        group-hover:opacity-100
-                      "
-                    >
-
-                      <ArrowUpRight className="h-5 w-5 text-[#D4AF37]" />
-
-                    </div>
-
-                  </div>
-
-                  {/* CONTENT */}
-                  <div className="relative mt-8">
-
-                    <h3
-                      className="
-                        text-[28px]
-                        font-bold
-                        leading-[1.15]
-                        tracking-[-0.03em]
-                        text-white
-                      "
-                    >
-                      {step.title}
-                    </h3>
-
-                    <p
-                      className="
-                        mt-5
-                        text-[16px]
-                        leading-[1.8]
-                        text-white/55
-                      "
-                    >
-                      {step.description}
-                    </p>
-
-                  </div>
-
-                </motion.div>
-              );
-            })}
-
+        {/* Stats strip */}
+        <dl
+          className="
+            mx-auto mt-14 grid max-w-[820px] grid-cols-1 gap-6
+            border-y border-white/10 py-10 sm:grid-cols-3
+          "
+        >
+          <div className="flex flex-col-reverse items-center gap-2 text-center">
+            <dt className="text-xs text-white/50">Placement Support</dt>
+            <dd className="flex items-center gap-2 text-[26px] font-black text-white">
+              <Users2 className="h-5 w-5 text-[#D4AF37]" aria-hidden="true" />
+              {academyStats.placementSupport}
+            </dd>
           </div>
 
+          <div className="flex flex-col-reverse items-center gap-2 text-center">
+            <dt className="text-xs text-white/50">Starting Salary</dt>
+            <dd className="flex items-center gap-2 text-[26px] font-black text-white">
+              <TrendingUp className="h-5 w-5 text-[#D4AF37]" aria-hidden="true" />
+              {placementSupport.startingSalary}
+            </dd>
+          </div>
+
+          <div className="flex flex-col-reverse items-center gap-2 text-center">
+            <dt className="text-xs text-white/50">Hiring Partners</dt>
+            <dd className="flex items-center gap-2 text-[26px] font-black text-white">
+              <Building2 className="h-5 w-5 text-[#D4AF37]" aria-hidden="true" />
+              {placementSupport.companies.length}+
+            </dd>
+          </div>
+        </dl>
+
+        {/* Process — horizontal numbered flow */}
+        <div className="mt-16">
+          <h3 className="text-center text-[13px] font-semibold uppercase tracking-wider text-[#D4AF37]/80">
+            How Placement Support Works
+          </h3>
+
+          <ol className="mt-8 grid gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            {placementSupport.process.slice(0, 5).map((step, index) => (
+              <li
+                key={step}
+                className="
+                  relative rounded-2xl border border-white/10 bg-white/[0.03]
+                  p-5 text-center
+                "
+              >
+                <span
+                  className="
+                    mx-auto flex h-8 w-8 items-center justify-center
+                    rounded-full bg-[#D4AF37]/10 text-[13px] font-bold
+                    text-[#D4AF37]
+                  "
+                >
+                  {index + 1}
+                </span>
+                <p className="mt-3 text-[13.5px] font-medium leading-snug text-white/80">
+                  {step}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* Hiring partners — infinite marquee */}
+        <div className="mt-20">
+          <h3 className="text-center text-[13px] font-semibold uppercase tracking-wider text-[#D4AF37]/80">
+            Students Placed At
+          </h3>
+
+          <div
+            className="
+              relative mt-8 overflow-hidden
+              [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
+            "
+          >
+            <div className="flex w-max animate-marquee gap-4">
+              {[...placementSupport.companies, ...placementSupport.companies].map(
+                (company, index) => (
+                  <span
+                    key={`${company}-${index}`}
+                    className="
+                      shrink-0 rounded-full border border-white/10
+                      bg-white/[0.03] px-6 py-3 text-[14px] font-semibold
+                      text-white/75
+                    "
+                  >
+                    {company}
+                  </span>
+                )
+              )}
+            </div>
+          </div>
         </div>
 
       </div>
 
+      <style>{`
+        @keyframes marquee {
+          from { transform: translateX(0); }
+          to { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 40s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 }

@@ -1,280 +1,419 @@
-"use client";
+import { ChevronDown } from "lucide-react";
+import Link from "next/link";
 
-import { useState } from "react";
+type FAQ = {
+  question: string;
+  answer: React.ReactNode;
+  answerText: string; // plain-text version for schema (no JSX)
+  category: "General" | "Courses" | "Fees & Enrollment" | "Placement" | "Choosing a Course";
+  defaultOpen?: boolean;
+};
 
-import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
-
-import {
-  Plus,
-  Minus,
-} from "lucide-react";
-
-const faqs = [
+const faqs: FAQ[] = [
   {
-    question: "Why choose NG Cloud Networks for CCNA training in Hyderabad?",
-    answer:
-      "NG Cloud Networks provides enterprise-focused CCNA training with practical routing and switching labs, real-world networking scenarios, certification preparation and placement-oriented mentorship designed for modern IT careers.",
+    category: "General",
+    question: "Which is the best institute for CCNA training in Hyderabad?",
+    defaultOpen: true,
+    answerText:
+      "NG Cloud Networks offers CCNA training in Hyderabad with live instructor-led sessions, enterprise Cisco labs, small batch sizes and placement assistance, led by a trainer with 14+ years of industry experience.",
+    answer: (
+      <>
+        NG Cloud Networks offers{" "}
+        <Link href="/courses/ccna-training-hyderabad" className="font-semibold text-[#D4AF37] underline underline-offset-2">
+          CCNA training in Hyderabad
+        </Link>{" "}
+        with live instructor-led sessions, enterprise Cisco labs, small batch
+        sizes and placement assistance, led by a trainer with{" "}
+        <strong className="text-white">14+ years of industry experience</strong>.
+      </>
+    ),
   },
   {
+    category: "Courses",
+    question: "What courses does NG Cloud Networks offer?",
+    answerText:
+      "NG Cloud Networks offers CCNA, CCNP Enterprise, CCNP Core, AWS Cloud, Azure Cloud, Palo Alto Firewall, Fortigate Firewall, F5 Load Balancer, Cisco SD-WAN and Cloud Security training in Hyderabad.",
+    answer: (
+      <>
+        NG Cloud Networks offers{" "}
+        <strong className="text-white">10 certification-focused programs</strong>
+        : CCNA, CCNP Enterprise, CCNP Core, AWS Cloud, Azure Cloud, Palo Alto
+        Firewall, Fortigate Firewall, F5 Load Balancer, Cisco SD-WAN and Cloud
+        Security training. View the full{" "}
+        <Link href="/courses" className="font-semibold text-[#D4AF37] underline underline-offset-2">
+          course catalog
+        </Link>
+        .
+      </>
+    ),
+  },
+  {
+    category: "Courses",
+    question: "Do you offer online CCNA and CCNP training?",
+    answerText:
+      "Yes. Live online, classroom and hybrid training formats are available for all courses, with flexible weekday, evening and weekend batch timings.",
+    answer: (
+      <>
+        Yes.{" "}
+        <strong className="text-white">
+          Live online, classroom and hybrid
+        </strong>{" "}
+        training formats are available for all courses, with flexible
+        weekday, evening and weekend batch timings.
+      </>
+    ),
+  },
+  {
+    category: "Courses",
+    question: "Is prior networking experience required to join CCNA?",
+    answerText:
+      "No. CCNA is an entry-level networking certification designed for beginners. Basic computer knowledge is sufficient to start learning.",
+    answer: (
+      <>
+        <strong className="text-white">No.</strong> CCNA is an entry-level
+        networking certification designed for beginners. Basic computer
+        knowledge is sufficient to start learning.
+      </>
+    ),
+  },
+  {
+    category: "Courses",
+    question: "What is the difference between CCNP Enterprise and CCNP Core?",
+    answerText:
+      "CCNP Core (ENCOR) covers the core exam required for all CCNP certifications. CCNP Enterprise includes the core exam plus an enterprise-focused concentration exam, covering advanced routing, wireless and SD-WAN topics.",
+    answer: (
+      <>
+        <Link href="/courses/ccnp-core-training-hyderabad" className="font-semibold text-[#D4AF37] underline underline-offset-2">
+          CCNP Core (ENCOR)
+        </Link>{" "}
+        covers the core exam required for all CCNP certifications.{" "}
+        <Link href="/courses/ccnp-enterprise-training-hyderabad" className="font-semibold text-[#D4AF37] underline underline-offset-2">
+          CCNP Enterprise
+        </Link>{" "}
+        includes the core exam plus an enterprise-focused concentration exam,
+        covering advanced routing, wireless and SD-WAN topics.
+      </>
+    ),
+  },
+  {
+    category: "Choosing a Course",
+    question: "Which course should I choose first if I'm completely new to networking?",
+    defaultOpen: true,
+    answerText:
+      "CCNA is the right starting point for anyone new to networking. It has no prerequisites, is globally recognized, and builds the routing, switching and troubleshooting foundation that every other course assumes you already have.",
+    answer: (
+      <>
+        <Link href="/courses/ccna-training-hyderabad" className="font-semibold text-[#D4AF37] underline underline-offset-2">
+          CCNA
+        </Link>{" "}
+        is the right starting point for anyone new to networking. It has{" "}
+        <strong className="text-white">no prerequisites</strong>, is
+        globally recognized, and builds the routing, switching and
+        troubleshooting foundation that every other course assumes you
+        already have.
+      </>
+    ),
+  },
+  {
+    category: "Choosing a Course",
+    question: "Which course gets me a job fastest as a fresher?",
+    answerText:
+      "CCNA leads to the fastest entry-level placement, typically into roles like Network Support Engineer or NOC Engineer, because it is an entry-level certification employers hire freshers into directly. CCNP, cloud and security courses generally lead to better-paying but less entry-level roles.",
+    answer: (
+      <>
+        <strong className="text-white">CCNA</strong> leads to the fastest
+        entry-level placement, typically into roles like Network Support
+        Engineer or NOC Engineer, because it is an entry-level
+        certification employers hire freshers into directly. CCNP, cloud
+        and security courses generally lead to better-paying but less
+        entry-level roles.
+      </>
+    ),
+  },
+  {
+    category: "Choosing a Course",
+    question: "Is CCNP or AWS Cloud a better second course after CCNA?",
+    answerText:
+      "Choose CCNP Enterprise if you want to stay in core networking and move toward network architect roles. Choose AWS or Azure if you want to pivot toward cloud infrastructure roles, which are in higher demand as organizations shift workloads to the cloud.",
+    answer: (
+      <>
+        Choose{" "}
+        <Link href="/courses/ccnp-enterprise-training-hyderabad" className="font-semibold text-[#D4AF37] underline underline-offset-2">
+          CCNP Enterprise
+        </Link>{" "}
+        if you want to stay in core networking and move toward network
+        architect roles. Choose{" "}
+        <Link href="/courses/aws-training-hyderabad" className="font-semibold text-[#D4AF37] underline underline-offset-2">
+          AWS
+        </Link>{" "}
+        or{" "}
+        <Link href="/courses/azure-cloud-training-hyderabad" className="font-semibold text-[#D4AF37] underline underline-offset-2">
+          Azure
+        </Link>{" "}
+        if you want to pivot toward cloud infrastructure roles, which are
+        in higher demand as organizations shift workloads to the cloud.
+      </>
+    ),
+  },
+  {
+    category: "Choosing a Course",
+    question: "Which certifications have the strongest future demand?",
+    answerText:
+      "Cloud (AWS, Azure), cloud security and SD-WAN skills currently show the strongest hiring demand in Hyderabad's IT market, as enterprises continue migrating infrastructure to hybrid and cloud-first architectures. Core networking (CCNA/CCNP) remains foundational and is required before specializing in these areas.",
+    answer: (
+      <>
+        <strong className="text-white">
+          Cloud (AWS, Azure), cloud security and SD-WAN
+        </strong>{" "}
+        skills currently show the strongest hiring demand in Hyderabad&apos;s
+        IT market, as enterprises continue migrating infrastructure to
+        hybrid and cloud-first architectures. Core networking (CCNA/CCNP)
+        remains foundational and is required before specializing in these
+        areas.
+      </>
+    ),
+  },
+  {
+    category: "Placement",
     question: "Do you provide placement assistance after course completion?",
-    answer:
-      "Yes. We support students with resume optimization, LinkedIn profile building, mock interviews, technical mentoring and placement assistance to help them prepare confidently for networking, cloud and cybersecurity job opportunities.",
+    defaultOpen: true,
+    answerText:
+      "Yes. Placement assistance includes resume building, mock technical interviews, HR interview preparation and job referral support. Students have been placed at companies including Cisco, HCL Technologies, Cloud4C and Teleperformance.",
+    answer: (
+      <>
+        Yes. Placement assistance includes{" "}
+        <strong className="text-white">
+          resume building, mock technical interviews, HR interview
+          preparation and job referral support
+        </strong>
+        . Students have been placed at companies including Cisco, HCL
+        Technologies, Cloud4C and Teleperformance.
+      </>
+    ),
   },
   {
-    question: "Can beginners join AWS and Azure cloud training programs?",
-    answer:
-      "Absolutely. Our AWS and Azure programs are designed for both beginners and experienced professionals with structured learning paths, practical labs and real-world cloud implementation training.",
+    category: "General",
+    question: "What is the batch size for training?",
+    answerText:
+      "Batches are capped at a maximum of 10 students to ensure personalized instructor attention and hands-on lab time for every student.",
+    answer: (
+      <>
+        Batches are capped at a{" "}
+        <strong className="text-white">maximum of 10 students</strong> to
+        ensure personalized instructor attention and hands-on lab time for
+        every student.
+      </>
+    ),
   },
   {
-    question: "Will students get hands-on practical lab experience?",
-    answer:
-      "Yes. Students work on enterprise-level labs covering networking, cloud infrastructure, firewall configuration, troubleshooting and cloud security environments to gain real-world practical exposure.",
+    category: "General",
+    question: "Will I get access to recorded class sessions?",
+    answerText:
+      "Yes. Recorded sessions are provided for every course so students can revise concepts and catch up on missed classes at their own pace.",
+    answer: (
+      <>
+        <strong className="text-white">Yes.</strong> Recorded sessions are
+        provided for every course so students can revise concepts and catch
+        up on missed classes at their own pace.
+      </>
+    ),
   },
   {
-    question: "Which courses are best for cybersecurity and cloud security careers?",
-    answer:
-      "Programs such as Palo Alto Firewall, AWS Cloud Security, Azure Security and enterprise networking certifications are excellent choices for students planning careers in cybersecurity and cloud infrastructure protection.",
+    category: "Courses",
+    question: "Are practical labs included in the training?",
+    answerText:
+      "Yes. All courses include hands-on practical labs using enterprise Cisco routers, switches, Palo Alto and Fortigate firewalls, F5 load balancers, and simulation tools like Packet Tracer and GNS3.",
+    answer: (
+      <>
+        Yes. All courses include hands-on practical labs using{" "}
+        <strong className="text-white">
+          enterprise Cisco routers, switches, Palo Alto and Fortigate
+          firewalls, F5 load balancers
+        </strong>
+        , and simulation tools like Packet Tracer and GNS3.
+      </>
+    ),
+  },
+  {
+    category: "Fees & Enrollment",
+    question: "Can international students join the training?",
+    answerText:
+      "Yes. Students joining from outside India can attend live online classes with flexible batch timings based on their country and time zone, subject to trainer and batch availability.",
+    answer: (
+      <>
+        <strong className="text-white">Yes.</strong> Students joining from
+        outside India can attend live online classes with flexible batch
+        timings based on their country and time zone, subject to trainer and
+        batch availability.
+      </>
+    ),
+  },
+  {
+    category: "Placement",
+    question: "What job roles can I apply for after completing training?",
+    answerText:
+      "Depending on the course, students commonly pursue roles such as Network Engineer, Network Security Engineer, Cloud Engineer, NOC Engineer, System Administrator and Infrastructure Support Engineer.",
+    answer: (
+      <>
+        Depending on the course, students commonly pursue roles such as{" "}
+        <strong className="text-white">
+          Network Engineer, Network Security Engineer, Cloud Engineer, NOC
+          Engineer, System Administrator
+        </strong>{" "}
+        and Infrastructure Support Engineer.
+      </>
+    ),
+  },
+  {
+    category: "General",
+    question: "Where is NG Cloud Networks located?",
+    answerText:
+      "NG Cloud Networks is located in Ameenpur, Hyderabad, Telangana, with both classroom and live online training options available.",
+    answer: (
+      <>
+        NG Cloud Networks is located in{" "}
+        <strong className="text-white">Ameenpur, Hyderabad, Telangana</strong>
+        , with both classroom and live online training options available.
+      </>
+    ),
   },
 ];
 
-export default function FaqSection() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+const categories = [
+  "General",
+  "Courses",
+  "Choosing a Course",
+  "Fees & Enrollment",
+  "Placement",
+] as const;
 
-  const toggleFaq = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
+export default function FAQSection() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answerText,
+        author: {
+          "@id": "https://www.ngcloudnetworks.com/#organization",
+        },
+      },
+    })),
   };
 
   return (
-    <section className="relative overflow-hidden py-28">
-
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
-        <div className="absolute left-[-120px] top-[100px] h-[420px] w-[420px] bg-[#D4AF37]/5 blur-[130px]" />
-
-        <div className="absolute right-[-120px] bottom-[-120px] h-[420px] w-[420px] bg-[#D4AF37]/5 blur-[130px]" />
-
+    <section
+      id="faq"
+      aria-labelledby="faq-heading"
+      itemScope
+      itemType="https://schema.org/FAQPage"
+      className="relative overflow-hidden py-20 md:py-24"
+    >
+      {/* Background */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute left-[-180px] top-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/7 blur-[180px]" />
+        <div className="absolute right-[-180px] bottom-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/6 blur-[180px]" />
       </div>
 
-      {/* CONTAINER */}
-      <div className="relative z-10 mx-auto max-w-[1400px] px-5">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
-        {/* HEADER */}
-        <div className="mx-auto max-w-[900px] text-center">
+      <div className="relative z-10 mx-auto max-w-[900px] px-5">
 
-          {/* BADGE */}
-          <div
+        {/* Header */}
+        <header className="mx-auto max-w-[720px] text-center">
+          <span
             className="
-              inline-flex
-              items-center
-              gap-2
-              rounded-full
-              border
-              border-[#D4AF37]/20
-              bg-[#D4AF37]/5
-              px-5
-              py-2.5
+              inline-flex rounded-full border border-[#D4AF37]/20
+              bg-[#D4AF37]/10 px-4 py-2 text-sm font-semibold text-[#D4AF37]
             "
           >
+            Frequently Asked Questions
+          </span>
 
-            <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
-
-            <span className="text-sm text-[#f5e6b3]">
-              Frequently Asked Questions
-            </span>
-
-          </div>
-
-          {/* TITLE */}
           <h2
+            id="faq-heading"
             className="
-              mt-8
-              text-[42px]
-              font-black
-              leading-[1]
-              tracking-[-0.04em]
-              text-white
-              md:text-[58px]
-              lg:text-[72px]
+              mt-6 text-[36px] font-black leading-[1.05] tracking-[-0.04em]
+              text-white md:text-[48px]
             "
           >
-            Answers to Your
-
-            <span className="block text-[#D4AF37]">
-              Most Common Questions
-            </span>
-
+            Common Questions About Our Training
           </h2>
 
-          {/* DESCRIPTION */}
-          <p
-            className="
-              mx-auto
-              mt-7
-              max-w-[760px]
-              text-[19px]
-              leading-[1.8]
-              text-white/60
-            "
-          >
-            Explore commonly asked questions about our cloud,
-            networking and cybersecurity training programs,
-            certification guidance and placement support.
+          <p className="mt-4 text-[13.5px] text-white/45">
+            Answered by the NG Cloud Networks training team, Ameenpur,
+            Hyderabad
           </p>
+        </header>
 
-        </div>
-
-        {/* FAQ LIST */}
-        <div className="mx-auto mt-20 max-w-[1000px] space-y-6">
-
-          {faqs.map((faq, index) => {
-            const isActive = activeIndex === index;
+        {/* Accordion grouped by category — all rendered, all crawlable */}
+        <div className="mt-14 space-y-10">
+          {categories.map((category) => {
+            const items = faqs.filter((f) => f.category === category);
+            if (!items.length) return null;
 
             return (
-              <motion.div
-                key={index}
-                layout
-                transition={{ duration: 0.3 }}
-                className={`
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-[32px]
-                  border
-                  backdrop-blur-xl
-                  transition-all
-                  duration-500
-                  ${
-                    isActive
-                      ? "border-[#D4AF37]/30 bg-[#D4AF37]/[0.04]"
-                      : "border-white/10 bg-white/[0.03]"
-                  }
-                `}
-              >
+              <div key={category}>
+                <h3 className="text-[13px] font-semibold uppercase tracking-wider text-[#D4AF37]/80">
+                  {category}
+                </h3>
 
-                {/* HOVER LIGHT */}
-                <div
-                  className="
-                    absolute
-                    inset-0
-                    opacity-0
-                    transition-opacity
-                    duration-500
-                    group-hover:opacity-100
-                    bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_55%)]
-                  "
-                />
-
-                {/* QUESTION */}
-                <button
-                  onClick={() => toggleFaq(index)}
-                  className="
-                    relative
-                    z-10
-                    flex
-                    w-full
-                    items-center
-                    justify-between
-                    gap-6
-                    px-8
-                    py-8
-                    text-left
-                  "
-                >
-
-                  <h3
-                    className="
-                      text-[22px]
-                      font-bold
-                      leading-[1.5]
-                      tracking-[-0.02em]
-                      text-white
-                    "
-                  >
-                    {faq.question}
-                  </h3>
-
-                  {/* ICON */}
-                  <div
-                    className={`
-                      flex
-                      h-[52px]
-                      w-[52px]
-                      shrink-0
-                      items-center
-                      justify-center
-                      rounded-2xl
-                      transition-all
-                      duration-300
-                      ${
-                        isActive
-                          ? "bg-[#D4AF37] text-black"
-                          : "border border-white/10 bg-white/[0.03] text-white"
-                      }
-                    `}
-                  >
-
-                    {isActive ? (
-                      <Minus className="h-5 w-5" />
-                    ) : (
-                      <Plus className="h-5 w-5" />
-                    )}
-
-                  </div>
-
-                </button>
-
-                {/* ANSWER */}
-                <AnimatePresence>
-
-                  {isActive && (
-                    <motion.div
-                      initial={{
-                        height: 0,
-                        opacity: 0,
-                      }}
-                      animate={{
-                        height: "auto",
-                        opacity: 1,
-                      }}
-                      exit={{
-                        height: 0,
-                        opacity: 0,
-                      }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
+                <div className="mt-4 divide-y divide-white/10">
+                  {items.map((faq) => (
+                    <details
+                      key={faq.question}
+                      itemScope
+                      itemProp="mainEntity"
+                      itemType="https://schema.org/Question"
+                      className="group py-5"
+                      open={faq.defaultOpen}
                     >
-
-                      <div className="px-8 pb-8 pr-24">
-
-                        <p
+                      <summary
+                        itemProp="name"
+                        className="
+                          flex cursor-pointer list-none items-center
+                          justify-between gap-4 text-[16px] font-semibold
+                          text-white marker:hidden
+                        "
+                      >
+                        {faq.question}
+                        <ChevronDown
                           className="
-                            text-[16px]
-                            leading-[1.9]
-                            text-white/60
+                            h-5 w-5 shrink-0 text-[#D4AF37]
+                            transition-transform duration-300
+                            group-open:rotate-180
                           "
+                          aria-hidden="true"
+                        />
+                      </summary>
+
+                      <div
+                        itemScope
+                        itemProp="acceptedAnswer"
+                        itemType="https://schema.org/Answer"
+                      >
+                        <p
+                          itemProp="text"
+                          className="mt-3 max-w-[820px] text-[15px] leading-[1.8] text-white/65"
                         >
                           {faq.answer}
                         </p>
-
                       </div>
-
-                    </motion.div>
-                  )}
-
-                </AnimatePresence>
-
-              </motion.div>
+                    </details>
+                  ))}
+                </div>
+              </div>
             );
           })}
-
         </div>
 
       </div>
-
     </section>
   );
 }

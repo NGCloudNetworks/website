@@ -26,9 +26,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+
     <html lang="en">
       <body className={`${inter.variable} ${sora.variable}`}>
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "NG Cloud Networks",
+              url: "https://www.ngcloudnetworks.com",
+            }),
+          }}
+        />
         <LeadPopup />
         <WhatsappFloat />
       </body>

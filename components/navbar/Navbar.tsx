@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 
 import { useState } from "react";
+import { courseLinks, courseCategories } from "@/data/courseLinks";
 
 const navLinks = [
   {
@@ -50,49 +51,6 @@ const navLinks = [
   },
 ];
 
-const courseLinks = [
-  {
-    title: "CCNA Training",
-    href: "/courses/ccna-training-hyderabad",
-    category: "Networking",
-  },
-  {
-    title: "CCNP Enterprise",
-    href: "/courses/ccnp-enterprise-training-hyderabad",
-    category: "Advanced Networking",
-  },
-  {
-    title: "Cisco SD-WAN",
-    href: "/courses/cisco-sdwan-training-hyderabad",
-    category: "Enterprise Networking",
-  },
-  {
-    title: "AWS Cloud",
-    href: "/courses/aws-training-hyderabad",
-    category: "Cloud Computing",
-  },
-  {
-    title: "Azure Cloud",
-    href: "/courses/azure-cloud-training-hyderabad",
-    category: "Cloud Computing",
-  },
-  {
-    title: "Palo Alto Firewall",
-    href: "/courses/palo-alto-firewall-training-hyderabad",
-    category: "Cyber Security",
-  },
-  {
-    title: "Fortigate Firewall",
-    href: "/courses/fortigate-firewall-training-hyderabad",
-    category: "Network Security",
-  },
-  {
-    title: "F5 Load Balancer",
-    href: "/courses/f5-load-balancer-training-hyderabad",
-    category: "Infrastructure",
-  },
-];
-
 export default function Navbar() {
   const [loading, setLoading] = useState(false);
 
@@ -112,6 +70,10 @@ export default function Navbar() {
   const [demoOpen, setDemoOpen] = useState(false);
 
   const [callOpen, setCallOpen] = useState(false);
+  const groupedCourses = courseCategories.map((category) => ({
+    category,
+    items: courseLinks.filter((c) => c.category === category),
+  }));
 
   const [mobileCoursesOpen, setMobileCoursesOpen] =
     useState(false);
@@ -327,115 +289,100 @@ export default function Navbar() {
                   </Link>
 
                   {/* DROPDOWN */}
-                  {link.dropdown && coursesOpen && (
-
+                  {link.dropdown && (
                     <div
-                      className="
-                        absolute
-                        left-1/2
-                        top-full pt-4
-                        z-50
-                        w-[720px]
-                        -translate-x-1/2
-                        overflow-hidden
-                        rounded-[32px]
-                        border
-                        border-[#D4AF37]/15
-                        bg-[#080808]/95
-                        p-7
-                        shadow-[0_30px_80px_rgba(0,0,0,0.55)]
-                        backdrop-blur-3xl
-                      "
+                      className={`
+      absolute left-0 top-full pt-4 z-50 w-[820px] max-w-[90vw]
+      overflow-hidden rounded-[32px] border
+      border-[#D4AF37]/15 bg-[#080808]/95 p-7 shadow-[0_30px_80px_rgba(0,0,0,0.55)]
+      backdrop-blur-3xl
+      ${coursesOpen
+                          ? "visible opacity-100"
+                          : "invisible pointer-events-none opacity-0"
+                        }
+    `}
                     >
-
                       <div
                         className="
-                          absolute
-                          inset-0
-                          bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_55%)]
-                        "
+        absolute inset-0
+        bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_55%)]
+      "
                       />
 
                       <div className="relative z-10">
 
                         <div className="mb-6">
-
-                          <p className="text-sm text-[#D4AF37]">
-                            Enterprise Training Programs
-                          </p>
-
                           <h3
                             className="
-                              mt-2
-                              text-[28px]
-                              font-black
-                              tracking-[-0.03em]
-                              text-white
-                            "
+            mt-2 text-[28px] font-black tracking-[-0.03em] text-white
+          "
                           >
                             Explore Our Courses
                           </h3>
-
                         </div>
 
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-3 gap-6">
 
-                          {courseLinks.map((course) => (
+                          {groupedCourses.map((group) => (
 
-                            <Link
-                              key={course.title}
-                              href={course.href}
-                              className="
-                                group
-                                rounded-[24px]
-                                border
-                                border-white/8
-                                bg-white/[0.03]
-                                p-5
-                                transition-all
-                                duration-300
-                                hover:border-[#D4AF37]/30
-                                hover:bg-[#D4AF37]/[0.04]
-                              "
-                            >
+                            <div key={group.category}>
 
-                              <div className="flex items-start justify-between gap-4">
+                              <p
+                                className="
+                mb-3 text-[11px] font-semibold uppercase
+                tracking-wider text-[#D4AF37]/70
+              "
+                              >
+                                {group.category}
+                              </p>
 
-                                <div>
+                              <div className="space-y-2">
 
-                                  <p className="text-xs text-[#D4AF37]">
-                                    {course.category}
-                                  </p>
+                                {group.items.map((course) => (
 
-                                  <h4
+                                  <Link
+                                    key={course.slug}
+                                    href={course.href}
                                     className="
-                                      mt-2
-                                      text-[17px]
-                                      font-semibold
-                                      text-white
-                                    "
+                    group block rounded-[16px] border border-white/8
+                    bg-white/[0.03] p-3.5 transition-all duration-300
+                    hover:border-[#D4AF37]/30 hover:bg-[#D4AF37]/[0.04]
+                  "
                                   >
-                                    {course.title}
-                                  </h4>
 
-                                </div>
+                                    <div className="flex items-start justify-between gap-2">
 
-                                <ArrowUpRight
-                                  className="
-                                    h-4
-                                    w-4
-                                    text-[#D4AF37]
-                                    opacity-0
-                                    transition-all
-                                    duration-300
-                                    group-hover:translate-x-1
-                                    group-hover:opacity-100
-                                  "
-                                />
+                                      <div>
+                                        <p className="text-[10px] text-[#D4AF37]/80">
+                                          {course.subtitle}
+                                        </p>
+
+                                        <h4
+                                          className="
+                          mt-1 text-[13.5px] font-semibold leading-snug text-white
+                        "
+                                        >
+                                          {course.anchor}
+                                        </h4>
+                                      </div>
+
+                                      <ArrowUpRight
+                                        className="
+                        mt-0.5 h-3.5 w-3.5 shrink-0 text-[#D4AF37]
+                        opacity-0 transition-all duration-300
+                        group-hover:translate-x-1 group-hover:opacity-100
+                      "
+                                      />
+
+                                    </div>
+
+                                  </Link>
+                                ))}
 
                               </div>
 
-                            </Link>
+                            </div>
+
                           ))}
 
                         </div>
@@ -544,15 +491,16 @@ export default function Navbar() {
 
           </div>
 
-        </div>
+        </div >
 
-      </header>
+      </header >
 
       {/* CALL MODAL */}
-      {callOpen && (
+      {
+        callOpen && (
 
-        <div
-          className="
+          <div
+            className="
             fixed
             inset-0
             z-[90]
@@ -563,10 +511,10 @@ export default function Navbar() {
             p-5
             backdrop-blur-md
           "
-        >
+          >
 
-          <div
-            className="
+            <div
+              className="
               relative
               w-full
               max-w-[520px]
@@ -577,17 +525,17 @@ export default function Navbar() {
               bg-[#080808]
               p-8
             "
-          >
-
-            <button
-              onClick={() => setCallOpen(false)}
-              className="absolute right-5 top-5 text-white/60"
             >
-              <X className="h-6 w-6" />
-            </button>
 
-            <div
-              className="
+              <button
+                onClick={() => setCallOpen(false)}
+                className="absolute right-5 top-5 text-white/60"
+              >
+                <X className="h-6 w-6" />
+              </button>
+
+              <div
+                className="
                 flex
                 h-16
                 w-16
@@ -596,14 +544,14 @@ export default function Navbar() {
                 rounded-2xl
                 bg-[#D4AF37]/10
               "
-            >
+              >
 
-              <Phone className="h-7 w-7 text-[#D4AF37]" />
+                <Phone className="h-7 w-7 text-[#D4AF37]" />
 
-            </div>
+              </div>
 
-            <h2
-              className="
+              <h2
+                className="
                 mt-7
                 text-[38px]
                 font-black
@@ -611,19 +559,19 @@ export default function Navbar() {
                 tracking-[-0.03em]
                 text-white
               "
-            >
-              Contact Our Team
-            </h2>
+              >
+                Contact Our Team
+              </h2>
 
-            <p className="mt-5 text-[16px] leading-[1.9] text-white/60">
-              Speak directly with our training coordinators for
-              course guidance, demo scheduling and placement support.
-            </p>
+              <p className="mt-5 text-[16px] leading-[1.9] text-white/60">
+                Speak directly with our training coordinators for
+                course guidance, demo scheduling and placement support.
+              </p>
 
-            <div className="mt-8 space-y-4">
+              <div className="mt-8 space-y-4">
 
-              <div
-                className="
+                <div
+                  className="
                   flex
                   items-center
                   gap-4
@@ -633,18 +581,18 @@ export default function Navbar() {
                   bg-white/[0.03]
                   p-5
                 "
-              >
+                >
 
-                <Phone className="h-5 w-5 text-[#D4AF37]" />
+                  <Phone className="h-5 w-5 text-[#D4AF37]" />
 
-                <span className="text-white">
-                  +91 9989939191
-                </span>
+                  <span className="text-white">
+                    +91 9989939191
+                  </span>
 
-              </div>
+                </div>
 
-              <div
-                className="
+                <div
+                  className="
                   flex
                   items-center
                   gap-4
@@ -654,18 +602,18 @@ export default function Navbar() {
                   bg-white/[0.03]
                   p-5
                 "
-              >
+                >
 
-                <Mail className="h-5 w-5 text-[#D4AF37]" />
+                  <Mail className="h-5 w-5 text-[#D4AF37]" />
 
-                <span className="text-white">
-                  info@ngcloudnetworks.com
-                </span>
+                  <span className="text-white">
+                    info@ngcloudnetworks.com
+                  </span>
 
-              </div>
+                </div>
 
-              <div
-                className="
+                <div
+                  className="
                   flex
                   items-center
                   gap-4
@@ -675,25 +623,25 @@ export default function Navbar() {
                   bg-white/[0.03]
                   p-5
                 "
-              >
+                >
 
-                <MapPin className="h-5 w-5 text-[#D4AF37]" />
+                  <MapPin className="h-5 w-5 text-[#D4AF37]" />
 
-                <span className="text-white">
-                  H.no:5-125/1/30, plot no,30,Royal Homes, Fusion School Back Side,Ameenpur,
+                  <span className="text-white">
+                    H.no:5-125/1/30, plot no,30,Royal Homes, Fusion School Back Side,Ameenpur,
                     Hyderabad, Telangana,
                     India
-                </span>
+                  </span>
+
+                </div>
 
               </div>
 
-            </div>
+              <div className="mt-8 flex gap-4">
 
-            <div className="mt-8 flex gap-4">
-
-              <a
-                href="tel:+919989939191"
-                className="
+                <a
+                  href="tel:+919989939191"
+                  className="
                   flex
                   h-[56px]
                   flex-1
@@ -705,13 +653,13 @@ export default function Navbar() {
                   font-semibold
                   text-black
                 "
-              >
-                Call Now
-              </a>
+                >
+                  Call Now
+                </a>
 
-              <Link
-                href="/contact"
-                className="
+                <Link
+                  href="/contact"
+                  className="
                   flex
                   h-[56px]
                   flex-1
@@ -722,22 +670,24 @@ export default function Navbar() {
                   border-white/10
                   text-white
                 "
-              >
-                Contact Page
-              </Link>
+                >
+                  Contact Page
+                </Link>
+
+              </div>
 
             </div>
 
           </div>
-
-        </div>
-      )}
+        )
+      }
 
       {/* DEMO MODAL */}
-      {demoOpen && (
+      {
+        demoOpen && (
 
-        <div
-          className="
+          <div
+            className="
     fixed
     inset-0
     z-[90]
@@ -747,10 +697,10 @@ export default function Navbar() {
     py-10
     backdrop-blur-md
   "
-        >
+          >
 
-          <div
-            className="
+            <div
+              className="
               relative
               mx-auto
               mt-10
@@ -764,21 +714,21 @@ export default function Navbar() {
               p-8
               lg:p-10
             "
-          >
-
-            <button
-              onClick={() => setDemoOpen(false)}
-              className="absolute right-5 top-5 text-white/60"
             >
 
-              <X className="h-6 w-6" />
+              <button
+                onClick={() => setDemoOpen(false)}
+                className="absolute right-5 top-5 text-white/60"
+              >
 
-            </button>
+                <X className="h-6 w-6" />
 
-            <div className="max-w-[620px]">
+              </button>
 
-              <div
-                className="
+              <div className="max-w-[620px]">
+
+                <div
+                  className="
                   inline-flex
                   items-center
                   gap-2
@@ -789,18 +739,18 @@ export default function Navbar() {
                   px-4
                   py-2
                 "
-              >
+                >
 
-                <Clock3 className="h-4 w-4 text-[#D4AF37]" />
+                  <Clock3 className="h-4 w-4 text-[#D4AF37]" />
 
-                <span className="text-sm text-[#D4AF37]">
-                  Schedule Your Free Demo Session
-                </span>
+                  <span className="text-sm text-[#D4AF37]">
+                    Schedule Your Free Demo Session
+                  </span>
 
-              </div>
+                </div>
 
-              <h2
-                className="
+                <h2
+                  className="
                   mt-6
                   text-[42px]
                   font-black
@@ -808,28 +758,28 @@ export default function Navbar() {
                   tracking-[-0.04em]
                   text-white
                 "
-              >
-                Book Your Demo Class
-              </h2>
+                >
+                  Book Your Demo Class
+                </h2>
 
-              <p className="mt-5 text-[16px] leading-[1.9] text-white/60">
-                Schedule a personalized demo session with our
-                trainers and explore real-time enterprise labs,
-                certification guidance and placement-focused training.
-              </p>
+                <p className="mt-5 text-[16px] leading-[1.9] text-white/60">
+                  Schedule a personalized demo session with our
+                  trainers and explore real-time enterprise labs,
+                  certification guidance and placement-focused training.
+                </p>
 
-            </div>
+              </div>
 
-            {/* FORM */}
-            <div className="mt-10 grid gap-5 md:grid-cols-2">
+              {/* FORM */}
+              <div className="mt-10 grid gap-5 md:grid-cols-2">
 
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Full Name"
-                className="
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Full Name"
+                  className="
                   h-[58px]
                   rounded-2xl
                   border
@@ -839,15 +789,15 @@ export default function Navbar() {
                   text-white
                   outline-none
                 "
-              />
+                />
 
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email Address"
-                className="
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Email Address"
+                  className="
                   h-[58px]
                   rounded-2xl
                   border
@@ -857,15 +807,15 @@ export default function Navbar() {
                   text-white
                   outline-none
                 "
-              />
+                />
 
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Phone Number"
-                className="
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Phone Number"
+                  className="
                   h-[58px]
                   rounded-2xl
                   border
@@ -875,13 +825,13 @@ export default function Navbar() {
                   text-white
                   outline-none
                 "
-              />
+                />
 
-              <select
-                name="course"
-                value={formData.course}
-                onChange={handleChange}
-                className="
+                <select
+                  name="course"
+                  value={formData.course}
+                  onChange={handleChange}
+                  className="
                   h-[58px]
                   rounded-2xl
                   border
@@ -891,24 +841,27 @@ export default function Navbar() {
                   text-white
                   outline-none
                 "
-              >
+                >
 
-                <option>Select Course</option>
+                  <option>Select Course</option>
 
-                {courseLinks.map((course) => (
-                  <option key={course.title}>
-                    {course.title}
-                  </option>
-                ))}
+                  {courseLinks.map((course) => (
+                    <option
+                      key={course.slug}
+                      value={course.anchor}
+                    >
+                      {course.anchor}
+                    </option>
+                  ))}
 
-              </select>
+                </select>
 
-              <input
-                type="date"
-                name="date"
-                value={formData.date}
-                onChange={handleChange}
-                className="
+                <input
+                  type="date"
+                  name="date"
+                  value={formData.date}
+                  onChange={handleChange}
+                  className="
                   h-[58px]
                   rounded-2xl
                   border
@@ -918,13 +871,13 @@ export default function Navbar() {
                   text-white
                   outline-none
                 "
-              />
+                />
 
-              <select
-                name="slot"
-                value={formData.slot}
-                onChange={handleChange}
-                className="
+                <select
+                  name="slot"
+                  value={formData.slot}
+                  onChange={handleChange}
+                  className="
                   h-[58px]
                   rounded-2xl
                   border
@@ -934,26 +887,26 @@ export default function Navbar() {
                   text-white
                   outline-none
                 "
-              >
+                >
 
-                <option>Select Time Slot</option>
+                  <option>Select Time Slot</option>
 
-                <option>Morning</option>
+                  <option>Morning</option>
 
-                <option>Afternoon</option>
+                  <option>Afternoon</option>
 
-                <option>Evening</option>
+                  <option>Evening</option>
 
-              </select>
+                </select>
 
-            </div>
+              </div>
 
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              placeholder="Message (Optional)"
-              className="
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Message (Optional)"
+                className="
                 mt-5
                 min-h-[140px]
                 w-full
@@ -965,13 +918,13 @@ export default function Navbar() {
                 text-white
                 outline-none
               "
-            />
+              />
 
-            <button
-              type="button"
-              onClick={handleSubmit}
-              disabled={loading}
-              className="
+              <button
+                type="button"
+                onClick={handleSubmit}
+                disabled={loading}
+                className="
     mt-6
     flex
     h-[60px]
@@ -986,218 +939,102 @@ export default function Navbar() {
     text-black
     disabled:opacity-70
   "
-            >
-              <ShieldCheck className="h-4 w-4" />
+              >
+                <ShieldCheck className="h-4 w-4" />
 
-              {loading
-                ? "Submitting..."
-                : "Submit Demo Request"}
-            </button>
+                {loading
+                  ? "Submitting..."
+                  : "Submit Demo Request"}
+              </button>
+
+            </div>
 
           </div>
+        )
+      }
 
-        </div>
-      )}
-
+      {/* MOBILE MENU */}
       {/* MOBILE MENU */}
       <div
         className={`
-          fixed
-          top-0
-          right-0
-          z-[80]
-          h-screen
-          w-[88%]
-          max-w-[380px]
-          overflow-y-auto
-          border-l
-          border-white/10
-          bg-[#080808]
-          p-6
-          transition-transform
-          duration-500
-          lg:hidden
-          ${mobileOpen
-            ? "translate-x-0"
-            : "translate-x-full"
-          }
-        `}
+    fixed top-0 right-0 z-[80] h-screen w-[88%] max-w-[380px]
+    overflow-y-auto border-l border-white/10 bg-[#080808] p-6
+    transition-transform duration-500 lg:hidden
+    ${mobileOpen ? "translate-x-0" : "translate-x-full"}
+  `}
       >
-
         <div className="flex items-center justify-between">
-
-          <h3 className="text-[24px] font-bold text-white">
-            Menu
-          </h3>
-
+          <h3 className="text-[24px] font-bold text-white">Menu</h3>
           <button onClick={() => setMobileOpen(false)}>
-
             <X className="h-7 w-7 text-white" />
-
           </button>
-
         </div>
 
         <div className="mt-10 flex flex-col">
-
-          {/* COURSES */}
           <button
-            onClick={() =>
-              setMobileCoursesOpen(!mobileCoursesOpen)
-            }
-            className="
-              flex
-              items-center
-              justify-between
-              border-b
-              border-white/5
-              py-5
-              text-left
-              text-[15px]
-              text-white
-            "
+            onClick={() => setMobileCoursesOpen(!mobileCoursesOpen)}
+            className="flex items-center justify-between border-b border-white/5 py-5 text-left text-[15px] text-white"
           >
-
             Courses
-
-            <ChevronDown
-              className={`
-                h-5
-                w-5
-                transition-transform
-                duration-300
-                ${mobileCoursesOpen
-                  ? "rotate-180"
-                  : ""
-                }
-              `}
-            />
-
+            <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${mobileCoursesOpen ? "rotate-180" : ""}`} />
           </button>
 
-          {mobileCoursesOpen && (
-
-            <div className="space-y-3 py-4">
-
-              {courseLinks.map((course) => (
-
-                <Link
-                  key={course.title}
-                  href={course.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="
-                    block
-                    rounded-2xl
-                    border
-                    border-white/8
-                    bg-white/[0.03]
-                    p-4
-                  "
-                >
-
-                  <p className="text-xs text-[#D4AF37]">
-                    {course.category}
-                  </p>
-
-                  <p className="mt-2 text-white">
-                    {course.title}
-                  </p>
-
-                </Link>
-              ))}
-
-            </div>
-          )}
-
-          {/* OTHER LINKS */}
-          {navLinks
-            .filter((link) => !link.dropdown)
-            .map((link) => (
-
+          {/* Always rendered, CSS-controlled visibility — same fix as desktop */}
+          <div
+            className={`space-y-3 overflow-hidden transition-all duration-300 ${mobileCoursesOpen ? "max-h-[2000px] py-4 opacity-100" : "max-h-0 py-0 opacity-0"
+              }`}
+          >
+            {courseLinks.map((course) => (
               <Link
-                key={link.name}
-                href={link.href}
+                key={course.slug}
+                href={course.href}
                 onClick={() => setMobileOpen(false)}
-                className="
-                  border-b
-                  border-white/5
-                  py-5
-                  text-[15px]
-                  text-white/80
-                "
+                className="block rounded-2xl border border-white/8 bg-white/[0.03] p-4"
               >
-                {link.name}
+                <p className="text-xs text-[#D4AF37]">{course.subtitle}</p>
+                <p className="mt-2 text-white">{course.anchor}</p>
               </Link>
             ))}
-
-          {/* CTA */}
-          <div className="mt-8 space-y-4">
-
-            <button
-              onClick={() => {
-                setCallOpen(true);
-                setMobileOpen(false);
-              }}
-              className="
-                flex
-                h-[54px]
-                w-full
-                items-center
-                justify-center
-                rounded-2xl
-                border
-                border-white/10
-                text-white
-              "
-            >
-              Call Now
-            </button>
-
-            <button
-              onClick={() => {
-                setDemoOpen(true);
-                setMobileOpen(false);
-              }}
-              className="
-                flex
-                h-[54px]
-                w-full
-                items-center
-                justify-center
-                rounded-2xl
-                bg-[#D4AF37]
-                font-semibold
-                text-black
-              "
-            >
-              Book Demo
-            </button>
-
           </div>
 
-        </div>
+          {navLinks.filter((l) => !l.dropdown).map((link) => (
+            <Link key={link.name} href={link.href} onClick={() => setMobileOpen(false)} className="border-b border-white/5 py-5 text-[15px] text-white/80">
+              {link.name}
+            </Link>
+          ))}
 
+          <div className="mt-8 space-y-4">
+            <button onClick={() => { setCallOpen(true); setMobileOpen(false); }} className="flex h-[54px] w-full items-center justify-center rounded-2xl border border-white/10 text-white">
+              Call Now
+            </button>
+            <button onClick={() => { setDemoOpen(true); setMobileOpen(false); }} className="flex h-[54px] w-full items-center justify-center rounded-2xl bg-[#D4AF37] font-semibold text-black">
+              Book Demo
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* OVERLAY */}
-      {(mobileOpen || demoOpen || callOpen) && (
+      {
+        (mobileOpen || demoOpen || callOpen) && (
 
-        <div
-          onClick={() => {
-            setMobileOpen(false);
-            setDemoOpen(false);
-            setCallOpen(false);
-          }}
-          className="
+          <div
+            onClick={() => {
+              setMobileOpen(false);
+              setDemoOpen(false);
+              setCallOpen(false);
+            }}
+            className="
             fixed
             inset-0
             z-40
             bg-black/70
             backdrop-blur-sm
           "
-        />
+          />
 
-      )}
+        )
+      }
     </>
   );
 }

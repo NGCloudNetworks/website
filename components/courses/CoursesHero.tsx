@@ -1,78 +1,56 @@
-"use client";
-
 import Link from "next/link";
-
-import { motion } from "framer-motion";
 
 import {
   ArrowRight,
-  Cloud,
-  Network,
+  BookOpen,
+  LucideIcon,
+  CheckCircle2,
+  ChevronRight,
+  GraduationCap,
   ShieldCheck,
-  ArrowUpRight,
+  Sparkles,
 } from "lucide-react";
 
-const trainingTracks = [
-  {
-    title: "Networking",
-    desc: "CCNA, CCNP Enterprise & Infrastructure",
-    icon: Network,
-    href: "/courses/ccna-training-hyderabad",
-  },
+import { Course } from "@/types/course";
+import { trainingFeatures, trainingModes } from "@/data/academy";
+type Props = {
+  course: Course;
+};
 
-  {
-    title: "Cloud Computing",
-    desc: "AWS & Azure Enterprise Cloud",
-    icon: Cloud,
-    href: "/courses/aws-training-hyderabad",
-  },
+export default function CoursesHero({
+  course,
+}: Props) {
 
-  {
-    title: "Cyber Security",
-    desc: "Firewall Security & Protection",
-    icon: ShieldCheck,
-    href: "/courses/palo-alto-firewall-training-hyderabad",
-  },
-];
-
-export default function CoursesHero() {
   return (
-    <section className="relative overflow-hidden pt-36 pb-20 lg:pt-40 lg:pb-24">
 
-      {/* BACKGROUND */}
+    <section className="relative overflow-hidden pt-20 pb-12">
+
+      {/* Background */}
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        {/* GLOW */}
-        <div className="absolute left-[-120px] top-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/10 blur-[130px]" />
+        <div className="absolute left-[-260px] top-[-180px] h-[560px] w-[560px] rounded-full bg-[#D4AF37]/10 blur-[200px]" />
 
-        <div className="absolute right-[-120px] bottom-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/10 blur-[130px]" />
-
-        {/* GRID */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
-            backgroundSize: "52px 52px",
-          }}
-        />
+        <div className="absolute right-[-240px] bottom-[-200px] h-[560px] w-[560px] rounded-full bg-[#D4AF37]/8 blur-[200px]" />
 
       </div>
 
-      {/* CONTAINER */}
       <div className="relative z-10 mx-auto max-w-[1450px] px-5">
 
-        <div className="grid items-center gap-12 xl:grid-cols-[1.02fr_0.98fr]">
+        {/* Breadcrumb */}
 
-          {/* LEFT */}
-          <motion.div
-            initial={{ opacity: 0, y: 35 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-[840px]"
-          >
+        <nav
+          aria-label="Breadcrumb"
+          className="mb-10"
+        >
+        </nav>
 
-            {/* BADGE */}
+        <div className="grid gap-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
+
+          <div>
+
+            {/* Category */}
+
             <div
               className="
                 inline-flex
@@ -81,395 +59,495 @@ export default function CoursesHero() {
                 rounded-full
                 border
                 border-[#D4AF37]/20
-                bg-[#D4AF37]/5
+                bg-[#D4AF37]/10
                 px-5
-                py-2.5
-                backdrop-blur-xl
+                py-1
+                text-sm
+                font-semibold
+                tracking-wide
+                text-[#D4AF37]
               "
             >
 
-              <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
+              <GraduationCap className="h-4 w-4" />
 
-              <span className="text-sm font-medium tracking-wide text-[#f5e6b3]">
-                Enterprise IT Training Programs
-              </span>
+              {course.category} Professional Training
 
             </div>
 
-            {/* TITLE */}
+            {/* Heading */}
+
             <h1
               className="
-                mt-7
-                text-[46px]
+                mt-8
+                text-[44px]
                 font-black
-                leading-[0.9]
+                leading-[0.95]
                 tracking-[-0.05em]
                 text-white
                 md:text-[72px]
-                xl:text-[92px]
               "
             >
-              Master
+              {course.title}
 
-              <span
-                className="
-                  ml-3
-                  bg-gradient-to-r
-                  from-[#D4AF37]
-                  via-[#f8dc82]
-                  to-[#D4AF37]
-                  bg-clip-text
-                  text-transparent
-                "
-              >
-                Cloud,
-              </span>
+              <span className="mt-3 block text-[#D4AF37]">
 
-              <span className="mt-2 block text-white">
-                Networking &
-              </span>
+                Build Practical Enterprise Skills
 
-              <span className="block text-[#D4AF37]">
-                Cyber Security
               </span>
 
             </h1>
 
-            {/* DESCRIPTION */}
+            {/* Description */}
+
             <p
               className="
-                mt-7
-                max-w-[760px]
+                mt-8
+                max-w-[820px]
                 text-[18px]
-                leading-[1.95]
-                text-white/60
-                lg:text-[19px]
+                leading-[2]
+                text-white/72
               "
             >
-              Explore premium enterprise-focused training programs
-              designed with practical labs, certification mentorship,
-              real-time infrastructure scenarios and placement-oriented
-              learning paths.
+              {course.excerpt}
             </p>
 
-            {/* BUTTONS */}
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            {/* Trust Chips */}
 
-              {/* PRIMARY */}
-              <Link
-                href="/courses"
-                className="
-                  group
-                  flex
-                  h-[58px]
-                  items-center
-                  justify-center
-                  gap-2.5
-                  rounded-full
-                  bg-[#D4AF37]
-                  px-8
-                  text-[15px]
-                  font-semibold
-                  text-black
-                  transition-all
-                  duration-300
-                  hover:scale-[1.02]
-                  hover:shadow-[0_0_35px_rgba(212,175,55,0.35)]
-                "
-              >
+            <div className="mt-10 flex flex-wrap gap-3">
 
-                Explore Courses
+              <TrustChip
+                icon={BookOpen}
+                text="Hands-on Enterprise Labs"
+              />
 
-                <ArrowRight
-                  className="
-                    h-4
-                    w-4
-                    transition-transform
-                    duration-300
-                    group-hover:translate-x-1
-                  "
-                />
+              <TrustChip
+                icon={ShieldCheck}
+                text="Placement Assistance"
+              />
 
-              </Link>
+              <TrustChip
+                icon={Sparkles}
+                text="Certification Guidance"
+              />
 
-              {/* SECONDARY */}
+            </div>
+
+            {/* CTA */}
+
+            <div className="mt-12 flex flex-wrap gap-5">
+
               <Link
                 href="/contact"
                 className="
-                  flex
-                  h-[58px]
+                  inline-flex
                   items-center
-                  justify-center
+                  gap-3
+                  rounded-full
+                  bg-[#D4AF37]
+                  px-8
+                  py-4
+                  text-[16px]
+                  font-bold
+                  text-black
+                  transition-all
+                  duration-300
+                  hover:scale-105
+                  hover:bg-[#E7C75A]
+                "
+              >
+
+                Enquire Now
+
+                <ArrowRight className="h-5 w-5" />
+
+              </Link>
+
+              <Link
+                href="#course-snapshot"
+                className="
+                  inline-flex
+                  items-center
                   rounded-full
                   border
-                  border-white/10
+                  border-[#D4AF37]/25
                   bg-white/[0.03]
                   px-8
-                  text-[15px]
-                  font-medium
+                  py-4
+                  text-[16px]
+                  font-semibold
                   text-white
                   backdrop-blur-xl
                   transition-all
                   duration-300
-                  hover:border-[#D4AF37]/30
-                  hover:bg-[#D4AF37]/[0.03]
-                  hover:text-[#D4AF37]
+                  hover:border-[#D4AF37]
+                  hover:bg-[#D4AF37]/10
                 "
               >
-                Book Free Demo
+
+                Explore Course Details
+
               </Link>
 
             </div>
 
-            {/* STATS */}
-            <div className="mt-14 grid max-w-[640px] grid-cols-3 gap-5">
+            {/* Why This Course */}
 
-              {[
-                {
-                  value: "10+",
-                  label: "Enterprise Courses",
-                },
-                {
-                  value: "5000+",
-                  label: "Students Trained",
-                },
-                {
-                  value: "1000+",
-                  label: "Placements",
-                },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="
-                    rounded-[26px]
-                    border
-                    border-white/10
-                    bg-white/[0.03]
-                    px-5
-                    py-5
-                    backdrop-blur-xl
-                  "
-                >
+            <div
+              className="
+                mt-14
+                rounded-[30px]
+                border
+                border-white/10
+                bg-white/[0.03]
+                p-8
+                backdrop-blur-xl
+              "
+            >
 
-                  <h3
-                    className="
-                      text-[34px]
-                      font-black
-                      leading-none
-                      text-[#D4AF37]
-                    "
-                  >
-                    {item.value}
-                  </h3>
+              <h2
+                className="
+                  text-[24px]
+                  font-bold
+                  text-white
+                "
+              >
+                Why Choose This Training?
+              </h2>
 
-                  <p className="mt-2 text-sm leading-relaxed text-white/50">
-                    {item.label}
-                  </p>
-
-                </div>
-              ))}
+              <p
+                className="
+                  mt-5
+                  text-[17px]
+                  leading-[2]
+                  text-white/70
+                "
+              >
+                This program combines instructor-led learning,
+                enterprise lab practice, structured mentoring,
+                certification guidance and interview preparation to help
+                learners develop practical skills that are directly
+                applicable in real-world IT environments.
+              </p>
 
             </div>
 
-          </motion.div>
+          </div>
 
-          {/* RIGHT */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative"
-          >
+          <div className="relative">
 
-            {/* GLOW */}
-            <div className="absolute inset-0 bg-[#D4AF37]/10 blur-[90px]" />
+            {/* Course Card */}
 
-            {/* CARD */}
             <div
               className="
                 relative
                 overflow-hidden
                 rounded-[36px]
                 border
-                border-white/10
-                bg-white/[0.03]
-                p-7
+                border-[#D4AF37]/15
+                bg-gradient-to-br
+                from-white/[0.05]
+                via-white/[0.03]
+                to-[#D4AF37]/[0.04]
                 backdrop-blur-2xl
               "
             >
+              <div className="p-8">
 
-              {/* TOP */}
-              <div className="flex items-center justify-between">
+                <h2
+                  className="
+                    text-[30px]
+                    font-black
+                    leading-tight
+                    text-white
+                  "
+                >
+                  Course Overview
+                </h2>
 
-                <div>
+                <p
+                  className="
+                    mt-4
+                    text-[16px]
+                    leading-[1.9]
+                    text-white/70
+                  "
+                >
+                  Everything you need to begin your learning journey,
+                  from practical training and certification guidance to
+                  interview preparation and placement assistance.
+                </p>
 
-                  <p
-                    className="
-                      text-[11px]
-                      font-semibold
-                      uppercase
-                      tracking-[0.28em]
-                      text-[#D4AF37]
-                    "
-                  >
-                    Career Domains
-                  </p>
+                {/* Course Information */}
 
-                  <h3
-                    className="
-                      mt-3
-                      text-[34px]
-                      font-black
-                      leading-none
-                      tracking-[-0.03em]
-                      text-white
-                    "
-                  >
-                    Training Tracks
-                  </h3>
+                <div className="mt-10 space-y-4">
+
+                  <InfoRow
+                    title="Duration"
+                    value={course.duration}
+                  />
+
+                  <InfoRow
+                    title="Training Mode"
+                    value={trainingModes
+                  .map((training) => training.mode.replace(" Training", ""))
+                  .join(" • ")}
+                  />
+
+                  <InfoRow
+                    title="Certification"
+                    value={
+                      trainingFeatures.certificationGuidance
+                        ? "Included"
+                        : "Course Completion"
+                    }
+                  />
+
+                  <InfoRow
+                    title="Placement"
+                    value={
+                      trainingFeatures.placementAssistance
+                        ? "100% Assistance"
+                        : "Career Guidance"
+                    }
+                  />
 
                 </div>
 
-              </div>
+                {/* Divider */}
 
-              {/* TRACKS */}
-              <div className="mt-8 space-y-4">
+                <div className="my-10 h-px bg-white/10" />
 
-                {trainingTracks.map((item, index) => {
-                  const Icon = item.icon;
+                {/* Skills */}
 
-                  return (
-                    <Link
-                      key={index}
-                      href={item.href}
-                      className="
-                        group
-                        relative
-                        flex
-                        items-start
-                        gap-5
-                        overflow-hidden
-                        rounded-[28px]
-                        border
-                        border-white/10
-                        bg-black/20
-                        p-5
-                        transition-all
-                        duration-300
-                        hover:border-[#D4AF37]/30
-                        hover:bg-[#D4AF37]/[0.03]
-                      "
-                    >
+                <div>
 
-                      {/* LIGHT */}
-                      <div
-                        className="
-                          absolute
-                          inset-0
-                          opacity-0
-                          transition-opacity
-                          duration-500
-                          group-hover:opacity-100
-                          bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.10),transparent_60%)]
-                        "
-                      />
+                  <h3
+                    className="
+                      text-[20px]
+                      font-bold
+                      text-white
+                    "
+                  >
+                    Key Skills You'll Learn
+                  </h3>
 
-                      {/* ICON */}
-                      <div
-                        className="
-                          relative
-                          z-10
-                          flex
-                          h-[62px]
-                          w-[62px]
-                          shrink-0
-                          items-center
-                          justify-center
-                          rounded-2xl
-                          border
-                          border-[#D4AF37]/20
-                          bg-[#D4AF37]/10
-                        "
-                      >
+                  <div className="mt-5 flex flex-wrap gap-3">
 
-                        <Icon className="h-7 w-7 text-[#D4AF37]" />
+                    {course.skills
+                      .slice(0, 8)
+                      .map((skill) => (
 
-                      </div>
+                        <span
+                          key={skill}
+                          className="
+                            rounded-full
+                            border
+                            border-[#D4AF37]/15
+                            bg-[#D4AF37]/8
+                            px-4
+                            py-2
+                            text-sm
+                            font-medium
+                            text-[#F5E6B3]
+                          "
+                        >
+                          {skill}
+                        </span>
 
-                      {/* CONTENT */}
-                      <div className="relative z-10 flex-1">
+                      ))}
 
-                        <div className="flex items-start justify-between gap-4">
+                  </div>
 
-                          <div>
+                </div>
 
-                            <h4
-                              className="
-                                text-[22px]
-                                font-bold
-                                tracking-[-0.03em]
-                                text-white
-                              "
-                            >
-                              {item.title}
-                            </h4>
+                {/* CTA */}
 
-                            <p
-                              className="
-                                mt-2
-                                text-[14px]
-                                leading-[1.8]
-                                text-white/55
-                              "
-                            >
-                              {item.desc}
-                            </p>
+                <Link
+                  href="/contact"
+                  className="
+                    mt-10
+                    inline-flex
+                    w-full
+                    items-center
+                    justify-center
+                    gap-3
+                    rounded-2xl
+                    bg-[#D4AF37]
+                    px-6
+                    py-4
+                    text-[17px]
+                    font-bold
+                    text-black
+                    transition-all
+                    duration-300
+                    hover:bg-[#E7C75A]
+                  "
+                >
 
-                          </div>
+                  Book Free Career Consultation
 
-                          <div
-                            className="
-                              flex
-                              h-10
-                              w-10
-                              shrink-0
-                              items-center
-                              justify-center
-                              rounded-full
-                              border
-                              border-white/10
-                              bg-white/[0.03]
-                              opacity-0
-                              translate-x-2
-                              transition-all
-                              duration-300
-                              group-hover:translate-x-0
-                              group-hover:opacity-100
-                            "
-                          >
+                  <ArrowRight className="h-5 w-5" />
 
-                            <ArrowUpRight className="h-4 w-4 text-[#D4AF37]" />
-
-                          </div>
-
-                        </div>
-
-                      </div>
-
-                    </Link>
-                  );
-                })}
+                </Link>
 
               </div>
 
             </div>
 
-          </motion.div>
+          </div>
 
         </div>
-
       </div>
-
     </section>
   );
+
+}
+
+type TrustChipProps = {
+  icon: LucideIcon;
+  text: string;
+};
+
+function TrustChip({
+  icon: Icon,
+  text,
+}: TrustChipProps) {
+
+  return (
+
+    <div
+      className="
+        inline-flex
+        items-center
+        gap-2
+        rounded-full
+        border
+        border-white/10
+        bg-white/[0.03]
+        px-4
+        py-2
+        backdrop-blur-xl
+      "
+    >
+
+      <Icon
+        className="
+          h-4
+          w-4
+          text-[#D4AF37]
+        "
+      />
+
+      <span
+        className="
+          text-sm
+          font-medium
+          text-white/80
+        "
+      >
+        {text}
+      </span>
+
+    </div>
+
+  );
+
+}
+
+type InfoRowProps = {
+  title: string;
+  value: string;
+};
+
+function InfoRow({
+  title,
+  value,
+}: InfoRowProps) {
+
+  return (
+
+    <div
+      className="
+        flex
+        items-center
+        justify-between
+        gap-6
+        rounded-2xl
+        border
+        border-white/10
+        bg-black/20
+        p-5
+      "
+    >
+
+      <span
+        className="
+          text-[15px]
+          font-medium
+          text-white/60
+        "
+      >
+        {title}
+      </span>
+
+      <span
+        className="
+          text-right
+          text-[15px]
+          font-semibold
+          text-white
+        "
+      >
+        {value}
+      </span>
+
+    </div>
+
+  );
+
+}
+
+type OutcomeItemProps = {
+  text: string;
+};
+
+function OutcomeItem({
+  text,
+}: OutcomeItemProps) {
+
+  return (
+
+    <div
+      className="
+        flex
+        items-start
+        gap-3
+      "
+    >
+
+      <CheckCircle2
+        className="
+          mt-0.5
+          h-5
+          w-5
+          shrink-0
+          text-[#D4AF37]
+        "
+      />
+
+      <p
+        className="
+          text-[16px]
+          leading-[1.8]
+          text-white/72
+        "
+      >
+        {text}
+      </p>
+
+    </div>
+
+  );
+
 }

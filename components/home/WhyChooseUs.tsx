@@ -1,255 +1,110 @@
-"use client";
+import { Server, Users, Briefcase, BadgeCheck } from "lucide-react";
+import { trainer, trainingFeatures, placementSupport } from "@/data/academy";
 
-import { motion } from "framer-motion";
-
-import {
-  BriefcaseBusiness,
-  BadgeCheck,
-  MonitorCog,
-  Users,
-  ArrowUpRight,
-} from "lucide-react";
-
-const features = [
+const reasons = [
   {
+    icon: Server,
     title: "Enterprise Lab Infrastructure",
-    description:
-      "Train in real-world enterprise lab environments designed to simulate modern networking, cloud and security infrastructures. Students gain practical exposure to routing, switching, firewall configuration, cloud deployment and troubleshooting scenarios used in real IT environments.",
-    icon: MonitorCog,
+    description: `Train using ${trainingFeatures.practicalLabs.toLowerCase()}, working directly with configurations used across enterprise network environments.`,
   },
   {
-    title: "Corporate Industry Trainers",
-    description:
-      "Learn directly from experienced professionals working in networking, cloud and cybersecurity domains. Our trainers focus on practical implementation, real-time troubleshooting, interview preparation and industry best practices instead of only theoretical learning.",
-    icon: BriefcaseBusiness,
-  },
-  {
-    title: "Career & Placement Support",
-    description:
-      "We help students become industry-ready through resume optimization, LinkedIn profile building, mock interviews, technical mentorship and placement-focused preparation programs tailored for networking and cloud engineering careers.",
     icon: Users,
+    title: "Corporate Industry Trainers",
+    description: `Learn from ${trainer.name}, a ${trainer.designation.toLowerCase()} with ${trainer.experience} of industry and training experience across Cisco networking, SD-WAN and cloud infrastructure.`,
   },
   {
-    title: "Global Certification Guidance",
-    description:
-      "Receive complete support for globally recognized certifications including CCNA, CCNP, AWS, Azure, Palo Alto and cloud security programs. Our structured training approach helps students prepare confidently for certification exams and real-world implementation.",
+    icon: Briefcase,
+    title: "Career & Placement Support",
+    description: `Placement assistance includes resume building, mock technical interviews and job referrals, with students placed at companies including ${placementSupport.companies.slice(0, 4).join(", ")} and more.`,
+  },
+  {
     icon: BadgeCheck,
+    title: "Small Batch, Structured Learning",
+    description: `Batches are capped at ${trainingFeatures.batchSize.toLowerCase()}, with weekly assessments, recorded sessions and live doubt support included in every course.`,
   },
 ];
 
-export default function WhyChooseUs() {
+export default function WhyChooseSection() {
   return (
-    <section className="relative overflow-hidden py-28">
-
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
-        <div className="absolute left-[-120px] bottom-[-120px] h-[420px] w-[420px] bg-[#D4AF37]/5 blur-[130px]" />
-
-        <div className="absolute right-[-120px] top-[-120px] h-[420px] w-[420px] bg-[#D4AF37]/5 blur-[130px]" />
-
+    <section
+      id="why-choose-us"
+      aria-labelledby="why-choose-heading"
+      className="relative overflow-hidden py-20 md:py-24"
+    >
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute left-[-180px] top-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/7 blur-[180px]" />
+        <div className="absolute right-[-180px] bottom-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/6 blur-[180px]" />
       </div>
 
-      {/* CONTAINER */}
-      <div className="relative z-10 mx-auto max-w-[1400px] px-5">
+      <div className="relative z-10 mx-auto max-w-[1280px] px-5">
 
-        {/* HEADER */}
-        <div className="max-w-[820px]">
-
-          {/* BADGE */}
-          <div
+        <header className="mx-auto max-w-[820px] text-center">
+          <span
             className="
-              inline-flex
-              items-center
-              gap-2
-              rounded-full
-              border
-              border-[#D4AF37]/20
-              bg-[#D4AF37]/5
-              px-5
-              py-2.5
+              inline-flex rounded-full border border-[#D4AF37]/20
+              bg-[#D4AF37]/10 px-4 py-2 text-sm font-semibold text-[#D4AF37]
             "
           >
+            Why NG Cloud Networks
+          </span>
 
-            <div className="h-2 w-2 rounded-full bg-[#D4AF37]" />
-
-            <span className="text-sm text-[#f5e6b3]">
-              Why NG Cloud Networks
-            </span>
-
-          </div>
-
-          {/* TITLE */}
           <h2
+            id="why-choose-heading"
             className="
-              mt-8
-              text-[42px]
-              font-black
-              leading-[1]
-              tracking-[-0.04em]
-              text-white
-              md:text-[58px]
-              lg:text-[72px]
+              mt-6 text-[40px] font-black leading-[1] tracking-[-0.04em]
+              text-white md:text-[56px]
             "
           >
-            Built for
-
-            <span className="block text-[#D4AF37]">
-              Future IT Professionals
-            </span>
-
+            Built for Future IT Professionals
           </h2>
 
-          {/* DESCRIPTION */}
           <p
             className="
-              mt-8
-              max-w-[760px]
-              text-[19px]
-              leading-[1.8]
-              text-white/60
+              mx-auto mt-6 max-w-[720px] text-[17px] leading-[1.9]
+              text-white/68
             "
           >
-            NG Cloud Networks combines enterprise-level infrastructure,
-            practical implementation training and career-focused mentorship
-            to prepare students for real-world cloud, networking and
-            cybersecurity careers.
+            NG Cloud Networks combines enterprise-grade lab infrastructure,
+            a trainer with {trainer.experience} of industry experience and
+            structured placement support to prepare students in Hyderabad
+            for networking, cloud and cybersecurity roles.
           </p>
+        </header>
 
-        </div>
-
-        {/* GRID */}
-        <div className="mt-20 grid gap-7 md:grid-cols-2">
-
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {reasons.map((reason) => {
+            const Icon = reason.icon;
             return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 35 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.08,
-                }}
-                viewport={{ once: true }}
+              <div
+                key={reason.title}
                 className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-[32px]
-                  border
-                  border-white/10
-                  bg-white/[0.03]
-                  p-9
-                  backdrop-blur-xl
-                  transition-all
-                  duration-500
-                  hover:-translate-y-1
-                  hover:border-[#D4AF37]/30
-                  hover:bg-[#D4AF37]/[0.04]
+                  rounded-[28px] border border-white/10
+                  bg-white/[0.03] p-7 transition-all duration-300
+                  hover:border-[#D4AF37]/25 hover:bg-[#D4AF37]/[0.04]
                 "
               >
-
-                {/* HOVER LIGHT */}
                 <div
                   className="
-                    absolute
-                    inset-0
-                    opacity-0
-                    transition-opacity
-                    duration-500
-                    group-hover:opacity-100
-                    bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_55%)]
+                    flex h-12 w-12 items-center justify-center
+                    rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37]
                   "
-                />
-
-                {/* TOP */}
-                <div className="relative flex items-start justify-between">
-
-                  {/* ICON */}
-                  <div
-                    className="
-                      flex
-                      h-[74px]
-                      w-[74px]
-                      items-center
-                      justify-center
-                      rounded-[24px]
-                      border
-                      border-[#D4AF37]/20
-                      bg-[#D4AF37]/10
-                    "
-                  >
-
-                    <Icon className="h-8 w-8 text-[#D4AF37]" />
-
-                  </div>
-
-                  {/* ARROW */}
-                  <div
-                    className="
-                      flex
-                      h-11
-                      w-11
-                      items-center
-                      justify-center
-                      rounded-full
-                      border
-                      border-white/10
-                      bg-white/[0.03]
-                      opacity-0
-                      translate-x-2
-                      transition-all
-                      duration-500
-                      group-hover:translate-x-0
-                      group-hover:opacity-100
-                    "
-                  >
-
-                    <ArrowUpRight className="h-5 w-5 text-[#D4AF37]" />
-
-                  </div>
-
+                >
+                  <Icon className="h-6 w-6" aria-hidden="true" />
                 </div>
 
-                {/* CONTENT */}
-                <div className="relative mt-8">
+                <h3 className="mt-6 text-[19px] font-bold text-white">
+                  {reason.title}
+                </h3>
 
-                  <h3
-                    className="
-                      text-[30px]
-                      font-bold
-                      leading-[1.15]
-                      tracking-[-0.03em]
-                      text-white
-                    "
-                  >
-                    {feature.title}
-                  </h3>
-
-                  <p
-                    className="
-                      mt-6
-                      text-[16px]
-                      leading-[1.9]
-                      text-white/55
-                    "
-                  >
-                    {feature.description}
-                  </p>
-
-                </div>
-
-              </motion.div>
+                <p className="mt-3 text-[15px] leading-[1.8] text-white/65">
+                  {reason.description}
+                </p>
+              </div>
             );
           })}
-
         </div>
 
       </div>
-
     </section>
   );
 }
