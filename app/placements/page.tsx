@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import PlacementsPageClient from "@/components/placements/PlacementsPageClient";
+import PlacementsSupport from "@/components/home/PlacementSupport";
 
 export const metadata: Metadata = {
   title:
@@ -47,5 +47,5 @@ export const metadata: Metadata = {
 };
 
 export default function PlacementsPage() {
-  return <PlacementsPageClient />;
+  return <PlacementsSupport />;
 }

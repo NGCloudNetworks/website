@@ -94,10 +94,6 @@ export default function CourseFeeSection({
 
         </header>
 
-        {/* =========================================
-            PRICE
-        ========================================= */}
-
         <div className="mx-auto mt-12 max-w-[820px]">
 
           <div
@@ -218,10 +214,6 @@ export default function CourseFeeSection({
 
         </div>
 
-        {/* =========================================
-            WHAT'S INCLUDED
-        ========================================= */}
-
         <div className="mx-auto mt-16 max-w-[1100px]">
 
           <div className="flex items-center gap-3">
@@ -285,11 +277,6 @@ export default function CourseFeeSection({
           </ul>
 
         </div>
-
-        {/* =========================================
-            COMPARISON
-        ========================================= */}
-
         <div className="mx-auto mt-20 max-w-[1100px]">
 
           <header className="max-w-[780px]">
@@ -509,11 +496,6 @@ export default function CourseFeeSection({
     </section>
   );
 }
-
-
-/* =========================================
-   COURSE FACT
-========================================= */
 
 function CourseFact({
   icon,
