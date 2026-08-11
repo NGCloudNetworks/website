@@ -19,7 +19,7 @@ const course: Course = {
   category: "Advanced Networking",
 
   // TODO: replace with the real course image path
-  image: "/courses/ccnp-enterprise-training-hyderabad.jpg",
+  image: "/courses/ccnp-training-hyderabad.png",
 
   duration: "3 Months",
   price: "₹15,000",

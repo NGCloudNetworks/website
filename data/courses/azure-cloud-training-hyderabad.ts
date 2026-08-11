@@ -23,7 +23,7 @@ const course: Course = {
 
   category: "Cloud Computing",
 
-  image: "/courses/azure-cloud-training-hyderabad.jpg",
+  image: "/courses/azure-cloud-training-hyderabad.png",
 
   duration: "30 Days",
   price: "₹10,000 + 18% GST",

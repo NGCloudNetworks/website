@@ -1,308 +1,99 @@
-import {
-  ArrowUpRight,
-  Briefcase,
-  CheckCircle2,
-  Cloud,
-  Network,
-  ShieldCheck,
-  TrendingUp,
-} from "lucide-react";
-
+import { TrendingUp, Sparkles, CheckCircle2 } from "lucide-react";
 import { Course } from "@/types/course";
 
 type Props = {
   course: Course;
 };
 
-export default function WhyLearn({
-  course,
-}: Props) {
+export default function WhyLearn({ course }: Props) {
   return (
-    <section className="relative overflow-hidden py-12">
+    <section
+      id="why-learn"
+      aria-labelledby="why-learn-heading"
+      className="relative overflow-hidden py-16 md:py-20"
+    >
+      <div className="mx-auto max-w-[1000px] px-5">
 
-      {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
-
-        <div className="absolute left-[-180px] top-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/8 blur-[140px]" />
-
-        <div className="absolute right-[-180px] bottom-[-120px] h-[420px] w-[420px] rounded-full bg-[#D4AF37]/8 blur-[140px]" />
-
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-[1450px] px-5">
-
-        {/* Heading */}
-
-        <div className="mx-auto max-w-[920px] text-center">
-
-          <div
+        <header className="mx-auto max-w-[760px] text-center">
+          <span
             className="
-              inline-flex
-              rounded-full
-              border
-              border-[#D4AF37]/20
-              bg-[#D4AF37]/10
-              px-5
-              py-2
-              text-sm
-              font-semibold
-              tracking-wide
-              text-[#D4AF37]
+              inline-flex items-center gap-2 rounded-full border
+              border-[#D4AF37]/20 bg-[#D4AF37]/10 px-4 py-2
+              text-sm font-semibold text-[#D4AF37]
             "
           >
-            Why Learn This Course?
-          </div>
+            <TrendingUp className="h-4 w-4" aria-hidden="true" />
+            Industry Trend &amp; Demand
+          </span>
 
           <h2
+            id="why-learn-heading"
             className="
-              mt-8
-              text-[42px]
-              font-black
-              leading-[0.95]
-              tracking-[-0.05em]
-              text-white
-              md:text-[64px]
+              mt-6 text-[32px] font-black leading-[1.1] tracking-[-0.04em]
+              text-white md:text-[42px]
             "
           >
             {course.whyLearn.title}
           </h2>
 
-          <p
-            className="
-              mx-auto
-              mt-8
-              max-w-[860px]
-              text-[18px]
-              leading-[2]
-              text-white/65
-            "
-          >
+          {/* Direct-answer paragraph — course.whyLearn.description already
+              written as a citable claim; rendered as-is, not padded */}
+          <p className="mx-auto mt-6 text-[15.5px] leading-[1.9] text-white/70">
             {course.whyLearn.description}
           </p>
+        </header>
 
-        </div>
+        {/* Two-column layout: reasons list + a distinct "why now" callout,
+            so the trend/demand angle isn't just buried inside the bullet list */}
+        <div className="mt-14 grid gap-8 lg:grid-cols-[1fr_320px]">
 
-        {/* Content */}
-
-        <div className="mt-20 grid items-center gap-14 lg:grid-cols-[1fr_1.05fr]">
-
-          {/* Left */}
-
-          <div
-            className="
-              relative
-              overflow-hidden
-              rounded-[34px]
-              border
-              border-[#D4AF37]/15
-              bg-[#D4AF37]/[0.05]
-              p-10
-            "
-          >
-
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_65%)]" />
-
-            <div className="relative z-10">
-
+          {/* Reasons grid */}
+          <div className="grid gap-4 sm:grid-cols-2">
+            {course.whyLearn.points.map((point) => (
               <div
+                key={point}
                 className="
-                  flex
-                  h-20
-                  w-20
-                  items-center
-                  justify-center
-                  rounded-3xl
-                  bg-[#D4AF37]/10
+                  flex items-start gap-3 rounded-2xl border border-white/10
+                  bg-white/[0.03] p-5
                 "
               >
-                <TrendingUp className="h-10 w-10 text-[#D4AF37]" />
-              </div>
-
-              <h3
-                className="
-                  mt-8
-                  text-[38px]
-                  font-black
-                  leading-[1]
-                  tracking-[-0.04em]
-                  text-white
-                "
-              >
-                Build Skills That
-                <span className="block text-[#D4AF37]">
-                  Employers Need
+                <CheckCircle2
+                  className="mt-0.5 h-4 w-4 shrink-0 text-[#D4AF37]"
+                  aria-hidden="true"
+                />
+                <span className="text-[14px] leading-[1.7] text-white/75">
+                  {point}
                 </span>
-              </h3>
-
-              <p
-                className="
-                  mt-8
-                  text-[17px]
-                  leading-[2]
-                  text-white/65
-                "
-              >
-                Modern organizations rely on skilled professionals
-                who understand networking, cloud computing,
-                infrastructure and cyber security. This course
-                prepares you with practical implementation skills
-                instead of only theoretical concepts.
-              </p>
-
-              {/* Career Highlights */}
-
-              <div className="mt-10 grid gap-5 sm:grid-cols-2">
-
-                <CareerMiniCard
-                  icon={<Network className="h-7 w-7 text-[#D4AF37]" />}
-                  title="Enterprise Networking"
-                />
-
-                <CareerMiniCard
-                  icon={<Cloud className="h-7 w-7 text-[#D4AF37]" />}
-                  title="Cloud Foundation"
-                />
-
-                <CareerMiniCard
-                  icon={<ShieldCheck className="h-7 w-7 text-[#D4AF37]" />}
-                  title="Cyber Security"
-                />
-
-                <CareerMiniCard
-                  icon={<Briefcase className="h-7 w-7 text-[#D4AF37]" />}
-                  title="Career Growth"
-                />
-
               </div>
-
-            </div>
-
+            ))}
           </div>
 
-          {/* Right */}
-
+          {/* Why now — standalone trend callout, distinct visual weight */}
           <div
             className="
-              rounded-[34px]
-              border
-              border-white/10
-              bg-white/[0.03]
-              p-10
-              backdrop-blur-2xl
+              flex flex-col justify-center gap-4 rounded-[28px] border
+              border-[#D4AF37]/20 bg-[#D4AF37]/[0.05] p-7
             "
           >
-
-            <h3
-              className="
-                text-[30px]
-                font-black
-                tracking-[-0.03em]
-                text-white
-              "
-            >
-              Benefits You'll Gain
-            </h3>
-
-            <div className="mt-10 space-y-6">
-
-              {course.whyLearn.points.map((point, index) => (
-
-                <div
-                  key={index}
-                  className="
-                    flex
-                    items-start
-                    gap-4
-                  "
-                >
-
-                  <div
-                    className="
-                      mt-1
-                      flex
-                      h-10
-                      w-10
-                      items-center
-                      justify-center
-                      rounded-full
-                      bg-[#D4AF37]/10
-                    "
-                  >
-
-                    <CheckCircle2 className="h-5 w-5 text-[#D4AF37]" />
-
-                  </div>
-
-                  <p
-                    className="
-                      flex-1
-                      text-[17px]
-                      leading-[1.9]
-                      text-white/72
-                    "
-                  >
-                    {point}
-                  </p>
-
-                </div>
-
-              ))}
-
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#D4AF37]/10">
+              <Sparkles className="h-5 w-5 text-[#D4AF37]" aria-hidden="true" />
             </div>
 
+            <h3 className="text-[16px] font-bold text-white">Why Now</h3>
+
+            <p className="text-[13.5px] leading-[1.8] text-white/65">
+              As enterprises continue shifting toward hybrid and cloud-first
+              infrastructure, demand for professionals who understand{" "}
+              {course.category.toLowerCase()} continues to grow. Building
+              this skill now, backed by hands-on labs rather than theory
+              alone, positions you ahead of candidates with certification
+              knowledge but no practical implementation experience.
+            </p>
           </div>
 
         </div>
 
       </div>
-
     </section>
-  );
-}
-
-function CareerMiniCard({
-  icon,
-  title,
-}: {
-  icon: React.ReactNode;
-  title: string;
-}) {
-  return (
-    <div
-      className="
-        rounded-2xl
-        border
-        border-white/10
-        bg-black/20
-        p-5
-      "
-    >
-
-      <div
-        className="
-          flex
-          h-12
-          w-12
-          items-center
-          justify-center
-          rounded-xl
-          bg-[#D4AF37]/10
-        "
-      >
-        {icon}
-      </div>
-
-      <h4
-        className="
-          mt-5
-          text-[17px]
-          font-semibold
-          text-white
-        "
-      >
-        {title}
-      </h4>
-
-    </div>
   );
 }

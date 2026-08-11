@@ -26,7 +26,7 @@ const course: Course = {
   // TODO: replace with the real course image path — required by the
   // Course type but was missing from the original file (would have
   // broken OG image tags and Course schema `image` field on this page)
-  image: "/courses/ccna-training-hyderabad.jpg",
+  image: "/courses/ccna-training-hyderabad.png",
 
   duration: "2 Months",
   price: "₹10,000",

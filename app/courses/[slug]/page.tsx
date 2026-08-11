@@ -9,7 +9,6 @@ import CourseSnapshot from "@/components/courses/CourseSnapshot";
 import WhyLearn from "@/components/courses/WhyLearn";
 import TrainerSection from "@/components/home/TrainerSection";
 import SkillsSection from "@/components/courses/SkillsSection";
-import WhoShouldJoin from "@/components/home/WhoShouldJoin";
 import CareerOpportunities from "@/components/courses/CareerOpportunities";
 import PlacementSection from "@/components/courses/PlacementSection";
 import RelatedCourses from "@/components/courses/RelatedCourses";
@@ -23,6 +22,8 @@ import CurriculumSection from "@/components/courses/CurriculumSection";
 import TrainingScheduleSection from "@/components/home/TrainingScheduleSection";
 import EnterpriseLabsProjects from "@/components/courses/EnterpriseLabsProjects";
 import CourseFeeSection from "@/components/courses/CourseFeeSection";
+import WhoShouldJoin from "@/components/courses/WhoShouldJoin";
+import CareerPathSection from "@/components/courses/CareerPathSection";
 
 type Props = {
   params: Promise<{
@@ -287,6 +288,7 @@ export default async function CoursePage({
         <CoursesHero
           course={course}
         />
+        <WhoShouldJoin course={course}/>
         <CourseSnapshot
           course={course}
         />
@@ -299,7 +301,6 @@ export default async function CoursePage({
         <CurriculumSection
           course={course} />
         <EnterpriseLabsProjects course={course} />
-        <WhoShouldJoin/>
         <TrainingScheduleSection />
 
         {/* emitSchema=false: Person schema for the trainer is only emitted
@@ -309,6 +310,7 @@ export default async function CoursePage({
         <TrainerSection emitSchema={false} />
 
         <CourseFeeSection course={course} />
+        <CareerPathSection course={course}/>
         <PlacementSection
           course={course}
         />

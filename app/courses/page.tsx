@@ -8,6 +8,7 @@ import ComparisonSection from "@/components/home/ComparisonSection";
 import { courses } from "@/data/courses";
 import { courseCategories } from "@/data/courseLinks";
 import { Course } from "@/types/course";
+import CoursesSeoContent from "@/components/academy/CoursesSeoContent";
 
 export const metadata: Metadata = {
   title:
@@ -309,6 +310,7 @@ export default function CoursesHubPage() {
 
         {/* Institute comparison — reused trust content */}
         <ComparisonSection />
+        <CoursesSeoContent/>
 
         {/* Catalog-specific FAQ — distinct from homepage FAQ, own FAQPage schema */}
         <section aria-labelledby="catalog-faq-heading" className="py-16 md:py-20">

@@ -23,7 +23,7 @@ const course: Course = {
 
   category: "Infrastructure",
 
-  image: "/courses/f5-load-balancer-training-hyderabad.jpg",
+  image: "/courses/f5-load-balancer-training-hyderabad.png",
 
   duration: "1 Month",
   price: "₹10,000 + 18% GST",

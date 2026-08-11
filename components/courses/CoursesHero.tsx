@@ -1,553 +1,134 @@
 import Link from "next/link";
-
-import {
-  ArrowRight,
-  BookOpen,
-  LucideIcon,
-  CheckCircle2,
-  ChevronRight,
-  GraduationCap,
-  ShieldCheck,
-  Sparkles,
-} from "lucide-react";
-
+import { Clock3, IndianRupee, Users, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Course } from "@/types/course";
-import { trainingFeatures, trainingModes } from "@/data/academy";
+import { trainer } from "@/data/academy";
+
 type Props = {
   course: Course;
 };
 
-export default function CoursesHero({
-  course,
-}: Props) {
-
+export default function CoursesHero({ course }: Props) {
   return (
-
-    <section className="relative overflow-hidden pt-20 pb-12">
-
+    <section
+      aria-labelledby="course-hero-heading"
+      className="relative overflow-hidden pt-[180px] pb-16 md:pt-[220px] md:pb-20"
+    >
       {/* Background */}
-
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-
-        <div className="absolute left-[-260px] top-[-180px] h-[560px] w-[560px] rounded-full bg-[#D4AF37]/10 blur-[200px]" />
-
-        <div className="absolute right-[-240px] bottom-[-200px] h-[560px] w-[560px] rounded-full bg-[#D4AF37]/8 blur-[200px]" />
-
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute left-[-200px] top-[-140px] h-[480px] w-[480px] rounded-full bg-[#D4AF37]/8 blur-[200px]" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1450px] px-5">
+      <div className="relative z-10 mx-auto max-w-[1000px] px-5">
 
-        {/* Breadcrumb */}
-
-        <nav
-          aria-label="Breadcrumb"
-          className="mb-10"
-        >
+        {/* Breadcrumb — visible, matches BreadcrumbList schema already emitted at page level */}
+        <nav aria-label="Breadcrumb" className="mb-6 flex justify-center gap-2 text-[13px] text-white/45">
+          <Link href="/" className="hover:text-[#D4AF37]">Home</Link>
+          <span>/</span>
+          <Link href="/courses" className="hover:text-[#D4AF37]">Courses</Link>
+          <span>/</span>
+          <span className="text-white/70">{course.title}</span>
         </nav>
 
-        <div className="grid gap-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-start">
-
-          <div>
-
-            {/* Category */}
-
-            <div
-              className="
-                inline-flex
-                items-center
-                gap-2
-                rounded-full
-                border
-                border-[#D4AF37]/20
-                bg-[#D4AF37]/10
-                px-5
-                py-1
-                text-sm
-                font-semibold
-                tracking-wide
-                text-[#D4AF37]
-              "
-            >
-
-              <GraduationCap className="h-4 w-4" />
-
-              {course.category} Professional Training
-
-            </div>
-
-            {/* Heading */}
-
-            <h1
-              className="
-                mt-8
-                text-[44px]
-                font-black
-                leading-[0.95]
-                tracking-[-0.05em]
-                text-white
-                md:text-[72px]
-              "
-            >
-              {course.title}
-
-              <span className="mt-3 block text-[#D4AF37]">
-
-                Build Practical Enterprise Skills
-
-              </span>
-
-            </h1>
-
-            {/* Description */}
-
-            <p
-              className="
-                mt-8
-                max-w-[820px]
-                text-[18px]
-                leading-[2]
-                text-white/72
-              "
-            >
-              {course.excerpt}
-            </p>
-
-            {/* Trust Chips */}
-
-            <div className="mt-10 flex flex-wrap gap-3">
-
-              <TrustChip
-                icon={BookOpen}
-                text="Hands-on Enterprise Labs"
-              />
-
-              <TrustChip
-                icon={ShieldCheck}
-                text="Placement Assistance"
-              />
-
-              <TrustChip
-                icon={Sparkles}
-                text="Certification Guidance"
-              />
-
-            </div>
-
-            {/* CTA */}
-
-            <div className="mt-12 flex flex-wrap gap-5">
-
-              <Link
-                href="/contact"
-                className="
-                  inline-flex
-                  items-center
-                  gap-3
-                  rounded-full
-                  bg-[#D4AF37]
-                  px-8
-                  py-4
-                  text-[16px]
-                  font-bold
-                  text-black
-                  transition-all
-                  duration-300
-                  hover:scale-105
-                  hover:bg-[#E7C75A]
-                "
-              >
-
-                Enquire Now
-
-                <ArrowRight className="h-5 w-5" />
-
-              </Link>
-
-              <Link
-                href="#course-snapshot"
-                className="
-                  inline-flex
-                  items-center
-                  rounded-full
-                  border
-                  border-[#D4AF37]/25
-                  bg-white/[0.03]
-                  px-8
-                  py-4
-                  text-[16px]
-                  font-semibold
-                  text-white
-                  backdrop-blur-xl
-                  transition-all
-                  duration-300
-                  hover:border-[#D4AF37]
-                  hover:bg-[#D4AF37]/10
-                "
-              >
-
-                Explore Course Details
-
-              </Link>
-
-            </div>
-
-            {/* Why This Course */}
-
-            <div
-              className="
-                mt-14
-                rounded-[30px]
-                border
-                border-white/10
-                bg-white/[0.03]
-                p-8
-                backdrop-blur-xl
-              "
-            >
-
-              <h2
-                className="
-                  text-[24px]
-                  font-bold
-                  text-white
-                "
-              >
-                Why Choose This Training?
-              </h2>
-
-              <p
-                className="
-                  mt-5
-                  text-[17px]
-                  leading-[2]
-                  text-white/70
-                "
-              >
-                This program combines instructor-led learning,
-                enterprise lab practice, structured mentoring,
-                certification guidance and interview preparation to help
-                learners develop practical skills that are directly
-                applicable in real-world IT environments.
-              </p>
-
-            </div>
-
-          </div>
-
-          <div className="relative">
-
-            {/* Course Card */}
-
-            <div
-              className="
-                relative
-                overflow-hidden
-                rounded-[36px]
-                border
-                border-[#D4AF37]/15
-                bg-gradient-to-br
-                from-white/[0.05]
-                via-white/[0.03]
-                to-[#D4AF37]/[0.04]
-                backdrop-blur-2xl
-              "
-            >
-              <div className="p-8">
-
-                <h2
-                  className="
-                    text-[30px]
-                    font-black
-                    leading-tight
-                    text-white
-                  "
-                >
-                  Course Overview
-                </h2>
-
-                <p
-                  className="
-                    mt-4
-                    text-[16px]
-                    leading-[1.9]
-                    text-white/70
-                  "
-                >
-                  Everything you need to begin your learning journey,
-                  from practical training and certification guidance to
-                  interview preparation and placement assistance.
-                </p>
-
-                {/* Course Information */}
-
-                <div className="mt-10 space-y-4">
-
-                  <InfoRow
-                    title="Duration"
-                    value={course.duration}
-                  />
-
-                  <InfoRow
-                    title="Training Mode"
-                    value={trainingModes
-                  .map((training) => training.mode.replace(" Training", ""))
-                  .join(" • ")}
-                  />
-
-                  <InfoRow
-                    title="Certification"
-                    value={
-                      trainingFeatures.certificationGuidance
-                        ? "Included"
-                        : "Course Completion"
-                    }
-                  />
-
-                  <InfoRow
-                    title="Placement"
-                    value={
-                      trainingFeatures.placementAssistance
-                        ? "100% Assistance"
-                        : "Career Guidance"
-                    }
-                  />
-
-                </div>
-
-                {/* Divider */}
-
-                <div className="my-10 h-px bg-white/10" />
-
-                {/* Skills */}
-
-                <div>
-
-                  <h3
-                    className="
-                      text-[20px]
-                      font-bold
-                      text-white
-                    "
-                  >
-                    Key Skills You'll Learn
-                  </h3>
-
-                  <div className="mt-5 flex flex-wrap gap-3">
-
-                    {course.skills
-                      .slice(0, 8)
-                      .map((skill) => (
-
-                        <span
-                          key={skill}
-                          className="
-                            rounded-full
-                            border
-                            border-[#D4AF37]/15
-                            bg-[#D4AF37]/8
-                            px-4
-                            py-2
-                            text-sm
-                            font-medium
-                            text-[#F5E6B3]
-                          "
-                        >
-                          {skill}
-                        </span>
-
-                      ))}
-
-                  </div>
-
-                </div>
-
-                {/* CTA */}
-
-                <Link
-                  href="/contact"
-                  className="
-                    mt-10
-                    inline-flex
-                    w-full
-                    items-center
-                    justify-center
-                    gap-3
-                    rounded-2xl
-                    bg-[#D4AF37]
-                    px-6
-                    py-4
-                    text-[17px]
-                    font-bold
-                    text-black
-                    transition-all
-                    duration-300
-                    hover:bg-[#E7C75A]
-                  "
-                >
-
-                  Book Free Career Consultation
-
-                  <ArrowRight className="h-5 w-5" />
-
-                </Link>
-
-              </div>
-
-            </div>
-
-          </div>
-
+        <div className="text-center">
+          <span
+            className="
+              inline-flex items-center gap-2 rounded-full border
+              border-[#D4AF37]/20 bg-[#D4AF37]/10 px-4 py-2
+              text-sm font-semibold text-[#D4AF37]
+            "
+          >
+            {course.category}
+          </span>
+
+          {/* H1 */}
+          <h1
+            id="course-hero-heading"
+            className="
+              mt-6 text-[36px] font-black leading-[1.08] tracking-[-0.04em]
+              text-white md:text-[54px]
+            "
+          >
+            {course.title}
+          </h1>
+
+          {/* AEO direct-answer paragraph — self-contained, citable */}
+          <p className="mx-auto mt-6 max-w-[760px] text-[16px] leading-[1.9] text-white/70">
+            {course.excerpt}
+          </p>
+
+          {/* Trainer credibility line — E-E-A-T, ties to the same trainer entity used site-wide */}
+          <p className="mt-4 text-[13.5px] text-white/45">
+            Taught by {trainer.name}, {trainer.designation} with {trainer.experience} of industry experience
+          </p>
         </div>
+
+        {/* Front-loaded fact strip — duration, fee, batch size, right in the hero,
+            matching the pattern used by the strongest-ranking competitor pages
+            (exact numbers up top, not buried further down the page) */}
+        <div
+          className="
+            mx-auto mt-10 flex max-w-[760px] flex-col gap-4 rounded-[28px]
+            border border-[#D4AF37]/20 bg-[#D4AF37]/[0.05] p-6 sm:flex-row
+            sm:items-center sm:justify-between md:p-8
+          "
+        >
+          <div className="grid flex-1 grid-cols-3 gap-4 text-center sm:text-left">
+            <div>
+              <div className="flex items-center justify-center gap-1.5 sm:justify-start">
+                <Clock3 className="h-4 w-4 text-[#D4AF37]" aria-hidden="true" />
+                <span className="text-[11px] uppercase tracking-wide text-white/45">Duration</span>
+              </div>
+              <p className="mt-1 text-[16px] font-bold text-white">{course.duration}</p>
+            </div>
+
+            <div>
+              <div className="flex items-center justify-center gap-1.5 sm:justify-start">
+                <IndianRupee className="h-4 w-4 text-[#D4AF37]" aria-hidden="true" />
+                <span className="text-[11px] uppercase tracking-wide text-white/45">Fee</span>
+              </div>
+              <p className="mt-1 text-[16px] font-bold text-white">{course.price}</p>
+            </div>
+
+            <div>
+              <div className="flex items-center justify-center gap-1.5 sm:justify-start">
+                <Users className="h-4 w-4 text-[#D4AF37]" aria-hidden="true" />
+                <span className="text-[11px] uppercase tracking-wide text-white/45">Batch Size</span>
+              </div>
+              <p className="mt-1 text-[16px] font-bold text-white">Max 10</p>
+            </div>
+          </div>
+
+          <Link
+            href="/contact"
+            className="
+              inline-flex h-[52px] shrink-0 items-center justify-center gap-2
+              rounded-full bg-[#D4AF37] px-7 text-[14.5px] font-bold text-black
+              transition-all duration-300 hover:scale-[1.02]
+              hover:shadow-[0_0_35px_rgba(212,175,55,0.35)]
+            "
+          >
+            Book Free Demo
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        </div>
+
+        {/* Trust micro-signals — quick scan, no claim without backing data */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] text-white/50">
+          <span className="flex items-center gap-1.5">
+            <CheckCircle2 className="h-3.5 w-3.5 text-[#D4AF37]" aria-hidden="true" />
+            Live Instructor-Led Training
+          </span>
+          <span className="flex items-center gap-1.5">
+            <CheckCircle2 className="h-3.5 w-3.5 text-[#D4AF37]" aria-hidden="true" />
+            Enterprise Practical Labs
+          </span>
+          <span className="flex items-center gap-1.5">
+            <CheckCircle2 className="h-3.5 w-3.5 text-[#D4AF37]" aria-hidden="true" />
+            Placement Assistance
+          </span>
+        </div>
+
       </div>
     </section>
   );
-
-}
-
-type TrustChipProps = {
-  icon: LucideIcon;
-  text: string;
-};
-
-function TrustChip({
-  icon: Icon,
-  text,
-}: TrustChipProps) {
-
-  return (
-
-    <div
-      className="
-        inline-flex
-        items-center
-        gap-2
-        rounded-full
-        border
-        border-white/10
-        bg-white/[0.03]
-        px-4
-        py-2
-        backdrop-blur-xl
-      "
-    >
-
-      <Icon
-        className="
-          h-4
-          w-4
-          text-[#D4AF37]
-        "
-      />
-
-      <span
-        className="
-          text-sm
-          font-medium
-          text-white/80
-        "
-      >
-        {text}
-      </span>
-
-    </div>
-
-  );
-
-}
-
-type InfoRowProps = {
-  title: string;
-  value: string;
-};
-
-function InfoRow({
-  title,
-  value,
-}: InfoRowProps) {
-
-  return (
-
-    <div
-      className="
-        flex
-        items-center
-        justify-between
-        gap-6
-        rounded-2xl
-        border
-        border-white/10
-        bg-black/20
-        p-5
-      "
-    >
-
-      <span
-        className="
-          text-[15px]
-          font-medium
-          text-white/60
-        "
-      >
-        {title}
-      </span>
-
-      <span
-        className="
-          text-right
-          text-[15px]
-          font-semibold
-          text-white
-        "
-      >
-        {value}
-      </span>
-
-    </div>
-
-  );
-
-}
-
-type OutcomeItemProps = {
-  text: string;
-};
-
-function OutcomeItem({
-  text,
-}: OutcomeItemProps) {
-
-  return (
-
-    <div
-      className="
-        flex
-        items-start
-        gap-3
-      "
-    >
-
-      <CheckCircle2
-        className="
-          mt-0.5
-          h-5
-          w-5
-          shrink-0
-          text-[#D4AF37]
-        "
-      />
-
-      <p
-        className="
-          text-[16px]
-          leading-[1.8]
-          text-white/72
-        "
-      >
-        {text}
-      </p>
-
-    </div>
-
-  );
-
 }

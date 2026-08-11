@@ -19,7 +19,7 @@ const course: Course = {
   category: "Enterprise Networking",
 
   // TODO: replace with the real course image path
-  image: "/courses/cisco-sdwan-training-hyderabad.jpg",
+  image: "/courses/cisco-sdwan-training-hyderabad.png",
 
   duration: "1 Month",
   price: "₹12,000",

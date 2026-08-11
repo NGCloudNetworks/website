@@ -19,7 +19,7 @@ const course: Course = {
   category: "Cyber Security",
 
   // TODO: replace with the real course image path
-  image: "/courses/cloud-security-training-hyderabad.jpg",
+  image: "/courses/cloud-security-training-hyderabad.png",
 
   duration: "45 Days",
   price: "₹15,000",

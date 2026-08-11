@@ -23,7 +23,7 @@ const course: Course = {
 
   category: "Cyber Security",
 
-  image: "/courses/palo-alto-firewall-training-hyderabad.jpg",
+  image: "/courses/palo-alto-firewall-training-hyderabad.png",
 
   duration: "1 Month",
   price: "₹10,000 + 18% GST",

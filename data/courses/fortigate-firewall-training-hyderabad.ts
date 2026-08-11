@@ -23,7 +23,7 @@ const course: Course = {
 
   category: "Network Security",
 
-  image: "/courses/fortigate-firewall-training-hyderabad.jpg",
+  image: "/courses/fortigate-firewall-training-hyderabad.png",
 
   duration: "20 Days",
   price: "₹10,000 + 18% GST",
