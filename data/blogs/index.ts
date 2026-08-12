@@ -4,6 +4,7 @@ import f5CareerRoadMap from "./infrastructure/f5-load-balancer-career-roadmap-sc
 import ccnaCourseFeeHyd from "./networking/ccna-course-fees-in-hyderabad";
 import CCNATrainingRoadmap from "./networking/best-ccna-training-roadmap-for-beginners";
 import bestccnaTraining from "./networking/best-ccna-training-in-hyderabad";
+import ccnaWorthIt from "./networking/is-ccna-worth-it-in-2026";
 
 export const blogs = [
   paloAltoVsFortigate,
@@ -12,4 +13,5 @@ export const blogs = [
   ccnaCourseFeeHyd,
   CCNATrainingRoadmap,
   bestccnaTraining,
+  ccnaWorthIt
 ];
