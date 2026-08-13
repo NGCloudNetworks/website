@@ -470,6 +470,7 @@ export default function Navbar() {
             {/* MOBILE BUTTON */}
             <button
               onClick={() => setMobileOpen(true)}
+              aria-label="Open menu"
               className="
                 lg:hidden
                 flex
@@ -529,6 +530,7 @@ export default function Navbar() {
 
               <button
                 onClick={() => setCallOpen(false)}
+                aria-label="Close"
                 className="absolute right-5 top-5 text-white/60"
               >
                 <X className="h-6 w-6" />
@@ -718,11 +720,10 @@ export default function Navbar() {
 
               <button
                 onClick={() => setDemoOpen(false)}
+                aria-label="Close"
                 className="absolute right-5 top-5 text-white/60"
               >
-
                 <X className="h-6 w-6" />
-
               </button>
 
               <div className="max-w-[620px]">
@@ -826,8 +827,12 @@ export default function Navbar() {
                   outline-none
                 "
                 />
+                <label htmlFor="course" className="sr-only">
+                  Select Course
+                </label>
 
                 <select
+                  id="course"
                   name="course"
                   value={formData.course}
                   onChange={handleChange}
@@ -872,8 +877,11 @@ export default function Navbar() {
                   outline-none
                 "
                 />
-
+                <label htmlFor="slot" className="sr-only">
+                  Select Time Slot
+                </label>
                 <select
+                  id="slot"
                   name="slot"
                   value={formData.slot}
                   onChange={handleChange}
@@ -965,7 +973,7 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between">
           <h3 className="text-[24px] font-bold text-white">Menu</h3>
-          <button onClick={() => setMobileOpen(false)}>
+          <button onClick={() => setMobileOpen(false)} aria-label="Close menu">
             <X className="h-7 w-7 text-white" />
           </button>
         </div>

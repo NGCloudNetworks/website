@@ -28,12 +28,11 @@ const quickLinks = [
   { title: "Contact", href: "/contact" },
 ];
 
-// Fill in real profile URLs once available — omit entries you don't have yet
 const socialLinks = [
-  { icon: FaFacebookF, href: "https://facebook.com/ngcloudnetworks" },
-  { icon: FaInstagram, href: "https://instagram.com/ngcloudnetworks" },
-  { icon: FaLinkedinIn, href: "https://linkedin.com/company/ngcloudnetworks" },
-  { icon: FaYoutube, href: "https://youtube.com/@ngcloudnetworks" },
+  { icon: FaFacebookF, href: "https://facebook.com/ngcloudnetworks", label: "Facebook" },
+  { icon: FaInstagram, href: "https://instagram.com/ng_cloud_networks", label: "Instagram" },
+  { icon: FaLinkedinIn, href: "https://linkedin.com/company/ng-cloud-networks", label: "LinkedIn" },
+  { icon: FaYoutube, href: "https://youtube.com/@ngcloudnetworksofficial?si=3rn1SiCyUE3gd093", label: "YouTube" },
 ];
 
 export default function Footer() {
@@ -129,14 +128,15 @@ export default function Footer() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={item.label}
                       className="
-                        group flex h-12 w-12 items-center justify-center
-                        rounded-2xl border border-white/10 bg-white/[0.03]
-                        text-white/60 backdrop-blur-xl transition-all
-                        duration-300 hover:-translate-y-1
-                        hover:border-[#D4AF37]/40 hover:bg-[#D4AF37]/10
-                        hover:text-[#D4AF37]
-                      "
+            group flex h-12 w-12 items-center justify-center
+            rounded-2xl border border-white/10 bg-white/[0.03]
+            text-white/60 backdrop-blur-xl transition-all
+            duration-300 hover:-translate-y-1
+            hover:border-[#D4AF37]/40 hover:bg-[#D4AF37]/10
+            hover:text-[#D4AF37]
+          "
                     >
                       <Icon className="h-4 w-4" />
                     </a>
