@@ -9,6 +9,8 @@ export default function WhatsappFloat() {
     <Link
       href="https://wa.me/919989939191?text=Hello%20NG%20Cloud%20Networks,%20I%20want%20to%20know%20more%20about%20your%20courses."
       target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
       className="
         group
         fixed

@@ -15,6 +15,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ngcloudnetworks.com"),
   title: "NG Cloud Networks",
   description:
     "Best Cloud, Networking & Cyber Security Training Institute in Hyderabad.",

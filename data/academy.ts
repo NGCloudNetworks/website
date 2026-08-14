@@ -6,7 +6,7 @@ export const academyStats = {
 
 export const trainer = {
 
-  name: "Nazeer Basha",
+  name: "Nazeer",
 
   designation:
     "Senior Enterprise Network & Infrastructure Consultant",

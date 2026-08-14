@@ -104,11 +104,11 @@ export default function StudentSuccessSection() {
 
                 <span
                   className="
-                    inline-flex items-center gap-1 rounded-full
-                    border border-white/10 bg-white/[0.03] px-2.5 py-1
-                    text-[10px] font-semibold uppercase tracking-wide
-                    text-white/40
-                  "
+    inline-flex items-center gap-1 rounded-full
+    border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-2.5 py-1
+    text-[10px] font-semibold uppercase tracking-wide
+    text-[#D4AF37]
+  "
                 >
                   <ShieldCheck className="h-3 w-3" aria-hidden="true" />
                   Placed
