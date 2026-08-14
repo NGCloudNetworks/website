@@ -346,7 +346,7 @@ export default function FAQSection() {
             Common Questions About Our Training
           </h2>
 
-          <p className="mt-4 text-[13.5px] text-white/45">
+          <p className="mt-4 text-[13.5px] text-white/60">
             Answered by the NG Cloud Networks training team, Ameenpur,
             Hyderabad
           </p>

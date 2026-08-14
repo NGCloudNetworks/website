@@ -29,7 +29,7 @@ const quickLinks = [
 ];
 
 const socialLinks = [
-  { icon: FaFacebookF, href: "https://facebook.com/ngcloudnetworks", label: "Facebook" },
+  { icon: FaFacebookF, href: "https://facebook.com/ngcloudnetwork", label: "Facebook" },
   { icon: FaInstagram, href: "https://instagram.com/ng_cloud_networks", label: "Instagram" },
   { icon: FaLinkedinIn, href: "https://linkedin.com/company/ng-cloud-networks", label: "LinkedIn" },
   { icon: FaYoutube, href: "https://youtube.com/@ngcloudnetworksofficial?si=3rn1SiCyUE3gd093", label: "YouTube" },
