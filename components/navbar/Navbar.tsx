@@ -190,6 +190,7 @@ export default function Navbar() {
                   alt="NG Cloud Networks"
                   width={52}
                   height={52}
+                  quality={60}
                   className="object-contain"
                 />
 

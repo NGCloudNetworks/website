@@ -95,6 +95,7 @@ export default function Footer() {
                   alt="NG Cloud Networks"
                   width={52}
                   height={52}
+                  quality={60}
                   className="object-contain"
                 />
               </div>
@@ -290,7 +291,7 @@ export default function Footer() {
 
         {/* BOTTOM */}
         <div className="mt-14 flex flex-col items-center justify-between gap-5 border-t border-white/10 pt-8 md:flex-row">
-          <p className="text-[14px] text-white/40">
+          <p className="text-[14px] text-white/55">
             © 2026 NG Cloud Networks. All rights reserved.
           </p>
           <p className="text-[14px] text-white/40">
