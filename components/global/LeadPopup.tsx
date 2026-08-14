@@ -175,6 +175,7 @@ export default function LeadPopup() {
         {/* CLOSE */}
         <button
           onClick={() => setOpen(false)}
+          aria-label="Close"
           className="
             absolute
             right-5
@@ -363,7 +364,11 @@ export default function LeadPopup() {
               />
 
               {/* COURSE */}
+              <label htmlFor="popup-course" className="sr-only">
+                Select Course
+              </label>
               <select
+                id="popup-course"
                 name="course"
                 value={formData.course}
                 onChange={handleChange}
