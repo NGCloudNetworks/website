@@ -79,13 +79,12 @@ export default function SeoContent({
 
           <p
             className="
-              text-[19px]
-              leading-[2.1]
-              text-white/75
-            "
-          >
-            {course.seoContent.introduction}
-          </p>
+    text-[19px]
+    leading-[2.1]
+    text-white/75
+  "
+            dangerouslySetInnerHTML={{ __html: course.seoContent.introduction }}
+          />
 
         </div>
 
@@ -118,13 +117,12 @@ export default function SeoContent({
                   <p
                     key={paragraph}
                     className="
-                      text-[18px]
-                      leading-[2.05]
-                      text-white/72
-                    "
-                  >
-                    {paragraph}
-                  </p>
+      text-[18px]
+      leading-[2.05]
+      text-white/72
+    "
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
 
                 ))}
 
@@ -135,7 +133,7 @@ export default function SeoContent({
           ))}
 
         </div>
-                {/* Conclusion */}
+        {/* Conclusion */}
 
         <div className="mt-24">
 
@@ -194,14 +192,13 @@ export default function SeoContent({
 
               <p
                 className="
-                  mt-8
-                  text-[19px]
-                  leading-[2.05]
-                  text-white/72
-                "
-              >
-                {course.seoContent.conclusion}
-              </p>
+    mt-8
+    text-[19px]
+    leading-[2.05]
+    text-white/72
+  "
+                dangerouslySetInnerHTML={{ __html: course.seoContent.conclusion }}
+              />
 
             </div>
 

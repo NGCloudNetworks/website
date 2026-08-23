@@ -557,7 +557,7 @@ const course: Course = {
     },
   ],
 
-  seoContent: {
+ seoContent: {
     introduction:
       "CCNP Enterprise is Cisco's professional-level certification for networking professionals ready to move beyond CCNA into advanced enterprise infrastructure. NG Cloud Networks' CCNP Enterprise Training in Hyderabad covers advanced routing, switching, BGP, OSPF, infrastructure security and enterprise troubleshooting through hands-on Cisco labs, led by <a href='/about' style='color:#D4AF37;font-weight:700;text-decoration:none;'>Nazeer Basha</a>, a Senior Enterprise Network & Infrastructure Consultant with 14+ years of industry experience. The course is designed for CCNA-level professionals who want to specialize in enterprise networking and move toward Senior Network Engineer, Infrastructure Specialist or Network Architect roles.",
 
