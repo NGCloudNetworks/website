@@ -289,12 +289,14 @@ const course: Course = {
   ],
 
   relatedBlogs: [
-    "/blog/fortigate-course-fees-in-hyderabad",
-    "/blog/palo-alto-vs-fortigate-firewall",
-    "/blog/fortinet-nse-certification-roadmap",
-    "/blog/how-to-become-a-firewall-engineer",
-    "/blog/network-security-interview-questions",
-  ],
+  "/blog/best-fortigate-firewall-training-in-hyderabad",
+  "/blog/palo-alto-vs-fortigate-firewall",
+  // only keep the ones below if you've confirmed they're actually published:
+  // "/blog/fortigate-course-fees-in-hyderabad",
+  // "/blog/fortinet-nse-certification-roadmap",
+  // "/blog/how-to-become-a-firewall-engineer",
+  // "/blog/network-security-interview-questions",
+],
 
   // Expanded with explicit funnel-stage terms: fee/cost (BOFU), syllabus/duration (MOFU),
   // career/salary (TOFU) — each maps to a real, searched query pattern
