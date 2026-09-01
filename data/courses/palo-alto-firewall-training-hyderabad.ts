@@ -322,11 +322,11 @@ const course: Course = {
   ],
 
   relatedBlogs: [
-    "/blog/palo-alto-course-fees-in-hyderabad",
-    "/blog/palo-alto-vs-fortigate-firewall",
-    "/blog/best-palo-alto-certification-roadmap-pcnsa-pcnse",
-    "/blog/how-to-become-a-firewall-administrator",
-    "/blog/network-security-interview-questions",
+    // "/blog/palo-alto-course-fees-in-hyderabad",
+     "/blog/palo-alto-vs-fortigate-firewall",
+    // "/blog/best-palo-alto-certification-roadmap-pcnsa-pcnse",
+    // "/blog/how-to-become-a-firewall-administrator",
+    // "/blog/network-security-interview-questions",
   ],
 
   // Expanded with explicit funnel-stage terms: fee/cost (BOFU), syllabus/duration (MOFU),

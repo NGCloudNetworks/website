@@ -315,11 +315,11 @@ const course: Course = {
   ],
 
   relatedBlogs: [
-    "/blog/f5-load-balancer-course-fees-in-hyderabad",
-    "/blog/f5-load-balancer-career-scope",
-    "/blog/f5-certification-roadmap-for-beginners",
-    "/blog/how-to-become-an-adc-engineer",
-    "/blog/load-balancer-interview-questions",
+    // "/blog/f5-load-balancer-course-fees-in-hyderabad",
+     "/blog/f5-load-balancer-career-scope",
+    // "/blog/f5-certification-roadmap-for-beginners",
+    // "/blog/how-to-become-an-adc-engineer",
+    // "/blog/load-balancer-interview-questions",
   ],
 
   // Expanded with explicit funnel-stage terms: fee/cost (BOFU), syllabus/duration (MOFU),
