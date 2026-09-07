@@ -8,6 +8,7 @@ import ccnaWorthIt from "./networking/is-ccna-worth-it-in-2026";
 import bestccnp from "./networking/best-ccnp-training-in-hyderabad";
 import awsCloud from "./cloud/best-aws-training-in-hyderabad";
 import bestFortigate from "./security/best-fortigate-firewall-training-in-hyderabad";
+import bestcloud from "./cloud/best-cloud-security-training-in-hyderabad";
 
 export const blogs = [
   paloAltoVsFortigate,
@@ -20,4 +21,5 @@ export const blogs = [
   bestccnp,
   awsCloud,
   bestFortigate,
+  bestcloud,
 ];
