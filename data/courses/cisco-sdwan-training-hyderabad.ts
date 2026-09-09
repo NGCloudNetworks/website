@@ -278,7 +278,9 @@ const course: Course = {
     "/courses/palo-alto-firewall-training-hyderabad",
   ],
 
-  relatedBlogs: [],
+  relatedBlogs: [
+    "/blog/best-cloud-security-training-in-hyderabad"
+  ],
 
   tags: [
     "Cisco SD-WAN Training Hyderabad",

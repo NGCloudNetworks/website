@@ -325,7 +325,9 @@ const course: Course = {
     "/courses/ccnp-enterprise-training-hyderabad",
   ],
 
-  relatedBlogs: [],
+  relatedBlogs: [
+    "/blog/best-cloud-security-training-in-hyderabad"
+  ],
 
   tags: [
     "Cloud Security Training Hyderabad",
