@@ -10,6 +10,7 @@ import awsCloud from "./cloud/best-aws-training-in-hyderabad";
 import bestFortigate from "./security/best-fortigate-firewall-training-in-hyderabad";
 import bestCisco from "./networking/best-cisco-sdwan-training-in-hyderabad";
 import bestcloud from "./cloud/best-cloud-security-training-in-hyderabad";
+import bestPalo from "./security/best-palo-alto-firewall-training-in-hyderabad";
 
 export const blogs = [
   paloAltoVsFortigate,
@@ -24,4 +25,5 @@ export const blogs = [
   bestFortigate,
   bestcloud,
   bestCisco,
+  bestPalo,
 ];

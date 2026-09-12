@@ -494,6 +494,7 @@ const course: Course = {
   "/blog/best-ccnp-training-in-hyderabad",
   "/blog/best-ccna-training-in-hyderabad",
   "/blog/is-ccna-worth-it-in-2026",
+  "/blog/best-cisco-sdwan-training-in-hyderabad",
 ],
 
   tags: [

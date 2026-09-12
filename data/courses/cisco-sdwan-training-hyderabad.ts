@@ -279,7 +279,9 @@ const course: Course = {
   ],
 
   relatedBlogs: [
-    "/blog/best-cloud-security-training-in-hyderabad"
+    "/blog/best-cloud-security-training-in-hyderabad",
+    "/blog/best-cisco-sdwan-training-in-hyderabad",
+    "/blog/best-aws-training-in-hyderabad",
   ],
 
   tags: [

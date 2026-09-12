@@ -457,6 +457,7 @@ const course: Course = {
     "/blog/how-to-prepare-for-network-engineer-interviews",
     "/blog/palo-alto-vs-fortigate-firewall",
     "/blog/f5-load-balancer-career-scope",
+    "/blog/best-cisco-sdwan-training-in-hyderabad",
   ],
 
   // Expanded with explicit funnel-stage terms: fee/cost (BOFU), syllabus/duration (MOFU),

@@ -280,7 +280,7 @@ That is why a networking foundation is valuable before or alongside AWS. Concept
 <p style="font-size:18px;line-height:2;color:rgba(255,255,255,.78);">
 If you need to strengthen networking before moving deeply into AWS, our
 <a href="/courses/ccna-training-hyderabad" style="color:#D4AF37;font-weight:700;text-decoration:none;">CCNA Training in Hyderabad</a>
-covers the networking foundation that supports enterprise and cloud infrastructure learning.
+covers the networking foundation that supports enterprise and cloud infrastructure learning. If you're comparing institutes for that first step, see our <a href="/blog/best-ccna-training-in-hyderabad" style="color:#D4AF37;font-weight:700;text-decoration:none;">guide to the best CCNA training in Hyderabad</a>.
 </p>
 
 <h2 style="font-size:34px;font-weight:900;color:#fff;margin-top:60px;margin-bottom:24px;">
@@ -326,7 +326,7 @@ After building AWS fundamentals, learners who want a dedicated security path can
 <a href="/courses/cloud-security-training-hyderabad" style="color:#D4AF37;font-weight:700;text-decoration:none;">Cloud Security Training</a>,
 <a href="/courses/palo-alto-firewall-training-hyderabad" style="color:#D4AF37;font-weight:700;text-decoration:none;">Palo Alto Firewall Training</a>
 or
-<a href="/courses/fortigate-firewall-training-hyderabad" style="color:#D4AF37;font-weight:700;text-decoration:none;">FortiGate Firewall Training</a>.
+<a href="/courses/fortigate-firewall-training-hyderabad" style="color:#D4AF37;font-weight:700;text-decoration:none;">FortiGate Firewall Training</a>. Our guides on <a href="/blog/best-cloud-security-training-in-hyderabad" style="color:#D4AF37;font-weight:700;text-decoration:none;">cloud security training</a> and <a href="/blog/best-fortigate-firewall-training-in-hyderabad" style="color:#D4AF37;font-weight:700;text-decoration:none;">Fortigate Firewall training</a> in Hyderabad cover what to check before enrolling.
 </p>
 
 <h2 style="font-size:34px;font-weight:900;color:#fff;margin-top:60px;margin-bottom:24px;">
@@ -606,7 +606,7 @@ Our
 is designed around the idea that cloud skills should be practical. The learning path connects AWS services with networking, security, Linux, infrastructure and troubleshooting so that students understand how cloud environments operate rather than simply memorizing service definitions.
 </p>
 <p style="color:rgba(255,255,255,.75);line-height:2;">
-The program is intended to support learners who want structured AWS training, hands-on practice, certification preparation and career-oriented technical development. Students can also build on their cloud foundation through our networking and security programs as their career direction becomes clearer.
+The program is intended to support learners who want structured AWS training, hands-on practice, certification preparation and career-oriented technical development, led by <a href="/about" style="color:#D4AF37;font-weight:700;text-decoration:none;">Nazeer Basha</a>, a Senior Enterprise Network & Infrastructure Consultant with 14+ years of industry experience. Students can also build on their cloud foundation through our networking and security programs as their career direction becomes clearer.
 </p>
 <ul style="margin-top:24px;padding-left:22px;color:rgba(255,255,255,.78);line-height:2;">
 <li>Structured AWS learning path</li>
