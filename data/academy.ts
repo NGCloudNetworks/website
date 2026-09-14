@@ -14,7 +14,7 @@ export const trainer = {
   experience: "14+ Years",
 
   bio:
-    "Nazeer Basha is an experienced enterprise networking professional with more than 14 years of industry and training experience. He has trained hundreds of students, freshers and working professionals in Cisco Networking, Enterprise Infrastructure, Routing & Switching, SD-WAN, Network Security and Cloud Networking. His practical teaching methodology focuses on real-world implementation, enterprise troubleshooting, certification preparation and interview readiness.",
+    "Nazeer is an experienced enterprise networking professional with more than 14 years of industry and training experience. He has trained hundreds of students, freshers and working professionals in Cisco Networking, Enterprise Infrastructure, Routing & Switching, SD-WAN, Network Security and Cloud Networking. His practical teaching methodology focuses on real-world implementation, enterprise troubleshooting, certification preparation and interview readiness.",
 
   expertise: [
 

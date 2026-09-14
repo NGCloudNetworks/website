@@ -64,10 +64,10 @@ const values = [
 
 // Founder / Lead Trainer — real data
 const founder = {
-  name: "Nazeer Basha",
+  name: "Nazeer",
   designation: "Senior Enterprise Network & Infrastructure Consultant",
   experience: "14+ Years",
-  bio: "Nazeer Basha is an experienced enterprise networking professional with more than 14 years of industry and training experience. He has trained hundreds of students, freshers and working professionals in Cisco Networking, Enterprise Infrastructure, Routing & Switching, SD-WAN, Network Security and Cloud Networking. His practical teaching methodology focuses on real-world implementation, enterprise troubleshooting, certification preparation and interview readiness.",
+  bio: "Nazeer is an experienced enterprise networking professional with more than 14 years of industry and training experience. He has trained hundreds of students, freshers and working professionals in Cisco Networking, Enterprise Infrastructure, Routing & Switching, SD-WAN, Network Security and Cloud Networking. His practical teaching methodology focuses on real-world implementation, enterprise troubleshooting, certification preparation and interview readiness.",
   expertise: [
     "Cisco Enterprise Networking",
     "CCNA",
@@ -135,11 +135,11 @@ const testimonials = [
 const aboutFaqs = [
   {
     q: "Who founded NG Cloud Networks?",
-    a: "NG Cloud Networks was founded by Nazeer Basha, a Senior Enterprise Network & Infrastructure Consultant with 14+ years of industry and training experience in Cisco Networking, Enterprise Infrastructure, Network Security and Cloud Networking.",
+    a: "NG Cloud Networks was founded by Nazeer, a Senior Enterprise Network & Infrastructure Consultant with 14+ years of industry and training experience in Cisco Networking, Enterprise Infrastructure, Network Security and Cloud Networking.",
   },
   {
     q: "Who is the trainer at NG Cloud Networks?",
-    a: "All courses at NG Cloud Networks are trained directly by Nazeer Basha, who has trained hundreds of students, freshers and working professionals in CCNA, CCNP Enterprise, Cisco SD-WAN, Network Security and Cloud Networking with a practical, real-world implementation approach.",
+    a: "All courses at NG Cloud Networks are trained directly by Nazeer, who has trained hundreds of students, freshers and working professionals in CCNA, CCNP Enterprise, Cisco SD-WAN, Network Security and Cloud Networking with a practical, real-world implementation approach.",
   },
   {
     q: "Where is NG Cloud Networks located?",
@@ -163,10 +163,10 @@ export const metadata: Metadata = {
   title:
     "About NG Cloud Networks | Best Networking, Cloud & Cyber Security Training Institute in Hyderabad",
   description:
-    "NG Cloud Networks is a Hyderabad-based networking, cloud and cyber security training institute founded by Nazeer Basha (14+ years experience). Practical CCNA, CCNP, AWS, Azure, Palo Alto, Fortigate and F5 Load Balancer training with placement support.",
+    "NG Cloud Networks is a Hyderabad-based networking, cloud and cyber security training institute founded by Nazeer(14+ years experience). Practical CCNA, CCNP, AWS, Azure, Palo Alto, Fortigate and F5 Load Balancer training with placement support.",
   keywords: [
     "About NG Cloud Networks",
-    "Nazeer Basha",
+    "Nazeer",
     "Networking Institute Hyderabad",
     "Cloud Training Institute Hyderabad",
     "Cyber Security Training Hyderabad",
@@ -193,7 +193,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About NG Cloud Networks",
     description:
-      "Practical networking, cloud and cybersecurity training institute in Hyderabad, founded by Nazeer Basha, with enterprise labs and placement support.",
+      "Practical networking, cloud and cybersecurity training institute in Hyderabad, founded by Nazeer, with enterprise labs and placement support.",
     url: "https://ngcloudnetworks.com/about",
     siteName: "NG Cloud Networks",
     locale: "en_IN",
@@ -203,7 +203,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About NG Cloud Networks",
     description:
-      "Enterprise networking, cloud and cybersecurity training institute in Hyderabad, founded by Nazeer Basha.",
+      "Enterprise networking, cloud and cybersecurity training institute in Hyderabad, founded by Nazeer.",
   },
 };
 
@@ -248,7 +248,7 @@ export default function AboutPage() {
               <p className="mt-8 max-w-[820px] text-[18px] leading-[1.95] text-white/60">
                 NG Cloud Networks is a networking, cloud computing and
                 cyber security training institute based in Ameenpur,
-                Hyderabad, founded by Nazeer Basha, a Senior Enterprise
+                Hyderabad, founded by Nazeer, a Senior Enterprise
                 Network & Infrastructure Consultant with 14+ years of
                 industry and training experience. We offer practical
                 CCNA, CCNP, AWS, Azure, Palo Alto, Fortigate and F5
@@ -312,7 +312,7 @@ export default function AboutPage() {
       </section>
 
       <div className="sr-only">
-        NG Cloud Networks, founded by Nazeer Basha, provides practical
+        NG Cloud Networks, founded by Nazeer, provides practical
         IT training in Hyderabad including CCNA training, CCNP
         Enterprise training, AWS cloud training, Azure cloud training,
         Palo Alto firewall training, Fortigate firewall training and
@@ -399,8 +399,7 @@ export default function AboutPage() {
             <p className="mt-8 max-w-[760px] text-[18px] leading-[1.95] text-white/60">
               We focus on practical implementation, enterprise
               scenarios, interview preparation and career-oriented
-              technical training under the direct mentorship of Nazeer
-              Basha.
+              technical training under the direct mentorship of Nazeer.
             </p>
           </div>
 
@@ -448,7 +447,7 @@ export default function AboutPage() {
               <span className="block text-[#D4AF37]">Alumni Work</span>
             </h2>
             <p className="mt-7 max-w-[720px] text-[18px] leading-[1.9] text-white/60">
-              Real students, real placements — trained by Nazeer Basha
+              Real students, real placements — trained by Nazeer
               and now working across leading networking and IT
               organizations.
             </p>
@@ -619,7 +618,7 @@ export default function AboutPage() {
 
               <p className="mt-8 max-w-[760px] text-[18px] leading-[1.9] text-white/60">
                 Learn enterprise networking, cloud computing and
-                cybersecurity directly from Nazeer Basha, with
+                cybersecurity directly from Nazeer, with
                 practical labs, placement mentorship and real-world
                 implementation training.
               </p>
@@ -657,7 +656,7 @@ export default function AboutPage() {
             logo: "https://ngcloudnetworks.com/logo.png",
             telephone: "+91-9989939191",
             description:
-              "Networking, cloud computing and cyber security training institute in Hyderabad, founded by Nazeer Basha.",
+              "Networking, cloud computing and cyber security training institute in Hyderabad, founded by Nazeer.",
             founder: {
               "@type": "Person",
               name: founder.name,
