@@ -325,8 +325,9 @@ const course: Course = {
     // "/blog/how-to-become-an-azure-cloud-administrator",
     // "/blog/azure-interview-questions-for-freshers",
     "/blog/best-azure-cloud-training-in-hyderabad",
-    "/blog/best-aws-cloud-training-in-hyderabad",
+    "/blog/best-aws-training-in-hyderabad",
     "/blog/best-ccna-training-in-hyderabad",
+    "/blog/best-cloud-security-training-in-hyderabad",
   ],
 
   // Expanded with explicit funnel-stage terms: fee/cost (BOFU), syllabus/duration (MOFU),

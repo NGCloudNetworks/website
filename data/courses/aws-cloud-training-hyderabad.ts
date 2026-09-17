@@ -326,9 +326,10 @@ const course: Course = {
   ],
 
   relatedBlogs: [
-    "/blog/best-aws-cloud-training-in-hyderabad",
+    "/blog/best-aws-training-in-hyderabad",
     "/blog/best-azure-cloud-training-in-hyderabad",
     "/blog/best-ccna-training-in-hyderabad",
+    "/blog/best-cloud-security-training-in-hyderabad",
     // "/blog/aws-vs-azure-cloud-computing",
     // "/blog/best-aws-certification-roadmap-for-beginners",
     // "/blog/how-to-become-an-aws-cloud-engineer",
