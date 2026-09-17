@@ -326,11 +326,13 @@ const course: Course = {
   ],
 
   relatedBlogs: [
-    "/blog/aws-course-fees-in-hyderabad",
-    "/blog/aws-vs-azure-cloud-computing",
-    "/blog/best-aws-certification-roadmap-for-beginners",
-    "/blog/how-to-become-an-aws-cloud-engineer",
-    "/blog/aws-solutions-architect-interview-questions",
+    "/blog/best-aws-cloud-training-in-hyderabad",
+    "/blog/best-azure-cloud-training-in-hyderabad",
+    "/blog/best-ccna-training-in-hyderabad",
+    // "/blog/aws-vs-azure-cloud-computing",
+    // "/blog/best-aws-certification-roadmap-for-beginners",
+    // "/blog/how-to-become-an-aws-cloud-engineer",
+    // "/blog/aws-solutions-architect-interview-questions",
   ],
 
   // Expanded with explicit funnel-stage terms: fee/cost (BOFU), syllabus/duration (MOFU),

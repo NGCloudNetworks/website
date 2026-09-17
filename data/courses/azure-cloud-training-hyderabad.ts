@@ -319,11 +319,14 @@ const course: Course = {
   ],
 
   relatedBlogs: [
-    "/blog/azure-course-fees-in-hyderabad",
-    "/blog/aws-vs-azure-cloud-computing",
-    "/blog/best-azure-certification-roadmap-for-beginners",
-    "/blog/how-to-become-an-azure-cloud-administrator",
-    "/blog/azure-interview-questions-for-freshers",
+    // "/blog/azure-course-fees-in-hyderabad",
+    // "/blog/aws-vs-azure-cloud-computing",
+    // "/blog/best-azure-certification-roadmap-for-beginners",
+    // "/blog/how-to-become-an-azure-cloud-administrator",
+    // "/blog/azure-interview-questions-for-freshers",
+    "/blog/best-azure-cloud-training-in-hyderabad",
+    "/blog/best-aws-cloud-training-in-hyderabad",
+    "/blog/best-ccna-training-in-hyderabad",
   ],
 
   // Expanded with explicit funnel-stage terms: fee/cost (BOFU), syllabus/duration (MOFU),
