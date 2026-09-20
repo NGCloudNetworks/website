@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "NG Cloud Networks",
   description:
     "Best Cloud, Networking & Cyber Security Training Institute in Hyderabad.",
+  other: {
+    "facebook-domain-verification": "e4niu7b899rxe5mwyrt8a3i9a08k2d",
+  },
 };
 
 export default function RootLayout({
