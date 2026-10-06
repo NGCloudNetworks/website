@@ -16,6 +16,7 @@ import StudentSuccessSection from "@/components/home/StudentSuccessSection";
 import FinalCTASection from "@/components/home/FinalCTASection";
 import CareerGuideSection from "@/components/home/CareerGuideSection";
 import CourseSelectionGuideSection from "@/components/home/CourseSelectionGuideSection";
+import UpcomingBatch from "@/components/home/UpcomingBatch";
 
 export const metadata: Metadata = {
   title:
@@ -121,6 +122,7 @@ export default function HomePage() {
         <Navbar />
 
         <HeroSection />
+        <UpcomingBatch/>
         <WhyChooseSection />
         <TrainerSection />
 
