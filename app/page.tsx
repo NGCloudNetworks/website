@@ -17,6 +17,7 @@ import FinalCTASection from "@/components/home/FinalCTASection";
 import CareerGuideSection from "@/components/home/CareerGuideSection";
 import CourseSelectionGuideSection from "@/components/home/CourseSelectionGuideSection";
 import UpcomingBatch from "@/components/home/UpcomingBatch";
+import AnnouncementTicker from "@/components/home/AnnouncementSticker";
 
 export const metadata: Metadata = {
   title:
@@ -119,10 +120,17 @@ export default function HomePage() {
             Every keyword here is already covered naturally in visible
             copy across Hero, Why Choose, Courses Grid and FAQ. */}
 
-        <Navbar />
+        <header className="relative z-50">
 
+          <Navbar />
+
+          <div className="mt-[122px]">
+            <AnnouncementTicker />
+          </div>
+
+        </header>
         <HeroSection />
-        <UpcomingBatch/>
+        <UpcomingBatch />
         <WhyChooseSection />
         <TrainerSection />
 

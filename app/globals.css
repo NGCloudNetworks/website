@@ -273,7 +273,131 @@ body {
 .batch-contact a:hover {
   color: #d4af37;
 }
+/* =========================================
+   NG CLOUD NETWORKS - ANNOUNCEMENT TICKER
+========================================= */
 
+.announcement-ticker {
+  position: relative;
+  z-index: 40;
+  width: 100%;
+  height: 46px;
+  overflow: hidden;
+
+  background: #d4af37;
+  color: #050505;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+.announcement-ticker-link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.announcement-track {
+  display: flex;
+  width: max-content;
+  min-width: 100%;
+
+  animation: announcement-scroll 28s linear infinite;
+}
+
+.announcement-content {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  height: 46px;
+
+  padding-right: 70px;
+
+  white-space: nowrap;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+}
+
+.announcement-content strong {
+  font-weight: 900;
+}
+
+.announcement-icon {
+  margin-right: 9px;
+  font-size: 15px;
+}
+
+.announcement-separator {
+  margin: 0 17px;
+  opacity: 0.55;
+  font-weight: 900;
+}
+
+@keyframes announcement-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause when user interacts */
+.announcement-ticker:hover .announcement-track {
+  animation-play-state: paused;
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .announcement-ticker {
+    height: 44px;
+  }
+
+  .announcement-content {
+    height: 44px;
+    padding-right: 55px;
+
+    font-size: 11px;
+    letter-spacing: 0.025em;
+  }
+
+  .announcement-separator {
+    margin: 0 12px;
+  }
+
+  .announcement-icon {
+    font-size: 13px;
+    margin-right: 6px;
+  }
+
+  .announcement-track {
+    animation-duration: 22s;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .announcement-track {
+    animation: none;
+  }
+
+  .announcement-content:nth-child(2) {
+    display: none;
+  }
+}
 /* Tablet */
 
 @media (max-width: 1000px) {
