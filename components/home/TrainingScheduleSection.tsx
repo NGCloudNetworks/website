@@ -1,7 +1,15 @@
-import { Monitor, Building2, Shuffle, Clock3, Globe2 } from "lucide-react";
+import Link from "next/link";
+import {
+  Monitor,
+  Building2,
+  Shuffle,
+  Clock3,
+  Globe2,
+  ArrowRight,
+} from "lucide-react";
 import {
   trainingModes,
-  batchTimings,
+  courseBatches,
   weekendSchedule,
   internationalStudents,
 } from "@/data/academy";
@@ -12,7 +20,29 @@ const modeIcons: Record<string, React.ElementType> = {
   "Hybrid Training": Shuffle,
 };
 
-export default function TrainingScheduleSection() {
+const periods = ["Morning", "Afternoon", "Evening"] as const;
+
+function joinList(items: string[]) {
+  if (items.length <= 1) return items.join("");
+  return `${items.slice(0, -1).join(", ")} and ${items[items.length - 1]}`;
+}
+
+type Props = {
+  /** Pass the course slug on course pages to show only that course's batches. */
+  courseSlug?: string;
+};
+
+export default function TrainingScheduleSection({ courseSlug }: Props) {
+  const courseSlots = courseSlug
+    ? courseBatches.filter((b) => b.courseSlug === courseSlug)
+    : [];
+
+  const heading = !courseSlug
+    ? "Weekday Batch Timings"
+    : courseSlots.length > 0
+      ? `${courseSlots[0].course} Batch Timings`
+      : "Batch Timings";
+
   return (
     <section
       id="training-schedule"
@@ -96,48 +126,181 @@ export default function TrainingScheduleSection() {
 
         {/* Weekday Batch Timings */}
         <div className="mt-20">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <Clock3 className="h-5 w-5 text-[#D4AF37]" aria-hidden="true" />
-            <h3 className="text-[24px] font-bold text-white">
-              Weekday Batch Timings
-            </h3>
+            <h3 className="text-[24px] font-bold text-white">{heading}</h3>
+            <span
+              className="
+                rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10
+                px-3 py-1 text-xs font-semibold text-[#D4AF37]
+              "
+            >
+              Online + Offline
+            </span>
           </div>
 
-          <div className="mt-7 overflow-hidden rounded-2xl border border-white/10">
-            <table className="w-full border-collapse text-left">
-              <caption className="sr-only">
-                Weekday training batch timings and who each batch suits
-              </caption>
-              <thead>
-                <tr className="border-b border-white/10 bg-white/[0.03]">
-                  <th scope="col" className="px-6 py-4 text-sm font-semibold text-white/60">
-                    Batch
-                  </th>
-                  <th scope="col" className="px-6 py-4 text-sm font-semibold text-[#D4AF37]">
-                    Timing
-                  </th>
-                  <th scope="col" className="px-6 py-4 text-sm font-semibold text-white/60">
-                    Suitable For
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {batchTimings.map((batch) => (
-                  <tr key={batch.batch} className="border-b border-white/10 last:border-b-0">
-                    <th scope="row" className="px-6 py-4 text-sm font-medium text-white/80">
-                      {batch.batch}
-                    </th>
-                    <td className="px-6 py-4 text-sm font-semibold text-[#D4AF37]">
-                      {batch.time}
-                    </td>
-                    <td className="px-6 py-4 text-sm text-white/55">
-                      {batch.suitableFor}
-                    </td>
-                  </tr>
+          {/* A) Homepage: full timetable */}
+          {!courseSlug && (
+            <>
+              <div className="mt-7 overflow-x-auto rounded-2xl border border-white/10">
+                <table className="w-full border-collapse text-left">
+                  <caption className="sr-only">
+                    Weekday training batch timings by course and trainer. All
+                    batches are available online and offline.
+                  </caption>
+                  <thead>
+                    <tr className="border-b border-white/10 bg-white/[0.03]">
+                      <th scope="col" className="px-4 py-4 text-sm font-semibold text-[#D4AF37] md:px-6">
+                        Timing
+                      </th>
+                      <th scope="col" className="px-4 py-4 text-sm font-semibold text-white/60 md:px-6">
+                        Course
+                      </th>
+                      <th scope="col" className="px-4 py-4 text-sm font-semibold text-white/60 md:px-6">
+                        Trainer
+                      </th>
+                    </tr>
+                  </thead>
+
+                  {periods.map((period) => {
+                    const slots = courseBatches.filter((b) => b.period === period);
+                    if (slots.length === 0) return null;
+
+                    return (
+                      <tbody key={period}>
+                        <tr className="bg-white/[0.02]">
+                          <th
+                            colSpan={3}
+                            scope="rowgroup"
+                            className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-white/45 md:px-6"
+                          >
+                            {period}
+                          </th>
+                        </tr>
+                        {slots.map((slot) => (
+                          <tr
+                            key={`${slot.courseSlug}-${slot.time}`}
+                            className="border-b border-white/10 last:border-b-0"
+                          >
+                            <td className="whitespace-nowrap px-4 py-4 text-sm font-semibold text-[#D4AF37] md:px-6">
+                              {slot.time}
+                            </td>
+                            <td className="px-4 py-4 text-sm font-medium md:px-6">
+                              <Link
+                                href={`/courses/${slot.courseSlug}`}
+                                className="text-white/85 transition-colors hover:text-[#D4AF37]"
+                              >
+                                {slot.course}
+                              </Link>
+                            </td>
+                            <td className="px-4 py-4 text-sm text-white/55 md:px-6">
+                              {slot.trainer}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    );
+                  })}
+                </table>
+              </div>
+
+              <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <p className="text-[13.5px] leading-[1.7] text-white/50">
+                  Timings are subject to batch availability. For other
+                  courses, contact us for the next batch dates.
+                </p>
+                <Link
+                  href="/contact"
+                  className="
+                    group inline-flex h-[52px] shrink-0 items-center justify-center
+                    gap-2 rounded-full bg-[#D4AF37] px-7 text-[15px]
+                    font-semibold text-black transition-all duration-300
+                    hover:scale-[1.02]
+                  "
+                >
+                  Check batch availability
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </>
+          )}
+
+          {/* B) Course page: only this course's slots */}
+          {courseSlug && courseSlots.length > 0 && (
+            <>
+              <p className="mt-5 max-w-[820px] text-[15px] leading-[1.8] text-white/65">
+                {courseSlots[0].course}{" "}
+                {courseSlots.length === 1 ? "batch runs" : "batches run"} on
+                weekdays at {joinList(courseSlots.map((s) => s.time))}, online
+                and offline.
+              </p>
+
+              <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {courseSlots.map((slot) => (
+                  <div
+                    key={slot.time}
+                    className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+                  >
+                    <p className="text-[12px] font-semibold uppercase tracking-wider text-white/45">
+                      {slot.period}
+                    </p>
+                    <p className="mt-2 text-[20px] font-bold text-[#D4AF37]">
+                      {slot.time}
+                    </p>
+                    <p className="mt-3 text-[14.5px] text-white/65">
+                      Trainer: {slot.trainer}
+                    </p>
+                  </div>
                 ))}
-              </tbody>
-            </table>
-          </div>
+              </div>
+
+              <div className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Link
+                  href="/contact"
+                  className="
+                    group inline-flex h-[52px] items-center justify-center
+                    gap-2 rounded-full bg-[#D4AF37] px-7 text-[15px]
+                    font-semibold text-black transition-all duration-300
+                    hover:scale-[1.02]
+                  "
+                >
+                  Check batch availability
+                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+                <Link
+                  href="/#training-schedule"
+                  className="text-[14.5px] font-medium text-white/60 underline underline-offset-4 transition-colors hover:text-[#D4AF37]"
+                >
+                  See the full weekday timetable
+                </Link>
+              </div>
+
+              <p className="mt-5 text-[13.5px] text-white/50">
+                Timings are subject to batch availability.
+              </p>
+            </>
+          )}
+
+          {/* C) Course page with no listed slots yet */}
+          {courseSlug && courseSlots.length === 0 && (
+            <div className="mt-7 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:flex sm:items-center sm:justify-between sm:gap-6">
+              <p className="text-[15px] leading-[1.8] text-white/65">
+                Contact our team for the next batch timings for this course.
+              </p>
+              <Link
+                href="/contact"
+                className="
+                  group mt-5 inline-flex h-[52px] shrink-0 items-center
+                  justify-center gap-2 rounded-full bg-[#D4AF37] px-7
+                  text-[15px] font-semibold text-black transition-all
+                  duration-300 hover:scale-[1.02] sm:mt-0
+                "
+              >
+                Check batch availability
+                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          )}
         </div>
 
         {/* Weekend Schedule */}

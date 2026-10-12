@@ -301,7 +301,7 @@ export default async function CoursePage({
         <CurriculumSection
           course={course} />
         <EnterpriseLabsProjects course={course} />
-        <TrainingScheduleSection />
+        <TrainingScheduleSection courseSlug={course.slug} />
 
         {/* emitSchema=false: Person schema for the trainer is only emitted
             once, on the homepage, where the canonical @id is defined.

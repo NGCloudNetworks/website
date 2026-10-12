@@ -330,3 +330,62 @@ export const trainingComparison = [
     industry: "Provider dependent",
   },
 ];
+export type CourseBatch = {
+  course: string;
+  courseSlug: string; // must match the /courses/[slug] route
+  period: "Morning" | "Afternoon" | "Evening";
+  time: string;
+  trainer: string;
+};
+
+export const courseBatches: CourseBatch[] = [
+  {
+    course: "CCNP Enterprise",
+    courseSlug: "ccnp-enterprise-training-hyderabad",
+    period: "Morning",
+    time: "7:15 – 8:30 AM",
+    trainer: "Nazeer Basha",
+  },
+  {
+    course: "CCNA 200-301",
+    courseSlug: "ccna-training-hyderabad",
+    period: "Morning",
+    time: "8:30 – 10:00 AM",
+    trainer: "Nazeer Basha",
+  },
+  {
+    course: "CCNA 200-301",
+    courseSlug: "ccna-training-hyderabad",
+    period: "Morning",
+    time: "11:00 AM – 12:30 PM",
+    trainer: "Nazeer Basha",
+  },
+  {
+    course: "CCNA 200-301",
+    courseSlug: "ccna-training-hyderabad",
+    period: "Afternoon",
+    time: "2:00 – 3:30 PM",
+    trainer: "Nazeer Basha",
+  },
+  {
+    course: "CCNP Enterprise",
+    courseSlug: "ccnp-enterprise-training-hyderabad",
+    period: "Evening",
+    time: "7:00 – 8:30 PM",
+    trainer: "Nazeer Basha",
+  },
+  {
+    course: "Cloud Security",
+    courseSlug: "cloud-security-training-hyderabad",
+    period: "Evening",
+    time: "7:30 – 9:00 PM",
+    trainer: "Cloud Security specialist trainer",
+  },
+  {
+    course: "Palo Alto Firewall",
+    courseSlug: "palo-alto-firewall-training-hyderabad",
+    period: "Evening",
+    time: "8:30 – 10:00 PM",
+    trainer: "Nazeer Basha",
+  },
+];

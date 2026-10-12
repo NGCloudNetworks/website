@@ -13,6 +13,7 @@ import bestcloud from "./cloud/best-cloud-security-training-in-hyderabad";
 import bestPalo from "./security/best-palo-alto-firewall-training-in-hyderabad";
 import bestazure from "./cloud/best-azure-cloud-training-in-hyderabad";
 import ccnavsccnp from "./networking/ccna-vs-ccnp-which-should-you-learn-first";
+import awsvsazure from "./cloud/aws-vs-azure-which-cloud-platform-should-learn-in-2026";
 
 export const blogs = [
   paloAltoVsFortigate,
@@ -29,5 +30,6 @@ export const blogs = [
   bestCisco,
   bestPalo,
   bestazure,
-  ccnavsccnp
+  ccnavsccnp,
+  awsvsazure,
 ];
