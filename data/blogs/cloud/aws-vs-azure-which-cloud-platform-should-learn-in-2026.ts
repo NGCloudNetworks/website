@@ -8,7 +8,7 @@ const blog: Blog = {
   seoTitle: "AWS vs Azure in 2026: Which Cloud Platform Should You Learn?",
   seoDescription: "Compare AWS vs Azure in 2026: services, certifications, jobs in India, learning curve, salary factors, projects, pricing and how to choose cloud training in Hyderabad.",
   excerpt: "Confused between AWS and Azure? Compare cloud services, certifications, career paths, practical projects and learning requirements to choose the right platform for your goals in 2026.",
-  image: "/images/blog/aws-vs-azure-which-cloud-platform-learn-2026.jpg",
+  image: "/images/blog/aws-vs-azure-cloud.png",
   author: "Nazeer Basha",
   publishedDate: "2026-10-12",
   readTime: "20 min read",
