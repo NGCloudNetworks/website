@@ -27,6 +27,21 @@ function joinList(items: string[]) {
   return `${items.slice(0, -1).join(", ")} and ${items[items.length - 1]}`;
 }
 
+function ModeBadge({ mode }: { mode: string }) {
+  return (
+    <span
+      className="
+        inline-flex items-center gap-1.5 whitespace-nowrap rounded-full
+        border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-3 py-1
+        text-xs font-semibold text-[#D4AF37]
+      "
+    >
+      <Monitor className="h-3 w-3" aria-hidden="true" />
+      {mode}
+    </span>
+  );
+}
+
 type Props = {
   /** Pass the course slug on course pages to show only that course's batches. */
   courseSlug?: string;
@@ -42,6 +57,10 @@ export default function TrainingScheduleSection({ courseSlug }: Props) {
     : courseSlots.length > 0
       ? `${courseSlots[0].course} Batch Timings`
       : "Batch Timings";
+
+  const allHybrid =
+    courseSlots.length > 0 &&
+    courseSlots.every((s) => s.mode === "Online + Offline");
 
   return (
     <section
@@ -126,38 +145,34 @@ export default function TrainingScheduleSection({ courseSlug }: Props) {
 
         {/* Weekday Batch Timings */}
         <div className="mt-20">
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex items-center gap-3">
             <Clock3 className="h-5 w-5 text-[#D4AF37]" aria-hidden="true" />
             <h3 className="text-[24px] font-bold text-white">{heading}</h3>
-            <span
-              className="
-                rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10
-                px-3 py-1 text-xs font-semibold text-[#D4AF37]
-              "
-            >
-              Online + Offline
-            </span>
           </div>
 
           {/* A) Homepage: full timetable */}
           {!courseSlug && (
             <>
-              <div className="mt-7 overflow-x-auto rounded-2xl border border-white/10">
+              {/* Desktop / tablet: table */}
+              <div className="mt-7 hidden overflow-hidden rounded-2xl border border-white/10 md:block">
                 <table className="w-full border-collapse text-left">
                   <caption className="sr-only">
-                    Weekday training batch timings by course and trainer. All
-                    batches are available online and offline.
+                    Weekday training batch timings by course, trainer and
+                    training mode
                   </caption>
                   <thead>
                     <tr className="border-b border-white/10 bg-white/[0.03]">
-                      <th scope="col" className="px-4 py-4 text-sm font-semibold text-[#D4AF37] md:px-6">
+                      <th scope="col" className="px-6 py-4 text-sm font-semibold text-[#D4AF37]">
                         Timing
                       </th>
-                      <th scope="col" className="px-4 py-4 text-sm font-semibold text-white/60 md:px-6">
+                      <th scope="col" className="px-6 py-4 text-sm font-semibold text-white/60">
                         Course
                       </th>
-                      <th scope="col" className="px-4 py-4 text-sm font-semibold text-white/60 md:px-6">
+                      <th scope="col" className="px-6 py-4 text-sm font-semibold text-white/60">
                         Trainer
+                      </th>
+                      <th scope="col" className="px-6 py-4 text-sm font-semibold text-white/60">
+                        Mode
                       </th>
                     </tr>
                   </thead>
@@ -170,9 +185,9 @@ export default function TrainingScheduleSection({ courseSlug }: Props) {
                       <tbody key={period}>
                         <tr className="bg-white/[0.02]">
                           <th
-                            colSpan={3}
+                            colSpan={4}
                             scope="rowgroup"
-                            className="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-white/45 md:px-6"
+                            className="px-6 py-3 text-xs font-semibold uppercase tracking-wider text-white/45"
                           >
                             {period}
                           </th>
@@ -182,10 +197,10 @@ export default function TrainingScheduleSection({ courseSlug }: Props) {
                             key={`${slot.courseSlug}-${slot.time}`}
                             className="border-b border-white/10 last:border-b-0"
                           >
-                            <td className="whitespace-nowrap px-4 py-4 text-sm font-semibold text-[#D4AF37] md:px-6">
+                            <td className="whitespace-nowrap px-6 py-4 text-sm font-semibold text-[#D4AF37]">
                               {slot.time}
                             </td>
-                            <td className="px-4 py-4 text-sm font-medium md:px-6">
+                            <td className="px-6 py-4 text-sm font-medium">
                               <Link
                                 href={`/courses/${slot.courseSlug}`}
                                 className="text-white/85 transition-colors hover:text-[#D4AF37]"
@@ -193,8 +208,11 @@ export default function TrainingScheduleSection({ courseSlug }: Props) {
                                 {slot.course}
                               </Link>
                             </td>
-                            <td className="px-4 py-4 text-sm text-white/55 md:px-6">
+                            <td className="px-6 py-4 text-sm text-white/55">
                               {slot.trainer}
+                            </td>
+                            <td className="px-6 py-4">
+                              <ModeBadge mode={slot.mode} />
                             </td>
                           </tr>
                         ))}
@@ -202,6 +220,46 @@ export default function TrainingScheduleSection({ courseSlug }: Props) {
                     );
                   })}
                 </table>
+              </div>
+
+              {/* Mobile: cards grouped by time of day */}
+              <div className="mt-7 space-y-7 md:hidden">
+                {periods.map((period) => {
+                  const slots = courseBatches.filter((b) => b.period === period);
+                  if (slots.length === 0) return null;
+
+                  return (
+                    <div key={period}>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-white/45">
+                        {period}
+                      </p>
+                      <div className="mt-3 space-y-3">
+                        {slots.map((slot) => (
+                          <div
+                            key={`${slot.courseSlug}-${slot.time}`}
+                            className="rounded-2xl border border-white/10 bg-white/[0.03] p-5"
+                          >
+                            <p className="text-[18px] font-bold text-[#D4AF37]">
+                              {slot.time}
+                            </p>
+                            <Link
+                              href={`/courses/${slot.courseSlug}`}
+                              className="mt-1 block text-[16px] font-semibold text-white/90"
+                            >
+                              {slot.course}
+                            </Link>
+                            <p className="mt-1 text-[13.5px] text-white/55">
+                              Trainer: {slot.trainer}
+                            </p>
+                            <div className="mt-3">
+                              <ModeBadge mode={slot.mode} />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
 
               <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -231,8 +289,8 @@ export default function TrainingScheduleSection({ courseSlug }: Props) {
               <p className="mt-5 max-w-[820px] text-[15px] leading-[1.8] text-white/65">
                 {courseSlots[0].course}{" "}
                 {courseSlots.length === 1 ? "batch runs" : "batches run"} on
-                weekdays at {joinList(courseSlots.map((s) => s.time))}, online
-                and offline.
+                weekdays at {joinList(courseSlots.map((s) => s.time))}
+                {allHybrid ? ", online and offline." : "."}
               </p>
 
               <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -250,6 +308,9 @@ export default function TrainingScheduleSection({ courseSlug }: Props) {
                     <p className="mt-3 text-[14.5px] text-white/65">
                       Trainer: {slot.trainer}
                     </p>
+                    <div className="mt-4">
+                      <ModeBadge mode={slot.mode} />
+                    </div>
                   </div>
                 ))}
               </div>
