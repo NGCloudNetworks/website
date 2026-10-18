@@ -124,13 +124,13 @@ export default function HomePage() {
 
           <Navbar />
 
-          <div className="mt-[122px]">
+          {/* <div className="mt-[122px]">
             <AnnouncementTicker />
-          </div>
+          </div> */}
 
         </header>
         <HeroSection />
-        <UpcomingBatch />
+        {/* <UpcomingBatch /> */}
         <WhyChooseSection />
         <TrainerSection />
 
