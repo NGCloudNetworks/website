@@ -1,6 +1,19 @@
 import Link from "next/link";
-import { ShieldCheck, Users2, Award, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { academyStats, trainer } from "@/data/academy";
+
+const heroCourses = [
+  { label: "CCNA", href: "/courses/ccna-training-hyderabad" },
+  { label: "CCNP Enterprise", href: "/courses/ccnp-enterprise-training-hyderabad" },
+  { label: "CCNP Core", href: "/courses/ccnp-core-training-hyderabad" },
+  { label: "AWS Cloud", href: "/courses/aws-training-hyderabad" },
+  { label: "Azure Cloud", href: "/courses/azure-cloud-training-hyderabad" },
+  { label: "Multi-Cloud Security", href: "/courses/cloud-security-training-hyderabad" },
+  { label: "Palo Alto Firewall", href: "/courses/palo-alto-firewall-training-hyderabad" },
+  { label: "FortiGate Firewall", href: "/courses/fortigate-firewall-training-hyderabad" },
+  { label: "F5 Load Balancer", href: "/courses/f5-load-balancer-training-hyderabad" },
+  { label: "Cisco SD-WAN", href: "/courses/cisco-sdwan-training-hyderabad" },
+];
 
 export default function HeroSection() {
   const heroSchema = {
@@ -11,18 +24,34 @@ export default function HeroSection() {
     url: "https://www.ngcloudnetworks.com",
     logo: "https://www.ngcloudnetworks.com/logo/ng-icon.png",
     description:
-      "NG Cloud Networks is a networking, cloud and cyber security training institute in Ameenpur, Hyderabad, offering CCNA, CCNP, AWS, Azure, Palo Alto, Fortigate, F5 and Cisco SD-WAN training with practical labs and placement support.",
+      "NG Cloud Networks is a networking, cloud and cybersecurity training institute in Ameenpur, Hyderabad, offering CCNA, CCNP Enterprise, CCNP Core, AWS, Microsoft Azure, Multi-Cloud Security, Palo Alto Firewall, FortiGate Firewall, F5 Load Balancer and Cisco SD-WAN training with hands-on labs and placement support.",
     address: {
       "@type": "PostalAddress",
       streetAddress:
         "H.no:5-125/1/30, Plot No. 30, Royal Homes, Fusion School Back Side, Ameenpur",
       addressLocality: "Hyderabad",
       addressRegion: "Telangana",
-      postalCode: "502032", // confirm real PIN
+      postalCode: "502032",
       addressCountry: "IN",
     },
     telephone: "+91-9989939191",
-    // sameAs omitted until real profile URLs are confirmed — see note below
+    areaServed: [
+      { "@type": "City", name: "Hyderabad" },
+      { "@type": "State", name: "Telangana" },
+      { "@type": "State", name: "Andhra Pradesh" },
+    ],
+    knowsAbout: [
+      "CCNA",
+      "CCNP Enterprise",
+      "AWS Cloud",
+      "Microsoft Azure",
+      "Multi-Cloud Security",
+      "Palo Alto Firewall",
+      "FortiGate Firewall",
+      "F5 Load Balancer",
+      "Cisco SD-WAN",
+      "Network Security",
+    ],
   };
 
   return (
@@ -61,7 +90,7 @@ export default function HeroSection() {
             text-white md:text-[64px]
           "
         >
-          Best CCNA, CCNP &amp; Cloud Security
+          Best CCNA, CCNP &amp; Multi-Cloud Security
           <span className="block text-[#D4AF37]">Training Institute in Hyderabad</span>
         </h1>
 
@@ -71,13 +100,16 @@ export default function HeroSection() {
             text-white/70 md:text-[18px]
           "
         >
-          NG Cloud Networks is a Hyderabad-based training institute offering
-          practical CCNA, CCNP Enterprise, CCNP Core, AWS, Azure, Palo Alto,
-          Fortigate, F5 Load Balancer and Cisco SD-WAN training. Led by{" "}
-          {trainer.name}, a {trainer.designation.toLowerCase()} with{" "}
-          {trainer.experience} of industry experience, courses run on real
-          enterprise lab equipment with certification guidance, interview
-          preparation and placement support.
+          NG Cloud Networks is a networking, cloud and cybersecurity training
+          institute in Ameenpur, Hyderabad. We teach CCNA, CCNP Enterprise,
+          CCNP Core, AWS, Microsoft Azure, Multi-Cloud Security, Palo Alto
+          Firewall, FortiGate Firewall, F5 Load Balancer and Cisco SD-WAN
+          through live online and classroom batches with hands-on enterprise
+          labs. Training is led by {trainer.name}, a{" "}
+          {trainer.designation.toLowerCase()} with{" "}
+          {trainer.experience.toLowerCase()} of industry experience, and
+          includes certification guidance, interview preparation and
+          placement support.
         </p>
 
         <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -106,6 +138,26 @@ export default function HeroSection() {
             Explore All Courses
           </Link>
         </div>
+
+        <nav aria-label="Courses offered at NG Cloud Networks" className="mt-8">
+          <ul className="mx-auto flex max-w-[900px] flex-wrap items-center justify-center gap-2.5">
+            {heroCourses.map((course) => (
+              <li key={course.href}>
+                <Link
+                  href={course.href}
+                  className="
+                    inline-flex rounded-full border border-white/10
+                    bg-white/[0.03] px-4 py-2 text-[13px] font-medium
+                    text-white/70 transition-all duration-300
+                    hover:border-[#D4AF37]/35 hover:text-[#D4AF37]
+                  "
+                >
+                  {course.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <dl
           className="
