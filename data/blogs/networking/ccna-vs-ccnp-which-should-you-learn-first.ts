@@ -4,15 +4,15 @@ const blog: Blog = {
   slug: "ccna-vs-ccnp-which-should-you-learn-first",
   featured: true,
   category: "Networking Career Guide",
-  title: "CCNA vs CCNP: Which Should You Learn First?",
-  seoTitle: "CCNA vs CCNP: Which Should You Learn First? | 2026 Guide",
+  title: "CCNA vs CCNP: Differences, Salary, Career Scope & Which to Choose",
+  seoTitle: "CCNA vs CCNP: Differences, Salary & Which to Choose (2026)",
   seoDescription:
-    "CCNA vs CCNP explained: learn which Cisco certification to start with, CCNA vs CCNP differences, prerequisites, syllabus, careers, roadmap, and when to move to CCNP Enterprise.",
+    "Compare CCNA vs CCNP Enterprise: key differences, syllabus, exam path, Hyderabad salary context, career options and the right certification roadmap for beginners and working engineers.",
   excerpt:
     "Confused between CCNA and CCNP? This practical 2026 guide explains which Cisco certification you should learn first based on your experience, networking skills, career goals, syllabus, and certification path.",
   image: "/images/blog/ccna-vs-ccnp-which-should-you-learn-first.jpg",
   author: "Nazeer Basha",
-  publishedDate: "2026-10-07",
+  publishedDate: "2026-11-03",
   readTime: "18 min read",
   tags: [
     "CCNA vs CCNP",
@@ -84,7 +84,7 @@ const blog: Blog = {
 <span class="tag">Networking Career Guide</span>
 <h2 id="quick-answer">CCNA vs CCNP: Which Should You Learn First?</h2>
 <p><strong>Quick answer:</strong> If you are new to networking, start with <strong>CCNA</strong>. CCNA builds the networking fundamentals you need to understand IP addressing, switching, routing, network access, IP services, security basics, and automation. If you already have solid networking knowledge or relevant enterprise networking experience, you can move toward <strong>CCNP Enterprise</strong> without first earning CCNA because Cisco does not require CCNA as a formal prerequisite for CCNP Enterprise.</p>
-<p>For most beginners, the strongest path is <strong>CCNA → hands-on networking experience → CCNP Enterprise</strong>. For experienced network engineers, the faster route can be <strong>skills assessment → CCNP Enterprise</strong>.</p>
+<p>For most beginners, the strongest path is <strong>CCNA → hands-on networking experience → CCNP Enterprise</strong>. For experienced network engineers, the faster route can be <strong>skills assessment → CCNP Enterprise</strong>. Neither certification carries a fixed salary: employers pay for the role, experience, troubleshooting ability, technology depth and business impact—not the certificate name alone.</p>
 </div>
 
 <nav class="toc" aria-label="Table of contents">
@@ -98,7 +98,7 @@ const blog: Blog = {
 <li><a href="#beginner-path">Best path for beginners</a></li>
 <li><a href="#experienced-path">Can experienced engineers skip CCNA?</a></li>
 <li><a href="#curriculum">CCNA vs CCNP syllabus comparison</a></li>
-<li><a href="#career">Career opportunities and progression</a></li>
+<li><a href="#career">Career opportunities and salary in India</a></li><li><a href="#future">Future scope: networking skills to build in 2027 and beyond</a></li>
 <li><a href="#mistakes">Common mistakes when choosing</a></li>
 <li><a href="#roadmap">Networking certification roadmap</a></li>
 <li><a href="#ng">How NG Cloud Networks can help</a></li>
@@ -156,18 +156,21 @@ const blog: Blog = {
 
 <section id="difference">
 <h2>CCNA vs CCNP Enterprise: 10 Key Differences</h2>
-<div class="comparison-wrap"><table><thead><tr><th>Area</th><th>CCNA</th><th>CCNP Enterprise</th></tr></thead><tbody>
-<tr><td>Career stage</td><td>Foundation / early career</td><td>Professional / experienced career stage</td></tr>
-<tr><td>Learning depth</td><td>Broad fundamentals</td><td>Deeper enterprise implementation</td></tr>
-<tr><td>Routing</td><td>Core routing concepts</td><td>Advanced routing and enterprise routing services</td></tr>
-<tr><td>Switching</td><td>Core switching and VLAN concepts</td><td>Enterprise switching architecture and implementation</td></tr>
-<tr><td>Security</td><td>Security fundamentals</td><td>Enterprise infrastructure security concepts and implementation</td></tr>
-<tr><td>Automation</td><td>Introductory automation and programmability</td><td>More advanced enterprise automation and programmability</td></tr>
-<tr><td>Certification structure</td><td>One core exam</td><td>One core + one concentration exam</td></tr>
-<tr><td>Experience expectation</td><td>Can be pursued without professional networking experience</td><td>Experience or strong hands-on practice is highly valuable</td></tr>
-<tr><td>Typical outcome</td><td>Foundation for junior networking roles</td><td>Professional-level enterprise networking specialization</td></tr>
-<tr><td>Recommended first choice</td><td>Most beginners</td><td>Experienced network professionals</td></tr>
+<div class="comparison-wrap"><table><thead><tr><th>Decision factor</th><th>CCNA (200-301)</th><th>CCNP Enterprise</th><th>What this means in practice</th></tr></thead><tbody>
+<tr><td>Certification level</td><td>Associate</td><td>Professional</td><td>CCNA validates broad foundations; CCNP validates deeper enterprise capability.</td></tr>
+<tr><td>Best-fit learner</td><td>Beginner, student, career changer or early-career IT support professional</td><td>Network engineer or learner with strong CCNA-equivalent knowledge</td><td>Choose by demonstrated skill, not by job title or confidence alone.</td></tr>
+<tr><td>Exam structure</td><td>One exam: 200-301 CCNA</td><td>One core exam (350-401 ENCOR) plus one eligible concentration exam</td><td>ENCOR alone earns the Enterprise Core Specialist credential, not the full CCNP Enterprise.</td></tr>
+<tr><td>Routing depth</td><td>IP connectivity, routing fundamentals and basic route interpretation</td><td>Enterprise routing, advanced services and concentration-level depth</td><td>Understand a route table at CCNA level; diagnose route-policy and redistribution interactions at professional depth.</td></tr>
+<tr><td>Switching depth</td><td>VLANs, trunks, Layer 2 fundamentals and network access</td><td>Enterprise infrastructure implementation, resilience and troubleshooting</td><td>Configure a VLAN versus isolate an intermittent multi-switch connectivity fault.</td></tr>
+<tr><td>Security</td><td>Security fundamentals and basic network controls</td><td>Enterprise infrastructure security and relevant specialist topics</td><td>Both require security awareness; CCNP expects broader implementation context.</td></tr>
+<tr><td>Automation</td><td>Introductory programmability and automation concepts</td><td>Deeper enterprise automation, APIs, controllers and concentration options</td><td>Build fundamentals first, then automate repeatable operational tasks.</td></tr>
+<tr><td>Lab expectation</td><td>Build, configure, verify and troubleshoot small networks</td><td>Work through larger, integrated enterprise scenarios with dependencies</td><td>Move from following a lab guide to diagnosing unfamiliar faults independently.</td></tr>
+<tr><td>Work context</td><td>Network support, NOC, junior network and infrastructure operations</td><td>Enterprise network engineering, escalation, implementation and specialist roles</td><td>Actual hiring requirements vary by employer and experience.</td></tr>
+<tr><td>Time and investment</td><td>One certification exam and preparation path</td><td>Two-exam credential path and deeper preparation investment</td><td>Plan for lab access, exam fees, study time and possible retakes.</td></tr>
+<tr><td>Salary impact</td><td>No fixed salary attached to certification</td><td>No guaranteed salary premium over CCNA</td><td>Experience, role scope, location, employer and practical skills drive compensation.</td></tr>
+<tr><td>Recommended next step</td><td>Hands-on practice and relevant entry-level experience</td><td>Specialise in routing, SD-WAN, design, automation, assurance or security</td><td>Choose the next skill based on the roles you want to perform.</td></tr>
 </tbody></table></div>
+<p><strong>Practical example:</strong> A CCNA-level task might be to identify why a workstation in VLAN 20 cannot reach its default gateway: check the access VLAN, trunk allowance, SVI status, addressing and ARP. A CCNP-level scenario may combine an OSPF adjacency change, route redistribution, an ACL and an asymmetric return path across several sites. The difference is not simply more commands; it is the ability to isolate interacting causes while protecting other working services.</p>
 </section>
 
 <section id="which-first">
@@ -230,16 +233,47 @@ const blog: Blog = {
 </section>
 
 <section id="career">
-<h2>CCNA vs CCNP Career Opportunities</h2>
-<p>Neither certification guarantees a job. Certifications are best treated as structured evidence of knowledge that should be combined with hands-on practice, troubleshooting ability, communication skills, and real project exposure.</p>
-<div class="comparison-wrap"><table><thead><tr><th>Stage</th><th>Potential roles</th><th>Skills to build</th></tr></thead><tbody>
-<tr><td>After foundation / CCNA</td><td>Network Support Engineer, NOC Engineer, Junior Network Engineer, IT Support with networking responsibilities</td><td>Switching, routing fundamentals, troubleshooting, monitoring</td></tr>
-<tr><td>CCNP preparation / experience</td><td>Network Engineer, Enterprise Network Engineer, Network Operations Engineer</td><td>Advanced routing, enterprise switching, security, automation</td></tr>
-<tr><td>CCNP + specialist skills</td><td>Senior Network Engineer, SD-WAN Engineer, Network Design Engineer, Network Automation Engineer</td><td>Specialization, architecture, automation, advanced troubleshooting</td></tr>
+<h2>CCNA vs CCNP Salary in India and Hyderabad: What Can You Realistically Expect?</h2>
+<p>There is no official salary attached to CCNA or CCNP Enterprise. Cisco does not publish a guaranteed pay scale for either certification. Salary depends on the job you actually perform, years and quality of experience, employer, city, shift, production responsibility, interview performance and the technologies you can operate independently.</p>
+<p>For a useful local reference, one 2026 Hyderabad salary guide based on CCNA-tagged job listings estimates approximately <strong>₹3.5–₹4.8 lakh per annum (LPA) for 0–1 year</strong> and <strong>₹5.0–₹7.5 LPA for 1–3 years</strong>. These are third-party market estimates, not Cisco figures, NG Cloud Networks placement results or guaranteed offers. Public salary trackers use different samples and can show materially different ranges.</p>
+<div class="comparison-wrap"><table><thead><tr><th>Career stage / example role</th><th>Indicative Hyderabad reference</th><th>What employers are likely to evaluate</th></tr></thead><tbody>
+<tr><td>Fresher / NOC / Network Support (0–1 year)</td><td>About ₹3.5–₹4.8 LPA in one 2026 CCNA-tagged job-listing estimate</td><td>IP addressing, subnetting, VLANs, basic routing, monitoring, ticket handling, communication and shift readiness.</td></tr>
+<tr><td>Early-career Network Engineer / L2 Support (1–3 years)</td><td>About ₹5.0–₹7.5 LPA in the same market reference</td><td>Production troubleshooting, incident ownership, routing and switching depth, documentation and vendor exposure.</td></tr>
+<tr><td>Experienced enterprise network engineer</td><td>No single reliable CCNP-only range should be assumed</td><td>Complex routing, change planning, outage leadership, network design, security, automation and infrastructure scale.</td></tr>
+<tr><td>Senior / specialist roles</td><td>Highly variable by employer and responsibility</td><td>Architecture decisions, multi-site delivery, SD-WAN, cloud connectivity, automation, customer ownership and mentoring.</td></tr>
 </tbody></table></div>
-<h3>Does CCNP guarantee a higher salary?</h3>
-<p>No certification can guarantee a salary level. Compensation varies by experience, location, employer, technical specialization, interview performance, shift requirements, and the complexity of the networks you support.</p>
-<p>In general, professional-level enterprise networking skills can support progression into more technically demanding roles, but the strongest profile combines <strong>real troubleshooting ability, lab experience, documentation skills, and production exposure</strong>.</p>
+<p><strong>How to interpret this:</strong> the numerical ranges above come from <a href="https://www.networkershome.com/ccna-salary-bangalore-vs-hyderabad-vs-delhi/" target="_blank" rel="noopener noreferrer">one third-party Hyderabad market guide</a> and are not a statistical guarantee. A <a href="https://www.glassdoor.com/Salaries/hyderabad-india-network-engineer-salary-SRCH_IL.0,15_IM1076_KO16,32.htm" target="_blank" rel="noopener noreferrer">Glassdoor Hyderabad network-engineer salary snapshot</a> reports a broad total-pay range, illustrating how widely datasets can differ. Do not treat either source as a salary promise or infer that earning CCNP automatically moves someone into the next pay band.</p>
+<h3>Does CCNP pay more than CCNA?</h3>
+<p>It can support access to more advanced roles, but there is no automatic certification-based increment. Consider two candidates:</p>
+<ul><li><strong>Candidate A:</strong> holds CCNP but has limited practical experience and cannot independently troubleshoot a production routing issue.</li><li><strong>Candidate B:</strong> holds CCNA, has two years of NOC/network operations experience, can troubleshoot OSPF, VLAN, ACL and connectivity issues, and can explain incident ownership.</li></ul>
+<p>Depending on the vacancy, Candidate B may be more employable than Candidate A. A professional certification becomes more valuable when supported by evidence: labs, production incidents, migration work, automation examples and clear technical explanations.</p>
+<h3>Roles to target at each stage</h3>
+<div class="comparison-wrap"><table><thead><tr><th>Current capability</th><th>Possible job titles to research</th><th>Evidence to prepare for interviews</th></tr></thead><tbody>
+<tr><td>Foundational networking</td><td>NOC Engineer, Network Support Engineer, Junior Network Engineer, IT Support with networking duties</td><td>Subnetting, VLAN/trunk, routing basics, ping/traceroute, interface checks and ticket documentation.</td></tr>
+<tr><td>Professional enterprise networking</td><td>Network Engineer, L2 Network Engineer, Enterprise Network Engineer, Network Operations Engineer</td><td>OSPF/BGP fundamentals, route selection, redundancy, ACLs, change validation and root-cause analysis.</td></tr>
+<tr><td>Specialist and advanced experience</td><td>Senior Network Engineer, SD-WAN Engineer, Network Design Engineer, Network Automation Engineer</td><td>Complex multi-site troubleshooting, design trade-offs, automation, monitoring, security and controlled migrations.</td></tr>
+</tbody></table></div>
+<p>Use current job descriptions in Hyderabad to validate which skills and certifications employers request. Compare responsibilities and required experience—not just salary headlines. For additional career context, read our <a href="/blog/is-ccna-worth-it-in-2026">CCNA career scope and value guide</a>.</p>
+</section>
+
+<section id="future">
+<h2>Future Scope After CCNA or CCNP: What Should You Learn in 2027 and Beyond?</h2>
+<p>Networking is not disappearing as organisations adopt cloud platforms, automation and AI-assisted operations. The work is changing: engineers still need to understand packet flow, routing, segmentation and availability, but increasingly combine those fundamentals with security, programmable infrastructure, telemetry and hybrid connectivity.</p>
+<h3>1. Prepare for the CCNA 200-301 v2.0 transition</h3>
+<p>Cisco has announced that the current 200-301 CCNA v1.1 exam has its last testing date on <strong>February 2, 2027</strong>, and the refreshed v2.0 exam begins on <strong>February 3, 2027</strong>. The exam code remains 200-301. If you are already preparing, do not panic or discard your study. Check Cisco's official v2.0 blueprint, identify changed topic wording and practical emphasis, and align your final preparation with the version you intend to sit.</p>
+<p>The refreshed blueprint places clearer emphasis on network infrastructure and connectivity, switching and network access, IP routing, network services and security, and AI/network operations and management. Review the <a href="https://learningcontent.cisco.com/documents/marketing/exam-topics/200-301_CCNA_v2.0_Exam_Topics_PDF.pdf" target="_blank" rel="noopener noreferrer">official Cisco CCNA v2.0 exam topics</a> rather than relying on unofficial summaries.</p>
+<h3>2. Build skills that complement the certification</h3>
+<div class="comparison-wrap"><table><thead><tr><th>Skill area</th><th>Why it matters</th><th>Practical example to build</th></tr></thead><tbody>
+<tr><td>Network troubleshooting</td><td>Hybrid and distributed services still depend on correct addressing, routing, DNS and reachability.</td><td>Trace a failed application flow from client VLAN through gateway, firewall and remote subnet; record evidence and root cause.</td></tr>
+<tr><td>Network security</td><td>Segmentation, identity, access control and secure management are part of reliable network operations.</td><td>Apply least-privilege ACLs, secure device management and validate permitted and denied traffic.</td></tr>
+<tr><td>Cloud and hybrid networking</td><td>Enterprises connect branches, data centres and cloud virtual networks.</td><td>Design a simple site-to-site connectivity lab and troubleshoot route propagation and overlapping address space.</td></tr>
+<tr><td>Automation and APIs</td><td>Repeatable checks and configuration tasks can be made more consistent through scripts and APIs.</td><td>Use Python to parse interface status or configuration output, then produce a simple validation report.</td></tr>
+<tr><td>Monitoring and assurance</td><td>Engineers need evidence of performance, faults and service health—not only device configuration.</td><td>Correlate interface errors, logs, latency and routing changes during a simulated incident.</td></tr>
+<tr><td>AI-assisted operations</td><td>AI tools can help summarise logs or draft troubleshooting hypotheses, but outputs must be checked.</td><td>Use synthetic logs to ask an AI assistant for possible causes, then verify each hypothesis against device evidence. Never paste confidential production data into unapproved tools.</td></tr>
+</tbody></table></div>
+<h3>3. Choose a specialisation based on the work you want</h3>
+<ul><li><strong>Advanced routing:</strong> deepen OSPF, BGP, redistribution, VPN and route troubleshooting.</li><li><strong>SD-WAN:</strong> learn policy, control/data-plane concepts, branch deployment and operational troubleshooting.</li><li><strong>Network automation:</strong> build Python, APIs, data formats, version control and safe change-validation skills.</li><li><strong>Cloud networking and security:</strong> learn virtual networks, routing, private connectivity, segmentation, identity and cloud security controls.</li><li><strong>Network design:</strong> practise requirements gathering, high availability, capacity, resilience, documentation and trade-off analysis.</li></ul>
+<p><strong>Future recommendation:</strong> do not collect every certification. Choose one direction, build a lab or project that demonstrates it, and use current job descriptions to decide which additional exam or technology is worth the investment.</p>
 </section>
 
 <section id="mistakes">
@@ -300,7 +334,10 @@ const blog: Blog = {
 <div class="faq"><h3>How long does it take to go from CCNA to CCNP?</h3><p>There is no universal timeline. It depends on your networking background, daily study time, lab practice and professional exposure. A learner with strong fundamentals and consistent lab work can progress faster than someone studying only theory.</p></div>
 <div class="faq"><h3>What should I learn before CCNA?</h3><p>You do not need a formal networking certification before CCNA. Basic computer knowledge helps, but the course can be used to build networking fundamentals from the beginning.</p></div>
 <div class="faq"><h3>What is the best CCNA to CCNP roadmap?</h3><p>A practical roadmap is networking fundamentals → CCNA → hands-on networking experience → ENCOR → a CCNP Enterprise concentration → deeper specialization in areas such as SD-WAN, security, cloud connectivity, design or automation.</p></div>
-<div class="faq"><h3>Is CCNA still worth learning in 2026?</h3><p>Yes. Cisco is refreshing the CCNA for 2027, but the current certification remains active until February 2, 2027, and Cisco says the skills developed through the current exam carry into the refreshed certification.</p></div>
+<div class="faq"><h3>Is CCNA still worth learning in 2027?</h3><p>Yes. Cisco has announced that 200-301 CCNA v2.0 begins on February 3, 2027, while the last date to test on v1.1 is February 2, 2027. Check the official blueprint and choose the exam version that matches your preparation timeline.</p></div>
+<div class="faq"><h3>What is the CCNA salary in Hyderabad?</h3><p>There is no fixed salary for holding CCNA. One 2026 third-party Hyderabad job-listing guide estimates around ₹3.5–₹4.8 LPA for 0–1 year and ₹5.0–₹7.5 LPA for 1–3 years. These are indicative market estimates, not guaranteed offers; actual pay varies by employer, role, experience and practical skills.</p></div>
+<div class="faq"><h3>Does CCNP guarantee a higher salary than CCNA?</h3><p>No. CCNP can support applications for more advanced enterprise networking roles, but it does not guarantee a salary increase. Employers assess practical troubleshooting, production experience, design responsibility, specialisation and interview performance.</p></div>
+<div class="faq"><h3>What networking skills should I learn after CCNA?</h3><p>Build practical troubleshooting first, then choose a direction such as advanced routing, SD-WAN, network security, cloud connectivity, automation or network assurance based on the roles you want.</p></div>
 </section>
 
 <section id="resources">
@@ -310,6 +347,7 @@ const blog: Blog = {
 <li><a href="https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccna/index.html" target="_blank" rel="noopener noreferrer">Cisco CCNA certification</a></li>
 <li><a href="https://www.cisco.com/site/us/en/learn/training-certifications/certifications/enterprise/ccnp-enterprise/index.html" target="_blank" rel="noopener noreferrer">Cisco CCNP Enterprise certification</a></li>
 <li><a href="https://www.cisco.com/site/us/en/learn/training-certifications/exams/ccna.html" target="_blank" rel="noopener noreferrer">Cisco 200-301 CCNA exam</a></li>
+<li><a href="https://learningcontent.cisco.com/documents/marketing/exam-topics/200-301_CCNA_v2.0_Exam_Topics_PDF.pdf" target="_blank" rel="noopener noreferrer">Cisco official 200-301 CCNA v2.0 exam topics</a></li>
 <li><a href="https://www.cisco.com/site/us/en/learn/training-certifications/exams/encor.html" target="_blank" rel="noopener noreferrer">Cisco 350-401 ENCOR exam</a></li>
 <li><a href="https://www.cisco.com/site/us/en/learn/training-certifications/exams/enarsi.html" target="_blank" rel="noopener noreferrer">Cisco 300-410 ENARSI exam</a></li>
 <li><a href="https://www.cisco.com/site/us/en/learn/training-certifications/exams/list.html" target="_blank" rel="noopener noreferrer">Cisco current exam list</a></li>
@@ -318,7 +356,7 @@ const blog: Blog = {
 
 <section id="final-thoughts">
 <h2>Final Thoughts: CCNA or CCNP?</h2>
-<p><strong>Start with CCNA if you are building your networking foundation. Move toward CCNP Enterprise when you are ready to work at a deeper enterprise level.</strong></p>
+<p><strong>Start with CCNA if you are building your networking foundation. Move toward CCNP Enterprise when you are ready to work at a deeper enterprise level. In 2027, keep your preparation aligned with Cisco’s refreshed CCNA v2.0 blueprint and build practical skills beyond the exam.</strong></p>
 <p>The important point is that CCNA and CCNP are not competing certifications. They are useful at different stages of a networking journey. A beginner can use CCNA to build confidence and practical fundamentals, while an experienced engineer can use CCNP Enterprise to deepen enterprise networking expertise and specialize in areas that match modern infrastructure roles.</p>
 <p>If you are in Hyderabad and unsure whether you should start with <a href="/courses/ccna-training-hyderabad">CCNA Training</a> or move directly into <a href="/courses/ccnp-enterprise-training-hyderabad">CCNP Enterprise Training</a>, evaluate your actual networking skills first. The best certification is the one that matches your current level and moves you toward your target role.</p>
 </section>
@@ -345,7 +383,10 @@ const blog: Blog = {
     { question: 'How long does it take to go from CCNA to CCNP?', answer: 'There is no universal timeline. It depends on your networking background, daily study time, lab practice and professional exposure. A learner with strong fundamentals and consistent lab work can progress faster than someone studying only theory.' },
     { question: 'What should I learn before CCNA?', answer: 'You do not need a formal networking certification before CCNA. Basic computer knowledge helps, but the course can be used to build networking fundamentals from the beginning.' },
     { question: 'What is the best CCNA to CCNP roadmap?', answer: 'A practical roadmap is networking fundamentals → CCNA → hands-on networking experience → ENCOR → a CCNP Enterprise concentration → deeper specialization in areas such as SD-WAN, security, cloud connectivity, design or automation.' },
-    { question: 'Is CCNA still worth learning in 2026?', answer: 'Yes. Cisco is refreshing the CCNA for 2027, but the current certification remains active until February 2, 2027, and Cisco says the skills developed through the current exam carry into the refreshed certification.' },
+    { question: 'Is CCNA still worth learning in 2027?', answer: 'Yes. Cisco has announced that 200-301 CCNA v2.0 begins on February 3, 2027, while the last date to test on v1.1 is February 2, 2027. Check the official blueprint and choose the exam version that matches your preparation timeline.' },
+    { question: 'What is the CCNA salary in Hyderabad?', answer: 'There is no fixed salary for holding CCNA. One 2026 third-party Hyderabad job-listing guide estimates around ₹3.5–₹4.8 LPA for 0–1 year and ₹5.0–₹7.5 LPA for 1–3 years. These are indicative market estimates, not guaranteed offers; actual pay varies by employer, role, experience and practical skills.' },
+    { question: 'Does CCNP guarantee a higher salary than CCNA?', answer: 'No. CCNP can support applications for more advanced enterprise networking roles, but it does not guarantee a salary increase. Employers assess practical troubleshooting, production experience, design responsibility, specialisation and interview performance.' },
+    { question: 'What networking skills should I learn after CCNA?', answer: 'Build practical troubleshooting first, then choose a direction such as advanced routing, SD-WAN, network security, cloud connectivity, automation or network assurance based on the roles you want.' },
   ],
 };
 
