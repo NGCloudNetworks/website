@@ -10,10 +10,10 @@ const blog: Blog = {
   title: "Best CCNA Training in Hyderabad (2026): How to Choose the Right Institute",
 
   seoTitle:
-    "Best CCNA Training in Hyderabad 2026 | How to Choose the Right CCNA Institute",
+    "Best CCNA Training in Hyderabad (2026): How to Choose",
 
   seoDescription:
-    "Comparing CCNA institutes in Hyderabad? Learn exactly what to check — trainer experience, lab access, syllabus, batch format and placement support — before you enroll in 2026.",
+    "Comparing CCNA institutes in Hyderabad? Check trainer experience, lab access, syllabus, batch format and placement support before you enroll in 2026.",
 
   excerpt:
     "Not all CCNA institutes in Hyderabad are the same. Here's a practical, no-fluff checklist for picking the right one — plus what actually separates a good CCNA course from a wasted six months.",
@@ -583,11 +583,15 @@ Keep Reading
 
 <ul style="margin-top:24px;padding-left:24px;color:rgba(255,255,255,.78);line-height:2;">
 
-<li><a href="/blogs/best-ccna-training-roadmap-for-beginners" style="color:#D4AF37;font-weight:700;text-decoration:none;">Best CCNA Training Roadmap for Beginners</a> — the full step-by-step learning path once you've picked an institute.</li>
+<li><a href="/blog/best-ccna-training-roadmap-for-beginners" style="color:#D4AF37;font-weight:700;text-decoration:none;">Best CCNA Training Roadmap for Beginners</a> — the full step-by-step learning path once you've picked an institute.</li>
 
-<li><a href="/blogs/ccna-course-fees-in-hyderabad" style="color:#D4AF37;font-weight:700;text-decoration:none;">CCNA Course Fees in Hyderabad</a> — compare pricing across training options.</li>
+<li><a href="/blog/ccna-course-fees-in-hyderabad" style="color:#D4AF37;font-weight:700;text-decoration:none;">CCNA Course Fees in Hyderabad</a> — compare pricing across training options.</li>
 
-<li><a href="/blogs/how-to-prepare-for-network-engineer-interviews" style="color:#D4AF37;font-weight:700;text-decoration:none;">How to Prepare for Network Engineer Interviews</a> — get interview-ready after certification.</li>
+<li><a href="/blog/how-to-prepare-for-network-engineer-interviews" style="color:#D4AF37;font-weight:700;text-decoration:none;">How to Prepare for Network Engineer Interviews</a> — get interview-ready after certification.</li>
+
+<li><a href="/blog/is-ccna-worth-it-in-2026" style="color:#D4AF37;font-weight:700;text-decoration:none;">Is CCNA Worth It in 2026?</a> — who should take it and what it can realistically lead to.</li>
+
+<li><a href="/blog/ccna-vs-ccnp-which-should-you-learn-first" style="color:#D4AF37;font-weight:700;text-decoration:none;">CCNA vs CCNP: Which Should You Learn First?</a> — pick the right starting point.</li>
 
 </ul>
 

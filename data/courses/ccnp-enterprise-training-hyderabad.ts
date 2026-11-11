@@ -6,10 +6,10 @@ const course: Course = {
   title: "CCNP Enterprise Training in Hyderabad",
 
   seoTitle:
-    "CCNP Enterprise Training in Hyderabad | Fee, Syllabus & Labs | NG Cloud Networks",
+    "CCNP Enterprise Training in Hyderabad: ₹15,000 + GST",
 
   seoDescription:
-    "Explore CCNP Enterprise training in Hyderabad at NG Cloud Networks. Review the 3-month curriculum, ₹15,000 + GST training fee, OSPF and BGP topics, enterprise labs, eligibility and certification pathway before enquiring.",
+    "CCNP Enterprise training in Hyderabad: 3-month course, ₹15,000 + 18% GST, OSPF, BGP and enterprise labs. Built for CCNA-level engineers. Ask about batches.",
 
   navCategory: "Networking",
 
@@ -527,6 +527,8 @@ const course: Course = {
   "/blog/best-ccna-training-in-hyderabad",
   "/blog/is-ccna-worth-it-in-2026",
   "/blog/best-cisco-sdwan-training-in-hyderabad",
+    "/blog/ccna-vs-ccnp-which-should-you-learn-first",
+    "/blog/ccnp-vs-ccie-is-it-worth-the-jump",
 ],
 
   tags: [
@@ -599,14 +601,14 @@ const course: Course = {
         heading: "Who Should Take CCNP Enterprise",
         paragraphs: [
           "CCNP Enterprise is built for networking professionals who already have CCNA-level knowledge of routing, switching and IP addressing and want to move into advanced enterprise infrastructure roles. It is a natural next step for graduates of our <a href='/courses/ccna-training-hyderabad' style='color:#D4AF37;font-weight:700;text-decoration:none;'>CCNA Training in Hyderabad</a>, working Network Engineers, and System Administrators looking to specialize in enterprise-scale networking rather than pivot toward cloud or security tracks.",
-          "Unlike CCNA, this course assumes a working understanding of core networking concepts and focuses on advanced implementation: multi-area OSPF, BGP, enterprise redundancy, infrastructure security and network automation. Still deciding if you're ready? Our guide on <a href='/blog/is-ccna-worth-it-in-2026' style='color:#D4AF37;font-weight:700;text-decoration:none;'>what to learn after CCNA</a> can help you decide.",
+          "Unlike CCNA, this course assumes a working understanding of core networking concepts and focuses on advanced implementation: multi-area OSPF, BGP, enterprise redundancy, infrastructure security and network automation. Still deciding if you're ready? Our guide on <a href='/blog/ccna-vs-ccnp-which-should-you-learn-first' style='color:#D4AF37;font-weight:700;text-decoration:none;'>CCNA vs CCNP: which to learn first</a> can help you decide.",
         ],
       },
       {
         heading: "CCNP Enterprise vs CCNP Core: Which Should You Choose?",
         paragraphs: [
           "ENCOR (350-401) is the core exam within the CCNP Enterprise certification path. Candidates must also pass one concentration exam to earn the CCNP Enterprise certification. The core exam validates broad enterprise networking knowledge; the concentration lets candidates demonstrate deeper capability in a selected area.",
-          "Choose the CCNP Enterprise path if you want to specialize in enterprise networking. If you are comparing a core-only preparation course with a complete certification path, ask whether the training covers ENCOR only or also includes preparation for a chosen concentration exam. The exam fee and exam booking are separate unless an offer explicitly says otherwise.",
+          "Choose the CCNP Enterprise path if you want to specialize in enterprise networking. If you are comparing a core-only preparation course, such as our <a href='/courses/ccnp-core-training-hyderabad' style='color:#D4AF37;font-weight:700;text-decoration:none;'>CCNP Core (ENCOR) training</a>, with a complete certification path, ask whether the training covers ENCOR only or also includes preparation for a chosen concentration exam. The exam fee and exam booking are separate unless an offer explicitly says otherwise.",
         ],
       },
       {

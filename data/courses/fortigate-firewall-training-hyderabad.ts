@@ -8,13 +8,13 @@ const course: Course = {
   // BOFU-weighted: "fees" + "placement" signal transactional intent,
   // year adds freshness signal for Google's query-deserves-freshness systems
   seoTitle:
-    "Fortigate Firewall Training in Hyderabad (2026) | Fees, Syllabus & Placement | NG Cloud Networks",
+    "Fortigate Firewall Training in Hyderabad: ₹10,000 + GST",
 
   // Opens with a direct, citable claim (AEO), names the trainer for
   // E-E-A-T, and blends BOFU (fees), MOFU (syllabus/services) and
   // TOFU (career) terms without keyword-stuffing.
   seoDescription:
-    "NG Cloud Networks offers Fortigate Firewall Training in Hyderabad for ₹10,000 + 18% GST, including live instructor-led classes, enterprise firewall labs, certification guidance and placement assistance. Learn firewall policies, NAT, IPSec & SSL VPN, application control, threat prevention and FortiManager from a network security expert with 14+ years of industry experience.",
+    "Fortigate firewall training in Hyderabad: 20-day course, ₹10,000 + 18% GST, with policy, NAT, IPSec and SSL VPN labs on FortiGate. Book a free demo.",
 
   navCategory: "Security",
 
@@ -296,6 +296,8 @@ const course: Course = {
   // "/blog/fortinet-nse-certification-roadmap",
   // "/blog/how-to-become-a-firewall-engineer",
   // "/blog/network-security-interview-questions",
+    "/blog/best-palo-alto-firewall-training-in-hyderabad",
+    "/blog/best-cloud-security-training-in-hyderabad",
 ],
 
   // Expanded with explicit funnel-stage terms: fee/cost (BOFU), syllabus/duration (MOFU),
