@@ -5,9 +5,9 @@ const blog: Blog = {
   featured: true,
   category: "Networking Career Guide",
   title: "CCNA vs CCNP: Differences, Salary, Career Scope & Which to Choose",
-  seoTitle: "CCNA vs CCNP: Differences, Salary & Which to Choose (2026)",
+  seoTitle: "CCNA vs CCNP: Which to Learn First? Differences & Salary",
   seoDescription:
-    "Compare CCNA vs CCNP Enterprise: key differences, syllabus, exam path, Hyderabad salary context, career options and the right certification roadmap for beginners and working engineers.",
+    "Start with CCNA if you are new to networking; go to CCNP Enterprise if you already have experience. Compare exams, syllabus, salary context and the roadmap.",
   excerpt:
     "Confused between CCNA and CCNP? This practical 2026 guide explains which Cisco certification you should learn first based on your experience, networking skills, career goals, syllabus, and certification path.",
   image: "/images/blog/ccna-vs-ccnp-which-should-you-learn-first.jpg",

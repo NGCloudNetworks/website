@@ -330,14 +330,8 @@ const course: Course = {
     "/blog/best-azure-cloud-training-in-hyderabad",
     "/blog/best-ccna-training-in-hyderabad",
     "/blog/best-cloud-security-training-in-hyderabad",
-    // "/blog/aws-vs-azure-cloud-computing",
-    // "/blog/best-aws-certification-roadmap-for-beginners",
-    // "/blog/how-to-become-an-aws-cloud-engineer",
-    // "/blog/aws-solutions-architect-interview-questions",
   ],
 
-  // Expanded with explicit funnel-stage terms: fee/cost (BOFU), syllabus/duration (MOFU),
-  // career/salary (TOFU) — each maps to a real, searched query pattern
   tags: [
     "AWS Training Hyderabad",
     "AWS Course Fee Hyderabad",

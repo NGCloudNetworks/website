@@ -6,10 +6,10 @@ const course: Course = {
   title: "CCNA Training in Hyderabad",
 
   seoTitle:
-    "CCNA Training in Hyderabad | Course Fee, Syllabus & Practical Labs | NG Cloud Networks",
+    "CCNA Training in Hyderabad: ₹10,000 Fee, Syllabus & Labs",
 
   seoDescription:
-     "Explore CCNA training in Hyderabad at NG Cloud Networks. Review the ₹10,000 course fee, two-month training plan, syllabus, practical networking topics and learning support. Learn subnetting, VLANs, routing, OSPF, ACLs and troubleshooting, then speak with the team about batch availability.",
+    "CCNA training in Hyderabad at NG Cloud Networks: ₹10,000 fee, 2-month plan, syllabus and hands-on Cisco labs. Online and classroom batches. Book a free demo.",
 
   navCategory: "Networking",
 
@@ -447,6 +447,7 @@ const course: Course = {
   relatedBlogs: [
     "/blog/best-ccna-training-in-hyderabad",
     "/blog/is-ccna-worth-it-in-2026",
+    "/blog/ccna-vs-ccnp-which-should-you-learn-first",
     "/blog/ccna-course-fees-in-hyderabad",
     "/blog/best-ccna-training-roadmap-for-beginners",
     "/blog/how-to-prepare-for-network-engineer-interviews",
