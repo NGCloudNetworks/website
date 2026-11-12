@@ -14,6 +14,7 @@ import {
   ArrowUpRight,
   MapPin,
   Mail,
+  MessageCircle,
   Phone,
 } from "lucide-react";
 
@@ -22,10 +23,29 @@ import { courseLinks } from "@/data/courseLinks";
 const quickLinks = [
   { title: "About Us", href: "/about" },
   { title: "Placements", href: "/placements" },
+  { title: "Ameerpet Branch", href: "/ameerpet" },
   { title: "Corporate Training", href: "/corporate-training" },
   { title: "Resources", href: "/resources" },
   { title: "Blog", href: "/blog" },
   { title: "Contact", href: "/contact" },
+];
+
+const branches = [
+  {
+    name: "Ameenpur Branch",
+    badge: "",
+    address:
+      "H.no:5-125/1/30, Plot No. 30, Royal Homes, Fusion School Back Side, Ameenpur, Hyderabad, Telangana, India 502032",
+    primary: { label: "Contact this branch", href: "/contact", external: false },
+  },
+  {
+    name: "Ameerpet Branch",
+    badge: "New",
+    address:
+      "Flat No. 404, 4th Floor, Aditya Enclave, Annapurna Block, Ameerpet, Hyderabad, Telangana, India 500038",
+    primary: { label: "Get directions", href: "https://maps.app.goo.gl/B5qT6V1v5F6zUMyv5", external: true },
+    secondary: { label: "Branch details", href: "/ameerpet" },
+  },
 ];
 
 const socialLinks = [
@@ -54,6 +74,36 @@ export default function Footer() {
       postalCode: "502032",
       addressCountry: "IN",
     },
+    location: [
+      {
+        "@type": "Place",
+        name: "NG Cloud Networks - Ameenpur",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress:
+            "H.no:5-125/1/30, Plot No. 30, Royal Homes, Fusion School Back Side, Ameenpur",
+          addressLocality: "Hyderabad",
+          addressRegion: "Telangana",
+          postalCode: "502032",
+          addressCountry: "IN",
+        },
+      },
+      {
+        "@type": "Place",
+        name: "NG Cloud Networks - Ameerpet",
+        url: "https://www.ngcloudnetworks.com/ameerpet",
+        hasMap: "https://maps.app.goo.gl/B5qT6V1v5F6zUMyv5",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress:
+            "Flat No. 404, 4th Floor, Aditya Enclave, Annapurna Block, Ameerpet",
+          addressLocality: "Hyderabad",
+          addressRegion: "Telangana",
+          postalCode: "500038", // must match the Ameerpet Google Business Profile
+          addressCountry: "IN",
+        },
+      },
+    ],
     ...(socialLinks.length
       ? { sameAs: socialLinks.map((s) => s.href) }
       : {}),
@@ -64,7 +114,7 @@ export default function Footer() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema).replace(/</g, "\\u003c") }}
       />
 
       {/* BACKGROUND */}
@@ -218,16 +268,6 @@ export default function Footer() {
 
               <div className="flex items-start gap-4 rounded-[24px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/10">
-                  <MapPin className="h-5 w-5 text-[#D4AF37]" />
-                </div>
-                <p className="text-[15px] leading-[1.8] text-white/60">
-                  H.no:5-125/1/30, Plot No. 30, Royal Homes, Fusion School
-                  Back Side, Ameenpur, Hyderabad, Telangana, India 502032
-                </p>
-              </div>
-
-              <div className="flex items-start gap-4 rounded-[24px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/10">
                   <Mail className="h-5 w-5 text-[#D4AF37]" />
                 </div>
                 <a
@@ -250,13 +290,90 @@ export default function Footer() {
                 </a>
               </div>
 
+              <div className="flex items-start gap-4 rounded-[24px] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/10">
+                  <MessageCircle className="h-5 w-5 text-[#D4AF37]" />
+                </div>
+                <a
+                  href="https://wa.me/919989939191"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[15px] text-white/60 transition-colors duration-300 hover:text-[#D4AF37]"
+                >
+                  Chat on WhatsApp
+                </a>
+              </div>
+
             </div>
           </div>
 
         </div>
 
+        {/* BRANCHES */}
+        <div className="mt-20">
+          <h3 className="text-[22px] font-black tracking-[-0.03em] text-white">
+            Our Branches
+          </h3>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {branches.map((b) => (
+              <div
+                key={b.name}
+                className="flex flex-col justify-between gap-6 rounded-[28px] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition-all duration-300 hover:border-[#D4AF37]/30 lg:p-8"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/10">
+                    <MapPin className="h-5 w-5 text-[#D4AF37]" />
+                  </div>
+                  <address className="not-italic">
+                    <div className="flex items-center gap-3">
+                      <span className="text-[17px] font-bold text-white">{b.name}</span>
+                      {b.badge && (
+                        <span className="rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 px-3 py-[2px] text-[11px] font-semibold uppercase tracking-[0.14em] text-[#D4AF37]">
+                          {b.badge}
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-2 text-[15px] leading-[1.8] text-white/60">{b.address}</p>
+                  </address>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3">
+                  {b.primary.external ? (
+                    <a
+                      href={b.primary.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-2 rounded-full bg-[#D4AF37] px-5 py-2.5 text-[14px] font-semibold text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+                    >
+                      {b.primary.label}
+                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                    </a>
+                  ) : (
+                    <Link
+                      href={b.primary.href}
+                      className="group inline-flex items-center gap-2 rounded-full bg-[#D4AF37] px-5 py-2.5 text-[14px] font-semibold text-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+                    >
+                      {b.primary.label}
+                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                    </Link>
+                  )}
+                  {"secondary" in b && b.secondary && (
+                    <Link
+                      href={b.secondary.href}
+                      className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-[14px] font-semibold text-white/80 transition-all duration-300 hover:border-[#D4AF37]/40 hover:text-[#D4AF37]"
+                    >
+                      {b.secondary.label}
+                    </Link>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* CTA SECTION */}
-        <div className="relative mt-20 overflow-hidden rounded-[36px] border border-[#D4AF37]/20 bg-[#D4AF37]/[0.05] p-8 backdrop-blur-2xl lg:p-10">
+        <div className="relative mt-14 overflow-hidden rounded-[36px] border border-[#D4AF37]/20 bg-[#D4AF37]/[0.05] p-8 backdrop-blur-2xl lg:p-10">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,175,55,0.12),transparent_60%)]" />
 
           <div className="relative z-10 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
