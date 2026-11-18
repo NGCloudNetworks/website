@@ -1,11 +1,7 @@
 "use client";
-
-// components/contact/ContactPageClient.tsx (v2)
-// Semantic structure: Navbar / <main> / Footer. One H1. JSON-LD only (no mixed microdata).
-// Metadata and page-level schema live in the server page.tsx.
-
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import HubCallout from "@/components/global/HubCallout";
 import { useState } from "react";
 import Link from "next/link";
 import {
@@ -503,6 +499,12 @@ export default function ContactPageClient() {
           </div>
         </section>
       </main>
+
+      <HubCallout
+        title="Choosing a course or a branch?"
+        text="Read our Hyderabad training guide to compare courses, fees and batch timings before you visit or call. Classes run at both branches and live online."
+        hubAnchor="Networking & cloud training in Hyderabad: courses, fees, batches"
+      />
 
       <Footer />
     </>

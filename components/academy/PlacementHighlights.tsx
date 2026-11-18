@@ -8,7 +8,7 @@ import {
 
 const careerSupport = [
   {
-    title: "100% Placement Assistance",
+    title: "Placement Assistance",
     description:
       "Every student receives complete placement assistance throughout the job search process, including interview scheduling guidance, application support and career mentoring until they become confident in pursuing opportunities.",
     icon: BadgeCheck,
@@ -118,7 +118,7 @@ export default function PlacementHighlights() {
             Learning technical skills is only one part of building a
             successful IT career. At NG Cloud Networks, every student
             receives structured career guidance, practical interview
-            preparation and <strong className="text-white">100% Placement Assistance</strong>
+            preparation and <strong className="text-white">Placement Assistance</strong>
             designed to improve job readiness. From resume building and
             LinkedIn optimization to mock interviews and career mentoring,
             our goal is to help learners confidently transition from

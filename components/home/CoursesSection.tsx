@@ -14,7 +14,7 @@ export default function CoursesSection() {
     itemListElement: courseLinks.map((course, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `https://ngcloudnetworks.com${course.href}`,
+      url: `https://www.ngcloudnetworks.com${course.href}`,
       name: course.anchor,
     })),
   };

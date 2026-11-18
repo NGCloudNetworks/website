@@ -3,6 +3,7 @@ import { Inter, Sora } from "next/font/google";
 import Script from "next/script";
 import WhatsappFloat from "@/components/global/WhatsappFloat";
 import LeadPopup from "@/components/global/LeadPopup";
+import { SITE } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,10 +17,15 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.ngcloudnetworks.com"),
-  title: "NG Cloud Networks",
+  metadataBase: new URL(SITE),
+  title: "NG Cloud Networks | CCNA, CCNP, Cloud & Firewall Training in Hyderabad",
   description:
-    "Best Cloud, Networking & Cyber Security Training Institute in Hyderabad.",
+    "Networking, cloud and firewall training institute in Hyderabad with branches in Ameenpur and Ameerpet: CCNA, CCNP, Palo Alto, Fortigate, AWS and Azure.",
+  openGraph: {
+    siteName: "NG Cloud Networks",
+    locale: "en_IN",
+    type: "website",
+  },
   other: {
     "facebook-domain-verification": "e4niu7b899rxe5mwyrt8a3i9a08k2d",
   },
@@ -34,7 +40,6 @@ export default function RootLayout({
 
     <html lang="en">
       <body className={`${inter.variable} ${sora.variable}`}>
-        {/* Google Analytics (GA4) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-CNHP7HRF5J"
           strategy="afterInteractive"

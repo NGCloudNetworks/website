@@ -7,7 +7,7 @@ import {
 
 const academyStats = [
   {
-    value: "1500+",
+    value: "1000+",
     title: "Students Trained",
     description:
       "Students, graduates and working professionals have developed practical networking, cloud computing and cybersecurity skills through our industry-focused training programs.",

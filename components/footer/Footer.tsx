@@ -21,8 +21,10 @@ import {
 import { courseLinks } from "@/data/courseLinks";
 
 const quickLinks = [
+  { title: "Training in Hyderabad", href: "/networking-training-hyderabad" },
   { title: "About Us", href: "/about" },
   { title: "Placements", href: "/placements" },
+  { title: "Ameenpur Branch", href: "/ameenpur" },
   { title: "Ameerpet Branch", href: "/ameerpet" },
   { title: "Corporate Training", href: "/corporate-training" },
   { title: "Resources", href: "/resources" },
@@ -37,6 +39,7 @@ const branches = [
     address:
       "H.no:5-125/1/30, Plot No. 30, Royal Homes, Fusion School Back Side, Ameenpur, Hyderabad, Telangana, India 502032",
     primary: { label: "Contact this branch", href: "/contact", external: false },
+    secondary: { label: "Branch details", href: "/ameenpur" },
   },
   {
     name: "Ameerpet Branch",
@@ -78,6 +81,7 @@ export default function Footer() {
       {
         "@type": "Place",
         name: "NG Cloud Networks - Ameenpur",
+        url: "https://www.ngcloudnetworks.com/ameenpur",
         address: {
           "@type": "PostalAddress",
           streetAddress:
@@ -135,7 +139,7 @@ export default function Footer() {
             <Link href="/" className="group flex items-center">
               <div
                 className="
-                  rounded-2xl border border-white/10 bg-white/[0.03] p-2
+                  shrink-0 rounded-2xl border border-white/10 bg-white/[0.03] p-2
                   transition-all duration-300 group-hover:border-[#D4AF37]/30
                   group-hover:bg-[#D4AF37]/[0.05]
                 "
@@ -146,7 +150,7 @@ export default function Footer() {
                   width={52}
                   height={52}
                   quality={60}
-                  className="object-contain"
+                  className="h-[52px] w-[52px] max-w-none object-contain"
                 />
               </div>
 

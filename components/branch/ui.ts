@@ -1,0 +1,9 @@
+export const gold = "text-[#D4AF37]";
+export const card = "rounded-2xl border border-[#D4AF37]/20 bg-white/[0.03] p-6";
+export const h2 = "text-2xl font-bold md:text-3xl";
+export const section = "mx-auto max-w-6xl scroll-mt-24 px-4 py-12";
+export const th = "p-4";
+export const link = "font-semibold text-[#D4AF37] underline-offset-2 hover:underline";
+export const btnPrimary = "rounded-xl bg-[#D4AF37] px-6 py-3 font-bold text-black hover:opacity-90";
+export const btnOutline = "rounded-xl border border-[#D4AF37] px-6 py-3 font-bold text-[#D4AF37] hover:bg-[#D4AF37]/10";
+export const btnGhost = "rounded-xl border border-white/20 px-6 py-3 font-bold text-white hover:border-[#D4AF37] hover:text-[#D4AF37]";

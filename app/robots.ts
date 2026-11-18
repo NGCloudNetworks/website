@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { SITE } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
 
@@ -14,9 +15,9 @@ export default function robots(): MetadataRoute.Robots {
     },
 
     sitemap:
-      "https://ngcloudnetworks.com/sitemap.xml",
+      `${SITE}/sitemap.xml`,
 
     host:
-      "https://ngcloudnetworks.com",
+      SITE,
   };
 }

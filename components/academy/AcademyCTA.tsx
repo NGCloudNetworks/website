@@ -25,7 +25,7 @@ const highlights = [
   },
 
   {
-    title: "100% Placement Assistance",
+    title: "Placement Assistance",
     description:
       "Build interview confidence with resume support, LinkedIn optimization, mock interviews and continuous career mentoring.",
     icon: BriefcaseBusiness,
@@ -223,7 +223,7 @@ export default function AcademyCTA() {
 
             <TrustPoint text="Career Mentoring & Guidance" />
 
-            <TrustPoint text="100% Placement Assistance" />
+            <TrustPoint text="Placement Assistance" />
 
           </div>
 

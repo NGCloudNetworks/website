@@ -1,49 +1,39 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 import { courses } from "@/data/courses";
-import { blogs } from "@/data/blogs"; // ⚠️ CONFIRM this import path/export name is correct
+import { blogs } from "@/data/blogs";
+import { AMEENPUR, AMEERPET } from "@/data/branches";
+import { SITE } from "@/lib/site";
+
+// Update a date here only when the page's content really changes.
+const PAGES: { path: string; lastModified?: string }[] = [
+  { path: "" },
+  { path: "/courses" },
+  { path: "/networking-training-hyderabad", lastModified: "2026-11-17" },
+  { path: "/ameenpur", lastModified: AMEENPUR.lastUpdated },
+  { path: "/ameerpet", lastModified: AMEERPET.lastUpdated },
+  { path: "/contact" },
+  { path: "/about" },
+  { path: "/blog" },
+  { path: "/placements" },
+  { path: "/resources" },
+  { path: "/corporate-training" },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-
-  const baseUrl = "https://www.ngcloudnetworks.com";
-
-  const staticPages = [
-    { path: "", priority: 1 },
-    { path: "/courses", priority: 0.9 },
-    { path: "/contact", priority: 0.9 },
-    { path: "/about", priority: 0.8 },
-    { path: "/blog", priority: 0.8 },
-    { path: "/placements", priority: 0.7 },
-    { path: "/resources", priority: 0.7 },
-    { path: "/corporate-training", priority: 0.7 },
-  ];
-
-  const staticUrls = staticPages.map(({ path, priority }) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority,
+  const pages = PAGES.map(({ path, lastModified }) => ({
+    url: `${SITE}${path}`,
+    ...(lastModified ? { lastModified: new Date(lastModified) } : {}),
   }));
 
   const courseUrls = courses.map((course) => ({
-    url: `${baseUrl}/courses/${course.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.95,
+    url: `${SITE}/courses/${course.slug}`,
   }));
 
   const blogUrls = blogs.map((blog) => ({
-    url: `${baseUrl}/blog/${blog.slug}`,
-    lastModified: blog.publishedDate
-      ? new Date(blog.publishedDate)
-      : new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.85,
+    url: `${SITE}/blog/${blog.slug}`,
+    ...(blog.publishedDate ? { lastModified: new Date(blog.publishedDate) } : {}),
   }));
 
-  return [
-    ...staticUrls,
-    ...courseUrls,
-    ...blogUrls,
-  ];
+  return [...pages, ...courseUrls, ...blogUrls];
 }

@@ -18,6 +18,7 @@ import SeoContent from "@/components/courses/SeoContent";
 import CTASection from "@/components/courses/CTASection";
 
 import { courses } from "@/data/courses";
+import HubCallout from "@/components/global/HubCallout";
 import CurriculumSection from "@/components/courses/CurriculumSection";
 import TrainingScheduleSection from "@/components/home/TrainingScheduleSection";
 import EnterpriseLabsProjects from "@/components/courses/EnterpriseLabsProjects";
@@ -323,6 +324,12 @@ export default async function CoursePage({
         <SeoContent
           course={course}
         />
+        <HubCallout
+          title={`${course.title} at Ameenpur and Ameerpet`}
+          text="The same course, trainer and timetable run at both Hyderabad branches, and you can also join live online. See every course, fee and batch in one place, or check which branch is closer to you."
+          hubAnchor="Compare all courses, fees and batches in Hyderabad"
+        />
+
         <RelatedCourses
           course={course}
         />

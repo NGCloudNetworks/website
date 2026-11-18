@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import HubCallout from "@/components/global/HubCallout";
+import { SITE, ORG_ID, LOGO_URL } from "@/lib/site";
 import type { Metadata } from "next";
 
 import {
@@ -25,7 +27,7 @@ import {
 // ---------------------------------------------
 
 const stats = [
-  { icon: Users, value: "10,000+", label: "Students Trained" },
+  { icon: Users, value: "1000+", label: "Students Trained" },
   { icon: BriefcaseBusiness, value: "2500+", label: "Placements" },
   { icon: GraduationCap, value: "15+", label: "Industry Courses" },
   { icon: TrendingUp, value: "92%", label: "Career Support" },
@@ -67,7 +69,7 @@ const founder = {
   name: "Nazeer",
   designation: "Senior Enterprise Network & Infrastructure Consultant",
   experience: "14+ Years",
-  bio: "Nazeer is an experienced enterprise networking professional with more than 14 years of industry and training experience. He has trained hundreds of students, freshers and working professionals in Cisco Networking, Enterprise Infrastructure, Routing & Switching, SD-WAN, Network Security and Cloud Networking. His practical teaching methodology focuses on real-world implementation, enterprise troubleshooting, certification preparation and interview readiness.",
+  bio: "Nazeer is an experienced enterprise networking professional with more than 14 years of industry and training experience. He has trained more than 1,000 students, freshers and working professionals in Cisco Networking, Enterprise Infrastructure, Routing & Switching, SD-WAN, Network Security and Cloud Networking. His practical teaching methodology focuses on real-world implementation, enterprise troubleshooting, certification preparation and interview readiness.",
   expertise: [
     "Cisco Enterprise Networking",
     "CCNA",
@@ -139,7 +141,7 @@ const aboutFaqs = [
   },
   {
     q: "Who is the trainer at NG Cloud Networks?",
-    a: "All courses at NG Cloud Networks are trained directly by Nazeer, who has trained hundreds of students, freshers and working professionals in CCNA, CCNP Enterprise, Cisco SD-WAN, Network Security and Cloud Networking with a practical, real-world implementation approach.",
+    a: "All courses at NG Cloud Networks are trained directly by Nazeer, who has trained more than 1,000 students, freshers and working professionals in CCNA, CCNP Enterprise, Cisco SD-WAN, Network Security and Cloud Networking with a practical, real-world implementation approach.",
   },
   {
     q: "Where is NG Cloud Networks located?",
@@ -188,13 +190,13 @@ export const metadata: Metadata = {
     "Network Engineer Training",
   ],
   alternates: {
-    canonical: "https://ngcloudnetworks.com/about",
+    canonical: `${SITE}/about`,
   },
   openGraph: {
     title: "About NG Cloud Networks",
     description:
       "Practical networking, cloud and cybersecurity training institute in Hyderabad, founded by Nazeer, with enterprise labs and placement support.",
-    url: "https://ngcloudnetworks.com/about",
+    url: `${SITE}/about`,
     siteName: "NG Cloud Networks",
     locale: "en_IN",
     type: "website",
@@ -651,9 +653,10 @@ export default function AboutPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "EducationalOrganization",
+            "@id": ORG_ID,
             name: "NG Cloud Networks",
-            url: "https://ngcloudnetworks.com",
-            logo: "https://ngcloudnetworks.com/logo.png",
+            url: SITE,
+            logo: LOGO_URL,
             telephone: "+91-9989939191",
             description:
               "Networking, cloud computing and cyber security training institute in Hyderabad, founded by Nazeer.",
@@ -705,6 +708,12 @@ export default function AboutPage() {
             })),
           }),
         }}
+      />
+
+      <HubCallout
+        title="Train with Nazeer in Hyderabad"
+        text="See which courses he teaches, how the batches work and what each course costs, then choose the branch that is easier to reach."
+        hubAnchor="Courses, fees and batches in Hyderabad"
       />
 
       <Footer />

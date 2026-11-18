@@ -46,7 +46,7 @@ const academyFaqs = [
   question:
     "Do you provide placement assistance after course completion?",
   answer:
-    "Yes. We provide 100% placement assistance to help students become job-ready. Our career support includes ATS-friendly resume building, LinkedIn profile optimization, technical mock interviews, HR interview guidance, career mentoring and job search support. While employment depends on individual performance, preparation and market opportunities, our team continues to guide students throughout the placement process."
+    "Yes. We provide placement assistance to help students become job-ready. Our career support includes ATS-friendly resume building, LinkedIn profile optimization, technical mock interviews, HR interview guidance, career mentoring and job search support. While employment depends on individual performance, preparation and market opportunities, our team continues to guide students throughout the placement process."
 },
 
 {

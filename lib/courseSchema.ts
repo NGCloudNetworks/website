@@ -1,15 +1,16 @@
 // lib/courseSchema.ts
 import { Course } from "@/types/course";
+import { SITE, ORG_ID } from "@/lib/site";
 
 export function buildCourseSchema(course: Course) {
   return {
     "@context": "https://schema.org",
     "@type": "Course",
-    "@id": `https://ngcloudnetworks.com/courses/${course.slug}#course`,
+    "@id": `${SITE}/courses/${course.slug}#course`,
     name: course.title,
     description: course.seoDescription,
     provider: {
-      "@id": "https://ngcloudnetworks.com/#organization",
+      "@id": ORG_ID,
     },
     hasCourseInstance: {
       "@type": "CourseInstance",
@@ -22,7 +23,7 @@ export function buildCourseSchema(course: Course) {
           price: Number(course.price.replace(/[^0-9.]/g, "")) || undefined,
           priceCurrency: course.priceCurrency,
           availability: "https://schema.org/InStock",
-          url: `https://ngcloudnetworks.com/courses/${course.slug}`,
+          url: `${SITE}/courses/${course.slug}`,
         }
       : undefined,
     teaches: course.skills,

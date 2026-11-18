@@ -173,6 +173,7 @@ export default function Navbar() {
 
               <div
                 className="
+                  shrink-0
                   rounded-2xl
                   border
                   border-white/10
@@ -191,7 +192,7 @@ export default function Navbar() {
                   width={52}
                   height={52}
                   quality={60}
-                  className="object-contain"
+                  className="h-[52px] w-[52px] max-w-none object-contain"
                 />
 
               </div>
@@ -387,6 +388,14 @@ export default function Navbar() {
                           ))}
 
                         </div>
+
+                        <Link
+                          href="/networking-training-hyderabad"
+                          className="mt-6 inline-flex items-center gap-2 text-[14px] font-semibold text-[#D4AF37] hover:underline"
+                        >
+                          Fees, batches and branches: Networking &amp; Cloud Training in Hyderabad
+                          <ArrowUpRight className="h-4 w-4" />
+                        </Link>
 
                       </div>
 
@@ -1005,6 +1014,10 @@ export default function Navbar() {
               </Link>
             ))}
           </div>
+
+          <Link href="/networking-training-hyderabad" onClick={() => setMobileOpen(false)} className="border-b border-white/5 py-5 text-[15px] text-[#D4AF37]">
+            Training in Hyderabad
+          </Link>
 
           {navLinks.filter((l) => !l.dropdown).map((link) => (
             <Link key={link.name} href={link.href} onClick={() => setMobileOpen(false)} className="border-b border-white/5 py-5 text-[15px] text-white/80">

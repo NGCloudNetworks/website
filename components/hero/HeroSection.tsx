@@ -24,7 +24,7 @@ export default function HeroSection() {
     url: "https://www.ngcloudnetworks.com",
     logo: "https://www.ngcloudnetworks.com/logo/ng-icon.png",
     description:
-      "NG Cloud Networks is a networking, cloud and cybersecurity training institute in Ameenpur, Hyderabad, offering CCNA, CCNP Enterprise, CCNP Core, AWS, Microsoft Azure, Multi-Cloud Security, Palo Alto Firewall, FortiGate Firewall, F5 Load Balancer and Cisco SD-WAN training with hands-on labs and placement support.",
+      "NG Cloud Networks is a networking, cloud and cybersecurity training institute in Hyderabad with branches in Ameenpur and Ameerpet, offering CCNA, CCNP Enterprise, CCNP Core, AWS, Microsoft Azure, Multi-Cloud Security, Palo Alto Firewall, FortiGate Firewall, F5 Load Balancer and Cisco SD-WAN training with hands-on labs and placement support.",
     address: {
       "@type": "PostalAddress",
       streetAddress:
@@ -80,7 +80,7 @@ export default function HeroSection() {
           "
         >
           <MapPin className="h-4 w-4" aria-hidden="true" />
-          Enterprise Networking, Cloud &amp; Security Academy — Ameenpur, Hyderabad
+          Networking, Cloud &amp; Security Academy · Ameenpur &amp; Ameerpet, Hyderabad
         </span>
 
         <h1
@@ -101,7 +101,7 @@ export default function HeroSection() {
           "
         >
           NG Cloud Networks is a networking, cloud and cybersecurity training
-          institute in Ameenpur, Hyderabad. We teach CCNA, CCNP Enterprise,
+          institute with branches in Ameenpur and Ameerpet, Hyderabad. We teach CCNA, CCNP Enterprise,
           CCNP Core, AWS, Microsoft Azure, Multi-Cloud Security, Palo Alto
           Firewall, FortiGate Firewall, F5 Load Balancer and Cisco SD-WAN
           through live online and classroom batches with hands-on enterprise
@@ -138,6 +138,16 @@ export default function HeroSection() {
             Explore All Courses
           </Link>
         </div>
+
+        <p className="mt-6 text-[14.5px] text-white/60">
+          Now open in Ameerpet:{" "}
+          <Link
+            href="/ameerpet"
+            className="font-semibold text-[#D4AF37] underline underline-offset-4 hover:text-[#E7C75A]"
+          >
+            see our Ameerpet branch
+          </Link>
+        </p>
 
         <nav aria-label="Courses offered at NG Cloud Networks" className="mt-8">
           <ul className="mx-auto flex max-w-[900px] flex-wrap items-center justify-center gap-2.5">

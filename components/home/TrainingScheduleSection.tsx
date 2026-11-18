@@ -264,7 +264,7 @@ export default function TrainingScheduleSection({ courseSlug }: Props) {
 
               <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-[13.5px] leading-[1.7] text-white/50">
-                  Timings are subject to batch availability. For other
+                  The same timetable runs at our Ameenpur and Ameerpet branches. Timings are subject to batch availability. For other
                   courses, contact us for the next batch dates.
                 </p>
                 <Link

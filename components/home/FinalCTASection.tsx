@@ -44,7 +44,15 @@ export default function FinalCTASection() {
         >
           Join {academyStats.studentsTrained} students trained in CCNA, CCNP,
           AWS, Azure, Palo Alto, Fortigate and Cisco SD-WAN. Experience our
-          teaching methodology and enterprise labs before you enroll.
+          teaching methodology and enterprise labs before you enroll, at our
+          Ameenpur or{" "}
+          <Link
+            href="/ameerpet"
+            className="font-semibold text-[#D4AF37] underline underline-offset-4"
+          >
+            Ameerpet branch
+          </Link>
+          , or online.
         </p>
 
         <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">

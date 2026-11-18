@@ -9,6 +9,7 @@ import { courses } from "@/data/courses";
 import { courseCategories } from "@/data/courseLinks";
 import { Course } from "@/types/course";
 import CoursesSeoContent from "@/components/academy/CoursesSeoContent";
+import HubCallout from "@/components/global/HubCallout";
 
 export const metadata: Metadata = {
   title:
@@ -311,6 +312,12 @@ export default function CoursesHubPage() {
         {/* Institute comparison — reused trust content */}
         <ComparisonSection />
         <CoursesSeoContent/>
+
+        <HubCallout
+          title="Which course and which branch?"
+          text="Not sure where to start? Our Hyderabad training guide helps you choose a course by background and goal, and compares fees, duration and batch timings. Classes run at Ameenpur and Ameerpet, or live online."
+          hubAnchor="Choose your course: Networking & Cloud Training in Hyderabad"
+        />
 
         {/* Catalog-specific FAQ — distinct from homepage FAQ, own FAQPage schema */}
         <section aria-labelledby="catalog-faq-heading" className="py-16 md:py-20">

@@ -6,12 +6,13 @@ type Props = {
   whatsappNumber: string; // digits only, e.g. 919989939191
   courses: { value: string; label: string }[];
   modes: string[];
+  branch?: string; // "Ameerpet" (default) or "Ameenpur"
 };
 
 const field =
   "w-full rounded-xl border border-white/15 bg-black/40 px-4 py-3 text-white placeholder:text-gray-500 focus:border-[#D4AF37] focus:outline-none focus:ring-2 focus:ring-[#D4AF37]/40";
 
-export default function EnquiryForm({ whatsappNumber, courses, modes }: Props) {
+export default function EnquiryForm({ whatsappNumber, courses, modes, branch = "Ameerpet" }: Props) {
   const [name, setName] = useState("");
   const [course, setCourse] = useState(courses[0]?.label ?? "");
   const [mode, setMode] = useState(modes[0] ?? "");
@@ -20,13 +21,14 @@ export default function EnquiryForm({ whatsappNumber, courses, modes }: Props) {
     e.preventDefault();
     const text =
       `Hi NG Cloud Networks, I'm ${name || "interested"}. ` +
-      `I want details about ${course} (${mode}) at the Ameerpet branch. Please share batch timings and a demo class slot.`;
+      `I want details about ${course} (${mode}) at the ${branch} branch. Please share batch timings and a demo class slot.`;
     // Optional analytics: fires only if GA4 is loaded.
-    (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.("event", "ameerpet_enquiry", { course, mode });
+    (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.("event", `${branch.toLowerCase()}_enquiry`, { course, mode });
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, "_blank", "noopener,noreferrer");
   }
+
   return (
-    <form onSubmit={submit} className="grid gap-4 md:grid-cols-2" aria-label="Ameerpet enquiry form">
+    <form onSubmit={submit} className="grid gap-4 md:grid-cols-2" aria-label={`${branch} enquiry form`}>
       <div>
         <label htmlFor="enq-name" className="mb-1 block text-sm text-gray-300">Your name</label>
         <input id="enq-name" className={field} value={name} onChange={(e) => setName(e.target.value)} placeholder="Full name" autoComplete="name" required />

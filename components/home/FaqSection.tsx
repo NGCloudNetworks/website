@@ -266,14 +266,37 @@ const faqs: FAQ[] = [
   },
   {
     category: "General",
-    question: "Where is NG Cloud Networks located?",
+    question: "Do you have a branch in Ameerpet?",
     answerText:
-      "NG Cloud Networks is located in Ameenpur, Hyderabad, Telangana, with both classroom and live online training options available.",
+      "Yes. NG Cloud Networks has a new branch in Ameerpet, Hyderabad, at Flat No. 404, 4th Floor, Aditya Enclave, Annapurna Block. It offers the same courses and batch timetable as the Ameenpur branch.",
     answer: (
       <>
-        NG Cloud Networks is located in{" "}
-        <strong className="text-white">Ameenpur, Hyderabad, Telangana</strong>
-        , with both classroom and live online training options available.
+        <strong className="text-white">Yes.</strong> NG Cloud Networks has a
+        new branch in Ameerpet, Hyderabad, at Flat No. 404, 4th Floor, Aditya
+        Enclave, Annapurna Block. It offers the same courses and batch
+        timetable as the Ameenpur branch. See the{" "}
+        <Link href="/ameerpet" className="font-semibold text-[#D4AF37] underline underline-offset-2">
+          Ameerpet branch page
+        </Link>
+        .
+      </>
+    ),
+  },
+  {
+    category: "General",
+    question: "Where is NG Cloud Networks located?",
+    answerText:
+      "NG Cloud Networks has two branches in Hyderabad: Ameenpur (Royal Homes, Fusion School Back Side) and Ameerpet (Aditya Enclave, Annapurna Block). Both offer the same courses, with classroom and live online training options.",
+    answer: (
+      <>
+        NG Cloud Networks has two branches in Hyderabad:{" "}
+        <strong className="text-white">Ameenpur</strong> (Royal Homes, Fusion
+        School Back Side) and{" "}
+        <Link href="/ameerpet" className="font-semibold text-[#D4AF37] underline underline-offset-2">
+          Ameerpet
+        </Link>{" "}
+        (Aditya Enclave, Annapurna Block). Both offer the same courses, with
+        classroom and live online training options.
       </>
     ),
   },
@@ -347,8 +370,8 @@ export default function FAQSection() {
           </h2>
 
           <p className="mt-4 text-[13.5px] text-white/60">
-            Answered by the NG Cloud Networks training team, Ameenpur,
-            Hyderabad
+            Answered by the NG Cloud Networks training team, Ameenpur
+            &amp; Ameerpet, Hyderabad
           </p>
         </header>
 

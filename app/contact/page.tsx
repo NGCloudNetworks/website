@@ -36,8 +36,9 @@ const schema = {
     },
     {
       "@type": ["EducationalOrganization", "LocalBusiness"],
-      "@id": `${SITE}/contact#ameenpur`,
+      "@id": `${SITE}/ameenpur#branch`,
       name: "NG Cloud Networks - Ameenpur",
+      url: `${SITE}/ameenpur`,
       telephone: "+91-9989939191",
       email: "info@ngcloudnetworks.com",
       parentOrganization: { "@id": `${SITE}/#organization` },

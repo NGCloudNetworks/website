@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import HubCallout from "@/components/global/HubCallout";
 import PlacementSupport from "@/components/home/PlacementSupport";
 import StudentSuccessSection from "@/components/home/StudentSuccessSection";
-import { placementSupport, academyStats } from "@/data/academy";
+import { placementSupport } from "@/data/academy";
 import { ChevronDown } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -135,8 +136,7 @@ export default function PlacementsPage() {
               <strong className="text-white">
                 Cisco, HCL Technologies, Cloud4C and Teleperformance
               </strong>
-              , with placement assistance included in every course fee and
-              starting salaries around {academyStats.placementSupport} placement support rate.
+              , with placement assistance included in every course fee.
             </p>
           </div>
         </section>
@@ -164,6 +164,12 @@ export default function PlacementsPage() {
             </div>
           </div>
         </section>
+
+        <HubCallout
+          title="What placement support covers"
+          text="Placement assistance is included in every course fee. See how it fits into each course, and which branch and batch suit you."
+          hubAnchor="Courses, fees and batches in Hyderabad"
+        />
 
         <Footer />
       </main>

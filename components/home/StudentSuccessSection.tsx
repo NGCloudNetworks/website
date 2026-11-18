@@ -9,8 +9,6 @@ const placements = [
   { name: "Vinay", role: "Network Engineer", company: "Teleperformance", course: "CCNA Training" },
 ];
 
-// Cycled accent tints per card — same gold family, varied opacity/hue weight
-// so 6 cards in a grid don't read as one flat repeated block
 const accents = [
   "bg-[#D4AF37]/15 text-[#D4AF37]",
   "bg-[#E7C75A]/15 text-[#E7C75A]",

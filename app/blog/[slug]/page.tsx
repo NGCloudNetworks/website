@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { SITE, ORG_ID, LOGO_URL } from "@/lib/site";
 
 import Link from "next/link";
 import Script from "next/script";
@@ -12,6 +13,7 @@ import {
 
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import HubCallout from "@/components/global/HubCallout";
 
 import { blogs } from "@/data/blogs";
 
@@ -46,6 +48,9 @@ export async function generateMetadata({
     title: blog.seoTitle,
     description: blog.seoDescription,
 
+    metadataBase: new URL(SITE),
+    alternates: { canonical: `${SITE}/blog/${blog.slug}` },
+
     keywords: blog.tags,
 
     authors: [
@@ -57,6 +62,9 @@ export async function generateMetadata({
     openGraph: {
       title: blog.seoTitle,
       description: blog.seoDescription,
+      url: `${SITE}/blog/${blog.slug}`,
+      siteName: "NG Cloud Networks",
+      locale: "en_IN",
       images: [blog.image],
       type: "article",
     },
@@ -83,7 +91,7 @@ export default async function BlogDetailPage({
   if (!blog) {
     notFound();
   }
-  const baseUrl = "https://ngcloudnetworks.com";
+  const baseUrl = SITE;
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -99,10 +107,11 @@ export default async function BlogDetailPage({
     },
     publisher: {
       "@type": "Organization",
+      "@id": ORG_ID,
       name: "NG Cloud Networks",
       logo: {
         "@type": "ImageObject",
-        url: `${baseUrl}/logo.png`,
+        url: LOGO_URL,
       },
     },
     mainEntityOfPage: {
@@ -397,6 +406,12 @@ export default async function BlogDetailPage({
         </div>
 
       </section>
+
+      <HubCallout
+        title="Learn this hands-on in Hyderabad"
+        text="Our trainer Nazeer Basha teaches CCNA, CCNP, firewalls and cloud in small live batches, with labs, at Ameenpur and Ameerpet or online."
+        hubAnchor="See courses, fees and batches in Hyderabad"
+      />
 
       <Footer />
 

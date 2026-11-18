@@ -8,6 +8,7 @@ import WhyChooseSection from "@/components/home/WhyChooseUs";
 import Navbar from "@/components/navbar/Navbar";
 import TrainerSection from "@/components/home/TrainerSection";
 import CoursesSection from "@/components/home/CoursesSection";
+import BranchesSection from "@/components/home/BranchesSection";
 import TrainingScheduleSection from "@/components/home/TrainingScheduleSection";
 import WhoShouldJoinSection from "@/components/home/WhoShouldJoin";
 import ComparisonSection from "@/components/home/ComparisonSection";
@@ -21,29 +22,10 @@ import AnnouncementTicker from "@/components/home/AnnouncementSticker";
 
 export const metadata: Metadata = {
   title:
-    "Best CCNA, CCNP, SD-WAN & Network Security Training Institute in Hyderabad | NG Cloud Networks",
+    "CCNA, CCNP & Cloud Training in Hyderabad | NG Cloud Networks",
 
   description:
-    "NG Cloud Networks is a leading networking, cloud and cyber security training institute in Hyderabad offering CCNA, CCNP, AWS, Azure, Palo Alto, Fortigate and F5 Load Balancer training with practical labs, certification guidance and placement support.",
-
-  keywords: [
-    "CCNA Training Hyderabad",
-    "CCNP Training Hyderabad",
-    "AWS Training Hyderabad",
-    "Azure Training Hyderabad",
-    "Cyber Security Training Hyderabad",
-    "Networking Training Institute Hyderabad",
-    "Cloud Computing Training Hyderabad",
-    "Cisco Training Hyderabad",
-    "Palo Alto Firewall Training Hyderabad",
-    "Fortigate Firewall Training Hyderabad",
-    "F5 Load Balancer Training Hyderabad",
-    "SD-WAN Training Hyderabad",
-    "Best Networking Institute Hyderabad",
-    "Cloud Course Hyderabad",
-    "IT Training Institute Hyderabad",
-    "Cyber Security Institute Hyderabad",
-  ],
+    "NG Cloud Networks: CCNA, CCNP, AWS, Azure, Palo Alto and Fortigate training in Hyderabad. Hands-on labs, placement support. Ameenpur & Ameerpet branches.",
 
   metadataBase: new URL("https://www.ngcloudnetworks.com"),
 
@@ -53,7 +35,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Best CCNA, CCNP, SD-WAN & Network Security Training Institute in Hyderabad | NG Cloud Networks",
+      "CCNA, CCNP & Cloud Training in Hyderabad | NG Cloud Networks",
 
     description:
       "Practical networking, cloud and cyber security training institute in Hyderabad with placement support and enterprise-level labs.",
@@ -80,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
 
     title:
-      "Best CCNA, CCNP, SD-WAN & Network Security Training Institute in Hyderabad",
+      "CCNA, CCNP & Cloud Training in Hyderabad | NG Cloud Networks",
 
     description:
       "Networking, cloud and cyber security training institute with practical labs and placement support.",
@@ -135,6 +117,7 @@ export default function HomePage() {
         <TrainerSection />
 
         <CoursesSection />
+        <BranchesSection />
         <TrainingScheduleSection />
         <WhoShouldJoinSection />
         <CareerGuideSection />
