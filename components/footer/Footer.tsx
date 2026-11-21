@@ -30,6 +30,7 @@ const quickLinks = [
   { title: "Resources", href: "/resources" },
   { title: "Blog", href: "/blog" },
   { title: "Contact", href: "/contact" },
+  { title: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 const branches = [

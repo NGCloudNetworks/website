@@ -1,4 +1,10 @@
 "use client";
+
+// components/contact/ContactPageClient.tsx (v2)
+// Semantic structure: Navbar / <main> / Footer. One H1. JSON-LD only (no mixed microdata).
+// Metadata and page-level schema live in the server page.tsx.
+
+import { trackMetaLead } from "@/lib/track";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import HubCallout from "@/components/global/HubCallout";
@@ -158,6 +164,7 @@ export default function ContactPageClient() {
 
       if (data.success) {
         setSuccess(true);
+        trackMetaLead();
         (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.("event", "generate_lead", {
           form: "contact",
           course,

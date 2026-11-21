@@ -1,6 +1,7 @@
 "use client";
 
 // components/LeadPopup.tsx (v2: responsive, accessible)
+import { trackMetaLead } from "@/lib/track";
 import { useEffect, useRef, useState } from "react";
 import { CalendarDays, ChevronDown, X } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -43,6 +44,7 @@ export default function LeadPopup() {
       const data = await response.json();
       if (data.success) {
         setStatus("success");
+        trackMetaLead();
         (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.("event", "generate_lead", {
           form: "demo_popup",
           course: formData.course,

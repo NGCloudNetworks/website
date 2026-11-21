@@ -1,5 +1,6 @@
 "use client";
 
+import { trackMetaLead } from "@/lib/track";
 import { useState } from "react";
 
 type Props = {
@@ -59,6 +60,7 @@ export default function BranchEnquiryForm({ branch, branchOptions, courses, mode
       const data = await res.json().catch(() => ({ success: false }));
       if (res.ok && data.success) {
         setSuccess(true);
+        trackMetaLead();
         (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.("event", "generate_lead", {
           form: `${branch.toLowerCase()}_page`,
           course,

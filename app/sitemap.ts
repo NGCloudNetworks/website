@@ -1,3 +1,7 @@
+// app/sitemap.ts
+// lastModified is only set where we know a real edit date. A date that changes on every build
+// (new Date()) teaches Google to ignore the field, so pages without a known date omit it.
+// changeFrequency and priority are ignored by Google, so they are dropped.
 import type { MetadataRoute } from "next";
 
 import { courses } from "@/data/courses";
@@ -18,6 +22,7 @@ const PAGES: { path: string; lastModified?: string }[] = [
   { path: "/placements" },
   { path: "/resources" },
   { path: "/corporate-training" },
+  { path: "/privacy-policy", lastModified: "2026-11-21" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

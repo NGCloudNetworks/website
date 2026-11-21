@@ -12,9 +12,10 @@ type Props = {
   whatsappUrl: string;
   whatsappLabel: string;
   formHeading: string;
+  courseOptions?: { value: string; label: string }[]; // overrides the default 10-course list
 };
 
-export default function ContactSection({ branch, branchOptions, title, intro, whatsappUrl, whatsappLabel, formHeading }: Props) {
+export default function ContactSection({ branch, branchOptions, title, intro, whatsappUrl, whatsappLabel, formHeading, courseOptions }: Props) {
   return (
     <section id="enquire" aria-labelledby="enq-h" className="mx-auto max-w-4xl scroll-mt-24 px-4 py-12">
       <h2 id="enq-h" className={h2}>{title}</h2>
@@ -42,7 +43,7 @@ export default function ContactSection({ branch, branchOptions, title, intro, wh
         <BranchEnquiryForm
           branch={branch}
           branchOptions={branchOptions}
-          courses={courses.map((c) => ({ value: c.slug, label: shortName(c.anchor) }))}
+          courses={courseOptions ?? courses.map((c) => ({ value: c.slug, label: shortName(c.anchor) }))}
           modes={modes}
           phoneDisplay={PHONE_DISPLAY}
           phoneTel={PHONE_TEL}
