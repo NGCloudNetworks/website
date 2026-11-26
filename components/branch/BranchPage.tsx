@@ -68,7 +68,7 @@ export default function BranchPage({ branch: b }: { branch: Branch }) {
         url: PAGE,
         telephone: "+91-9989939191",
         email: EMAIL,
-        priceRange: "₹10,000 - ₹15,000",
+        priceRange: "₹10,000 - ₹20,000",
         description: b.schemaDescription,
         parentOrganization: { "@id": `${SITE}/#organization` },
         address: {

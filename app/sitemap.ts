@@ -22,6 +22,8 @@ const PAGES: { path: string; lastModified?: string }[] = [
   { path: "/placements" },
   { path: "/resources" },
   { path: "/corporate-training" },
+  { path: "/network-security-engineer-course-hyderabad", lastModified: "2026-11-25" },
+  { path: "/cloud-security-combo-course-hyderabad", lastModified: "2026-11-25" },
   { path: "/privacy-policy", lastModified: "2026-11-21" },
 ];
 

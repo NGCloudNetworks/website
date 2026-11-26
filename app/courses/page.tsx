@@ -10,6 +10,7 @@ import { courseCategories } from "@/data/courseLinks";
 import { Course } from "@/types/course";
 import CoursesSeoContent from "@/components/academy/CoursesSeoContent";
 import HubCallout from "@/components/global/HubCallout";
+import OfferLinks from "@/components/global/OfferLinks";
 
 export const metadata: Metadata = {
   title:
@@ -312,6 +313,8 @@ export default function CoursesHubPage() {
         {/* Institute comparison — reused trust content */}
         <ComparisonSection />
         <CoursesSeoContent/>
+
+        <OfferLinks />
 
         <HubCallout
           title="Which course and which branch?"

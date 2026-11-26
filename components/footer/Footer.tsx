@@ -24,6 +24,8 @@ const quickLinks = [
   { title: "Training in Hyderabad", href: "/networking-training-hyderabad" },
   { title: "About Us", href: "/about" },
   { title: "Placements", href: "/placements" },
+  { title: "Network Security Engineer Course", href: "/network-security-engineer-course-hyderabad" },
+  { title: "Cloud Security Combined Course", href: "/cloud-security-combo-course-hyderabad" },
   { title: "Ameenpur Branch", href: "/ameenpur" },
   { title: "Ameerpet Branch", href: "/ameerpet" },
   { title: "Corporate Training", href: "/corporate-training" },

@@ -97,7 +97,7 @@ export const CLOUD_SECURITY: Program = {
   modules: [
     { name: "CCNA (Routing and Switching)", detail: "Networking fundamentals that every cloud and security role builds on.", href: "/courses/ccna-training-hyderabad" },
     { name: "Linux Administration", detail: "Command line, users, permissions and services for cloud and security work." },
-    { name: "AWS Cloud Security", detail: "Securing AWS accounts, identity, networking and workloads.", href: "/courses/aws-cloud-training-hyderabad" },
+    { name: "AWS Cloud Security", detail: "Securing AWS accounts, identity, networking and workloads.", href: "/courses/aws-training-hyderabad" },
     { name: "Multi Cloud Security (AWS, Azure, GCP)", detail: "Applying security controls consistently across the three major clouds.", href: "/courses/cloud-security-training-hyderabad" },
   ],
   forWho: [

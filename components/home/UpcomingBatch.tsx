@@ -1,126 +1,114 @@
+// components/home/UpcomingBatch.tsx
+// Homepage section for the next batch. Everything comes from data/programs.ts, so a new batch is a one-file edit.
 import Image from "next/image";
 import Link from "next/link";
+import { NETWORK_SECURITY, CLOUD_SECURITY, gstAmount, inr, type Program } from "@/data/programs";
+import { PHONE_DISPLAY, PHONE_TEL, WA_NUMBER } from "@/data/branches";
+
+const OFFERS: { p: Program; image: string; width: number; height: number; alt: string; short: string; covers: string[] }[] = [
+  {
+    p: NETWORK_SECURITY,
+    image: "/images/batches/network-security-engineer-dec-2026.webp",
+    width: 1080,
+    height: 1350,
+    alt: "Network Security Engineer course at NG Cloud Networks Ameerpet: CCNA, CCNP, Palo Alto and FortiGate, batch starts 1 December 2026, 5 students per batch",
+    short: "Network Security Engineer",
+    covers: ["CCNA", "CCNP Enterprise", "Palo Alto", "FortiGate"],
+  },
+  {
+    p: CLOUD_SECURITY,
+    image: "/images/batches/cloud-security-combo-dec-2026.webp",
+    width: 1080,
+    height: 1296,
+    alt: "Cloud Security combined course at NG Cloud Networks Ameerpet: CCNA, Linux, AWS and multi-cloud security, batch starts 1 December 2026, 5 members per batch",
+    short: "Cloud Security",
+    covers: ["CCNA", "Linux", "AWS Security", "AWS · Azure · GCP"],
+  },
+];
 
 export default function UpcomingBatch() {
+  const start = NETWORK_SECURITY.startLabel;
   return (
-    <section
-      id="upcoming-batch"
-      className="upcoming-batch"
-      aria-labelledby="upcoming-batch-title"
-    >
+    <section id="upcoming-batch" className="upcoming-batch" aria-labelledby="upcoming-batch-title">
       <div className="upcoming-batch-container">
-
-        {/* Section heading */}
         <div className="upcoming-batch-heading">
-          <span className="upcoming-batch-eyebrow">
-            NEW BATCH
-          </span>
-
-          <h2 id="upcoming-batch-title">
-            CCNP Enterprise Training
-          </h2>
-
+          <span className="upcoming-batch-eyebrow">NEXT BATCH · {start.toUpperCase()}</span>
+          <h2 id="upcoming-batch-title">New Batches Start {start}</h2>
           <p>
-            ENCOR + ENARSI · Starts 15 October 2026
+            Two combined programs at our Ameerpet branch in Hyderabad, in the classroom or live online, with only 5
+            students per batch. Individual courses can still be joined separately at the fees on their course pages.
           </p>
         </div>
 
-        {/* Main content */}
-        <div className="upcoming-batch-grid">
+        <div className="grid gap-8 lg:grid-cols-2">
+          {OFFERS.map(({ p, image, width, height, alt, short, covers }) => {
+            const wa = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(`Hi NG Cloud Networks, I am interested in the ${short} program starting ${start}.`)}`;
+            return (
+              <article key={p.slug} className="flex flex-col overflow-hidden rounded-3xl border border-[#D4AF37]/25 bg-white/[0.03]">
+                <Link href={p.path} aria-label={`${p.h1}: details and fees`} className="block">
+                  <Image src={image} alt={alt} width={width} height={height} sizes="(max-width: 1024px) 100vw, 600px" className="h-auto w-full" />
+                </Link>
 
-          {/* Poster */}
-          <div className="upcoming-batch-poster">
-            <Image
-              src="/images/batches/ccnp-enterprise-october-2026.webp"
-              alt="CCNP Enterprise ENCOR and ENARSI training batch starting 15 October 2026 at NG Cloud Networks"
-              width={1080}
-              height={1080}
-              sizes="(max-width: 900px) 100vw, 58vw"
-              priority
-            />
-          </div>
+                <div className="flex flex-1 flex-col p-6 md:p-7">
+                  <div className="batch-status">
+                    <span className="status-dot" />
+                    Admissions Open
+                  </div>
 
-          {/* Information */}
-          <div className="upcoming-batch-info">
+                  <h3 className="mt-3 text-[22px] font-extrabold leading-snug text-white">
+                    <Link href={p.path} className="hover:text-[#D4AF37]">{p.h1}</Link>
+                  </h3>
 
-            <div className="batch-status">
-              <span className="status-dot" />
-              Admissions Open
-            </div>
+                  <div className="batch-modules mt-4">
+                    {covers.map((c) => (
+                      <span key={c}>{c}</span>
+                    ))}
+                  </div>
 
-            <h3>
-              Build Advanced Enterprise Networking Skills
-            </h3>
+                  <div className="batch-details mt-5">
+                    <div>
+                      <span>Batch Starts</span>
+                      <strong>{p.startLabel}</strong>
+                    </div>
+                    <div>
+                      <span>Duration</span>
+                      <strong>{p.duration}</strong>
+                    </div>
+                    <div>
+                      <span>Fee</span>
+                      <strong>{inr(p.fee)} + GST</strong>
+                    </div>
+                    <div>
+                      <span>Timing</span>
+                      <strong>{p.slots.join(" · ")}</strong>
+                    </div>
+                  </div>
+                  <p className="mt-2 text-xs text-white/50">
+                    GST {p.gstPercent}% = {inr(gstAmount(p.fee))}. {p.batchSize}. Exam vouchers not included.
+                  </p>
 
-            <p>
-              Join the upcoming CCNP Enterprise training program covering
-              ENCOR and ENARSI with practical Cisco networking labs and
-              real-world troubleshooting scenarios.
-            </p>
-
-            <div className="batch-details">
-
-              <div>
-                <span>Batch Starts</span>
-                <strong>15 October 2026</strong>
-              </div>
-
-              <div>
-                <span>Schedule</span>
-                <strong>Monday – Saturday</strong>
-              </div>
-
-              <div>
-                <span>Time</span>
-                <strong>7:00 AM – 9:00 AM</strong>
-              </div>
-
-              <div>
-                <span>Location</span>
-                <strong>Ameenpur, Hyderabad</strong>
-              </div>
-
-            </div>
-
-            <div className="batch-modules">
-              <span>350-401 ENCOR</span>
-              <span>300-410 ENARSI</span>
-              <span>Hands-on Cisco Labs</span>
-            </div>
-
-            <div className="batch-actions">
-
-              <Link
-                href="/courses/ccnp-enterprise-training-hyderabad"
-                className="batch-primary-btn"
-              >
-                View Course
-              </Link>
-
-              <a
-                href="https://wa.me/919989939191?text=Hi%20NG%20Cloud%20Networks%2C%20I%20am%20interested%20in%20the%20CCNP%20Enterprise%20batch%20starting%2015%20October%202026."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="batch-secondary-btn"
-              >
-                Enquire on WhatsApp
-              </a>
-
-            </div>
-
-            <div className="batch-contact">
-              <a href="tel:+919989939191">
-                +91 9989939191
-              </a>
-
-              <a href="mailto:info@ngcloudnetworks.com">
-                info@ngcloudnetworks.com
-              </a>
-            </div>
-
-          </div>
+                  <div className="batch-actions mt-6">
+                    <Link href={p.path} className="batch-primary-btn">
+                      View details and fees
+                    </Link>
+                    <a href={wa} target="_blank" rel="noopener noreferrer" className="batch-secondary-btn">
+                      Enquire on WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
+        <p className="mt-8 text-center text-[15px] text-white/60">
+          Questions about seats or timings? Call{" "}
+          <a href={`tel:${PHONE_TEL}`} className="font-semibold text-[#D4AF37]">{PHONE_DISPLAY}</a>, or see all{" "}
+          <Link href="/networking-training-hyderabad" className="font-semibold text-[#D4AF37] underline underline-offset-4">
+            courses, fees and batches in Hyderabad
+          </Link>
+          .
+        </p>
       </div>
     </section>
   );

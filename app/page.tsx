@@ -112,7 +112,7 @@ export default function HomePage() {
 
         </header>
         <HeroSection />
-        {/* <UpcomingBatch /> */}
+        <UpcomingBatch />
         <WhyChooseSection />
         <TrainerSection />
 

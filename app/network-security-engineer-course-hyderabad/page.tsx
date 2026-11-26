@@ -4,12 +4,12 @@ import { NETWORK_SECURITY, programUrl } from "@/data/programs";
 
 const p = NETWORK_SECURITY;
 
-// noindex: this is a dated offer page for ads. It would otherwise compete with the individual course pages in search.
+// Indexable: linked from the homepage, hub, courses and branch pages. Update the dates in data/programs.ts for each new batch
+// instead of creating a new URL, so the page keeps its history.
 export const metadata: Metadata = {
   title: p.seoTitle,
   description: p.seoDescription,
   alternates: { canonical: programUrl(p) },
-  robots: { index: false, follow: true },
   openGraph: { title: p.seoTitle, description: p.seoDescription, url: programUrl(p), siteName: "NG Cloud Networks", locale: "en_IN", type: "website" },
 };
 

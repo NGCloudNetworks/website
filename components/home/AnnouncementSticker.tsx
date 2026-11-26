@@ -9,19 +9,19 @@ export default function AnnouncementTicker() {
 
       <span className="announcement-separator">•</span>
 
-      <span>CCNP ENTERPRISE</span>
+      <span>NETWORK SECURITY ENGINEER &amp; CLOUD SECURITY</span>
 
       <span className="announcement-separator">•</span>
 
-      <span>ENCOR + ENARSI</span>
+      <span>5 SEATS PER BATCH</span>
 
       <span className="announcement-separator">•</span>
 
-      <span>STARTS 15 OCTOBER 2026</span>
+      <span>STARTS 1 DECEMBER 2026</span>
 
       <span className="announcement-separator">•</span>
 
-      <span>7:00 AM – 9:00 AM</span>
+      <span>AMEERPET · ONLINE ALSO</span>
 
       <span className="announcement-separator">•</span>
 

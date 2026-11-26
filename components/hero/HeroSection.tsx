@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { academyStats, trainer } from "@/data/academy";
+import { NETWORK_SECURITY } from "@/data/programs";
 
 const heroCourses = [
   { label: "CCNA", href: "/courses/ccna-training-hyderabad" },
@@ -82,6 +83,18 @@ export default function HeroSection() {
           <MapPin className="h-4 w-4" aria-hidden="true" />
           Networking, Cloud &amp; Security Academy · Ameenpur &amp; Ameerpet, Hyderabad
         </span>
+
+        <a
+          href="#upcoming-batch"
+          className="
+            mt-4 inline-flex flex-wrap items-center justify-center gap-x-2 rounded-full border
+            border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-white
+            transition-colors hover:border-[#D4AF37]/50
+          "
+        >
+          <span className="text-[#D4AF37]">New batches start {NETWORK_SECURITY.startLabel}</span>
+          <span className="text-white/70">· Network Security Engineer &amp; Cloud Security programs →</span>
+        </a>
 
         <h1
           id="hero-heading"

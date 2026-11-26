@@ -9,7 +9,7 @@ export const FACTS: Record<string, { duration: string; fee: string }> = {
   "cisco-sdwan": { duration: "1 month", fee: "₹12,000 + GST" },
   "aws-cloud": { duration: "30 days", fee: "₹10,000 + GST" },
   "azure-cloud": { duration: "30 days", fee: "₹10,000 + GST" },
-  "cloud-security": { duration: "45 days", fee: "₹15,000 + GST" },
+  "cloud-security": { duration: "60 days", fee: "₹20,000 + GST" },
   "palo-alto-firewall": { duration: "1 month", fee: "₹10,000 + GST" },
   "fortigate-firewall": { duration: "20 days", fee: "₹10,000 + GST" },
   "f5-load-balancer": { duration: "1 month", fee: "₹10,000 + GST" },

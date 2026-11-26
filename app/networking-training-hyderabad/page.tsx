@@ -1,3 +1,4 @@
+import OfferLinks from "@/components/global/OfferLinks";
 // app/networking-training-hyderabad/page.tsx
 // The single home for everything that is true for BOTH branches: course comparison, fees, doubts about learning,
 // job struggles, how training works, full timetable, trainer profile and academy-wide FAQs.
@@ -56,7 +57,7 @@ const FAQS = [
   },
   {
     q: "How much do the courses cost?",
-    a: "Course fees range from ₹10,000 to ₹15,000, and most courses add 18% GST; CCNA is ₹10,000. See the fees table on this page and ask for the latest figure when you enquire.",
+    a: "Course fees range from ₹10,000 to ₹20,000, and most courses add 18% GST; CCNA is ₹10,000. See the fees table on this page and ask for the latest figure when you enquire.",
   },
   {
     q: "Which course should a beginner start with?",
@@ -207,6 +208,8 @@ export default function HyderabadTrainingPage() {
             ))}
           </div>
         </section>
+
+        <OfferLinks />
 
         <section id="courses" aria-labelledby="courses-h" className={section}>
           <h2 id="courses-h" className={h2}>Choose Your Course: <span className={gold}>Fees, Duration & Prerequisites</span></h2>

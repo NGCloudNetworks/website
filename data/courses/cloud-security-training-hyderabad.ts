@@ -9,7 +9,7 @@ const course: Course = {
     "Cloud Security Training in Hyderabad: AWS & Azure Labs",
 
   seoDescription:
-    "Cloud security training in Hyderabad: 45-day AWS and Azure security course, ₹15,000 + 18% GST, with IAM, SIEM and monitoring labs. Book a free demo.",
+    "Cloud security training in Hyderabad: 60-day AWS and Azure security course, ₹20,000 + 18% GST, with IAM, SIEM and monitoring labs. Book a free demo.",
 
   navCategory: "Security",
 
@@ -21,12 +21,12 @@ const course: Course = {
   // TODO: replace with the real course image path
   image: "/courses/cloud-security-training-hyderabad.png",
 
-  duration: "45 Days",
-  price: "₹15,000",
+  duration: "60 Days",
+  price: "₹20,000",
   priceCurrency: "INR",
 
   priceDescription:
-    "The Cloud Security training fee is ₹15,000 + 18% GST and includes live instructor-led sessions, hands-on AWS and Azure security labs, recorded classes, assessments, interview preparation and certification guidance.",
+    "The Cloud Security training fee is ₹20,000 + 18% GST and includes live instructor-led sessions, hands-on AWS and Azure security labs, recorded classes, assessments, interview preparation and certification guidance.",
 
   includedFeatures: [
     "Live instructor-led Cloud Security training",
@@ -45,7 +45,7 @@ const course: Course = {
     {
       question: "What is the Cloud Security course fee in Hyderabad?",
       answer:
-        "The Cloud Security course fee at NG Cloud Networks is ₹15,000 plus 18% GST. The fee includes instructor-led training, hands-on AWS and Azure security labs, recorded sessions and career preparation support.",
+        "The Cloud Security course fee at NG Cloud Networks is ₹20,000 plus 18% GST. The fee includes instructor-led training, hands-on AWS and Azure security labs, recorded sessions and career preparation support.",
     },
     {
       question: "Does the course fee include AWS or Azure certification exam vouchers?",
@@ -140,8 +140,8 @@ const course: Course = {
 
   curriculum: [
     {
-      week: "Week 1",
-      timeline: "Day 1 – Day 7",
+      week: "Phase 1",
+      timeline: "Day 1 – Day 10",
       module: "Cloud Computing & Security Fundamentals",
       description:
         "Builds the foundation every later module depends on — cloud service models, the shared responsibility model, and core security principles applied to cloud environments rather than traditional on-premise networks.",
@@ -163,8 +163,8 @@ const course: Course = {
       ],
     },
     {
-      week: "Week 2",
-      timeline: "Day 8 – Day 14",
+      week: "Phase 2",
+      timeline: "Day 11 – Day 20",
       module: "Identity & Access Management (IAM)",
       description:
         "Covers identity as the primary security boundary in cloud environments — AWS IAM and Azure AD, least-privilege access design, MFA and federation, the controls responsible for most real-world cloud breaches when misconfigured.",
@@ -188,8 +188,8 @@ const course: Course = {
       ],
     },
     {
-      week: "Week 3",
-      timeline: "Day 15 – Day 21",
+      week: "Phase 3",
+      timeline: "Day 21 – Day 30",
       module: "Cloud Network Security",
       description:
         "Secures the network layer of cloud infrastructure — VPCs, subnetting, security groups and NSGs — the controls that determine what traffic can reach a workload in the first place.",
@@ -211,8 +211,8 @@ const course: Course = {
       ],
     },
     {
-      week: "Week 4",
-      timeline: "Day 22 – Day 28",
+      week: "Phase 4",
+      timeline: "Day 31 – Day 40",
       module: "Cloud Infrastructure Security",
       description:
         "Hardens the compute and storage layers — EC2/Azure VM hardening, patch management, encryption at rest and in transit, and key management — the controls that protect data once network access is granted.",
@@ -233,8 +233,8 @@ const course: Course = {
       ],
     },
     {
-      week: "Week 5",
-      timeline: "Day 29 – Day 35",
+      week: "Phase 5",
+      timeline: "Day 41 – Day 50",
       module: "Security Monitoring & Threat Detection",
       description:
         "Shifts from configuration to operations — using CloudTrail, CloudWatch, Azure Monitor and Defender for Cloud to detect and investigate threats, plus SIEM fundamentals for structured incident response.",
@@ -256,8 +256,8 @@ const course: Course = {
       ],
     },
     {
-      week: "Week 6",
-      timeline: "Day 36 – Day 45",
+      week: "Phase 6",
+      timeline: "Day 51 – Day 60",
       module: "Cloud Compliance, DevSecOps & Real-Time Projects",
       description:
         "Closes the program with governance and compliance frameworks, DevSecOps and container security fundamentals, and full capstone projects covering AWS security, Azure security and incident response — plus placement preparation.",
@@ -363,7 +363,7 @@ const course: Course = {
     {
       question: "Can beginners learn Cloud Security?",
       answer:
-        "Yes. Students with basic networking or cloud knowledge can start from cloud and security fundamentals in Week 1 and progress into IAM, network security, monitoring and compliance by the end of the program.",
+        "Yes. Students with basic networking or cloud knowledge can start from cloud and security fundamentals in the first phase and progress into IAM, network security, monitoring and compliance by the end of the program.",
     },
     {
       question: "Is this course focused on AWS, Azure, or both?",
